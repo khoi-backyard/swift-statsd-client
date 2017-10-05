@@ -21,7 +21,7 @@ public class HTTPTransport: NSObject, Transport {
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private let configuration: URLSessionConfiguration
 
-    init(endpoint: URL, configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
+    public init(endpoint: URL, configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
         self.endpoint = endpoint
         self.configuration = configuration
     }

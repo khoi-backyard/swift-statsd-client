@@ -17,7 +17,7 @@ public class UDPTransport: NSObject, Transport {
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private var tag: Int = 0
 
-    init(host: String, port: UInt16) {
+    public init(host: String, port: UInt16) {
         self.host = host
         self.port = port
         super.init()
