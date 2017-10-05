@@ -1,5 +1,7 @@
 # Statsd Swift Client
 
+[![CircleCI](https://circleci.com/gh/khoiln/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiln/swift-statsd-client)
+
 A Statsd Client written in Swift that supports UDP and HTTP protocols
 
 - [Requirements](#requirements)
