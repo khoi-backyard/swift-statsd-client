@@ -1,0 +1,28 @@
+machine:
+  xcode:
+    version: 9.0
+  environment:
+    XCODE_PROJECT: StatsdClient.xcodeproj
+    XCODE_SCHEME: StatsdClient-iOS
+    LANG: en_US.UTF-8
+
+dependencies:
+  override:
+    - carthage bootstrap --platform iOS
+  cache_directories:
+    - "Carthage" # Cache carthage to speed up builds.
+
+test:
+  override:
+    - set -o pipefail &&
+      xcodebuild
+        CODE_SIGNING_REQUIRED=NO
+        CODE_SIGN_IDENTITY=
+        PROVISIONING_PROFILE=
+        -sdk iphonesimulator
+        -destination 'platform=iOS Simulator,OS=10.3.1,name=iPhone 7'
+        -project "$XCODE_PROJECT"
+        -scheme "$XCODE_SCHEME"
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
