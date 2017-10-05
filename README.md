@@ -3,15 +3,19 @@
 A Statsd Client written in Swift
 
 - [Requirements](#requirements)
+- [Usage](#usage)
 - [Installation](#installation)
 - [FAQ](#faq)
 - [License](#license)
 
 ## Requirements
 
-- iOS 9.0+ / macOS 10.11+ / tvOS 9.0+ 
+- iOS 9.0+ / macOS 10.11+ / tvOS 9.0+
 - Xcode 9.0+
 - Swift 4.0+
+
+## Usage
+
 
 
 ## Installation

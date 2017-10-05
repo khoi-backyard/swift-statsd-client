@@ -24,7 +24,7 @@ public class UDPTransport: NSObject, Transport {
         self.socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: socketDelegateQueue)
     }
 
-    func write(data: String, completion: TransportCompletionCallback?) {
+    public func write(data: String, completion: TransportCompletionCallback?) {
         guard let data = data.data(using: String.Encoding.utf8) else {
             completion?(TransportError.invalidData)
             return

@@ -17,15 +17,15 @@ protocol StatsdProtocol {
 public class StatsD: StatsdProtocol {
     let transport: Transport
 
-    init(transport: Transport) {
+    public init(transport: Transport) {
         self.transport = transport
     }
 
-    func increment(bucket: String, value: Int = 1) {
+    public func increment(bucket: String, value: Int = 1) {
         transport.write(data: Counting(name: bucket, value: value).metricData, completion: nil)
     }
 
-    func set(bucket: String, value: String) {
+    public func set(bucket: String, value: String) {
         transport.write(data: Sets(name: bucket, value: value).metricData, completion: nil)
     }
 }
