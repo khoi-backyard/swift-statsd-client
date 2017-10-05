@@ -1,6 +1,6 @@
 # Statsd Swift Client
 
-A Statsd Client written in Swift
+A Statsd Client written in Swift that supports UDP and HTTP protocols
 
 - [Requirements](#requirements)
 - [Usage](#usage)
@@ -16,7 +16,35 @@ A Statsd Client written in Swift
 
 ## Usage
 
+### Initializing the client
 
+UDP Client
+```swift
+let statsD = StatsD(transport: UDPTransport(host: "localhost", port: 2003))
+```
+
+HTTP CLient
+```swift
+let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!)
+```
+
+And if you want to customize your HTTP request
+```swift
+let statsD: StatsD = {
+    let configuration = URLSessionConfiguration()
+    configuration.httpAdditionalHeaders = ["token": "Some Super Secret Token"]
+    return StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!,
+                                      configuration: configuration))
+}()
+```
+
+### Sending Data
+
+```swift
+statsD.increment(bucket: "foo")
+statsD.increment(bucket: "foo", value: 10)
+statsD.set(bucket: "uniques", value: "someUniqueValue")
+```
 
 ## Installation
 
@@ -27,7 +55,7 @@ A Statsd Client written in Swift
 To integrate StatsD into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "khoiln/swift-statsd-client" ~> 1.3
+github "khoiln/swift-statsd-client"
 ```
 
 The project is currently configured to build for iOS, tvOS and Mac. After building with carthage the resultant frameworks will be stored in:
