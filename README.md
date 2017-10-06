@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/khoiln/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiln/swift-statsd-client)
 
-A Statsd Client written in Swift that supports UDP and HTTP protocols
+A Statsd Client written in Swift that is protocol agnostic. UDP and HTTP are supported out of the box.
 
 - [Requirements](#requirements)
 - [Usage](#usage)
