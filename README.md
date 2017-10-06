@@ -1,4 +1,4 @@
-# Statsd Swift Client
+# swift-statsd-client
 
 [![CircleCI](https://circleci.com/gh/khoiln/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiln/swift-statsd-client)
 
