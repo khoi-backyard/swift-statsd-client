@@ -43,9 +43,9 @@ let statsD: StatsD = {
 ### Sending Data
 
 ```swift
-statsD.increment(bucket: "foo")
-statsD.increment(bucket: "foo", value: 10)
-statsD.set(bucket: "uniques", value: "someUniqueValue")
+statsD.increment(bucket: "foo") # Increment 'foo' by 1
+statsD.increment(bucket: "foo", value: 10) # Increment 'foo' by 10
+statsD.set(bucket: "uniques", value: "someUniqueValue") # Add 'someUniqueValue' to the set
 ```
 
 ## Installation
