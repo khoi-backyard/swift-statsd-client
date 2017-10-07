@@ -12,13 +12,18 @@ struct Gauge: Metric {
     var name: String
     var value: String
 
-    init(name: String, value: String) {
+    private init(name: String, value: String) {
         self.name = name
         self.value = value
     }
 
+    init(name: String, value: UInt) {
+        self.init(name: name, value: "\(value)")
+    }
+
     init(name: String, delta: Int) {
-       self.init(name: name, value: "\(delta)")
+        let prefix = delta >= 0 ? "+" : "-"
+        self.init(name: name, value: "\(prefix)\(abs(delta))")
     }
 
     var metricData: String {
