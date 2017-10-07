@@ -18,7 +18,7 @@ struct Counting: Metric, Sampleable {
         self.value = value
         self.sample = sample
     }
-    
+
     var metricData: String {
         if let sample = sample {
             return "\(name):\(value)|c|@\(sample.clean)"

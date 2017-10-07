@@ -10,15 +10,15 @@ import XCTest
 @testable import StatsdClient
 
 class MetricTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testCounting() {
         XCTAssertEqual(Counting(name: "gorets", value: 1).metricData, "gorets:1|c")
         XCTAssertEqual(Counting(name: "gorets", value: -5).metricData, "gorets:-5|c")
@@ -54,12 +54,12 @@ class MetricTests: XCTestCase {
         XCTAssertEqual(Gauge(name: "gaugor", delta: 123).metricData, "gaugor:+123|g")
         XCTAssertEqual(Gauge(name: "gaugor", delta: -234).metricData, "gaugor:-234|g")
     }
-    
+
     static var allTests = [
         ("testCounting", testCounting),
         ("testSet", testSet),
         ("testTiming", testTiming),
         ("testGauge", testGauge),
     ]
-    
+
 }
