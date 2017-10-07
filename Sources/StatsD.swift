@@ -10,6 +10,7 @@ import Foundation
 
 protocol StatsdProtocol {
     var transport: Transport { get }
+
     func increment(_ bucket: String, by value: Int)
     func set(_ bucket: String, value: String)
     func timing(_ bucket: String, value: Int)

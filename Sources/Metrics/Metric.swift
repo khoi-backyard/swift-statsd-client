@@ -10,6 +10,7 @@ import Foundation
 
 protocol Metric {
     associatedtype ValueType
+
     var name: String { get }
     var value: ValueType { get }
     var metricData: String { get }
