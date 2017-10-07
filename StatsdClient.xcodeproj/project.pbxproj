@@ -29,6 +29,9 @@
 		7CC756281F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
 		7CC756291F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
 		7CC7562A1F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
+		7CC7562C1F888C6E00112173 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7562B1F888C6E00112173 /* Gauge.swift */; };
+		7CC7562D1F888C6E00112173 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7562B1F888C6E00112173 /* Gauge.swift */; };
+		7CC7562E1F888C6E00112173 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7562B1F888C6E00112173 /* Gauge.swift */; };
 		7CCE6AC41F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
 		7CCE6AC51F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
 		7CCE6AC71F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
@@ -87,6 +90,7 @@
 		7C105DC01F655F7000ED2957 /* UDPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPTransport.swift; sourceTree = "<group>"; };
 		7C4CA4F31F72CCC400AF5A69 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
 		7CC756271F88891A00112173 /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
+		7CC7562B1F888C6E00112173 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
 		7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTransport.swift; sourceTree = "<group>"; };
 		7CCE6AC91F77A57D00716C0F /* URLSessionDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataProtocol.swift; sourceTree = "<group>"; };
 		7CE316FC1F8659DD00EB637A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				7C105DA61F6304D700ED2957 /* Counting.swift */,
 				7C4CA4F31F72CCC400AF5A69 /* Sets.swift */,
 				7CC756271F88891A00112173 /* Timing.swift */,
+				7CC7562B1F888C6E00112173 /* Gauge.swift */,
 			);
 			path = Metrics;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				7CFC13141F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACA1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DA71F6304D700ED2957 /* Counting.swift in Sources */,
+				7CC7562C1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC41F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA21F6302D700ED2957 /* Metric.swift in Sources */,
@@ -608,6 +614,7 @@
 				7CFC13171F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACD1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DAA1F6304D700ED2957 /* Counting.swift in Sources */,
+				7CC7562E1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC71F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA51F6302D700ED2957 /* Metric.swift in Sources */,
@@ -625,6 +632,7 @@
 				7CFC13151F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACB1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DA81F6304D700ED2957 /* Counting.swift in Sources */,
+				7CC7562D1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC51F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA31F6302D700ED2957 /* Metric.swift in Sources */,
