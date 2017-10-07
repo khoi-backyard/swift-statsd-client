@@ -26,6 +26,9 @@
 		7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
 		7C4CA4F51F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
 		7C4CA4F71F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
+		7CC756281F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
+		7CC756291F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
+		7CC7562A1F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
 		7CCE6AC41F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
 		7CCE6AC51F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
 		7CCE6AC71F77A3BF00716C0F /* HTTPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */; };
@@ -83,6 +86,7 @@
 		7C105DB31F630CFE00ED2957 /* Float+Clean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Clean.swift"; sourceTree = "<group>"; };
 		7C105DC01F655F7000ED2957 /* UDPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPTransport.swift; sourceTree = "<group>"; };
 		7C4CA4F31F72CCC400AF5A69 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
+		7CC756271F88891A00112173 /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTransport.swift; sourceTree = "<group>"; };
 		7CCE6AC91F77A57D00716C0F /* URLSessionDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataProtocol.swift; sourceTree = "<group>"; };
 		7CE316FC1F8659DD00EB637A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				7C105DA11F6302D700ED2957 /* Metric.swift */,
 				7C105DA61F6304D700ED2957 /* Counting.swift */,
 				7C4CA4F31F72CCC400AF5A69 /* Sets.swift */,
+				7CC756271F88891A00112173 /* Timing.swift */,
 			);
 			path = Metrics;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C105DC11F655F7000ED2957 /* UDPTransport.swift in Sources */,
+				7CC756281F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB41F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13141F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACA1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
@@ -597,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C105DC41F655F7000ED2957 /* UDPTransport.swift in Sources */,
+				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB71F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13171F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACD1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
@@ -613,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C105DC21F655F7000ED2957 /* UDPTransport.swift in Sources */,
+				7CC756291F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB51F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13151F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACB1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
