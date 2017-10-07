@@ -44,11 +44,22 @@ class MetricTests: XCTestCase {
         XCTAssertEqual(Timing(name: "api.foo.bar", value: 403, sample: 0.2).metricData, "api.foo.bar:403|ms|@0.2")
         XCTAssertEqual(Timing(name: "api.foo.bar", value: 929, sample: 1.0).metricData, "api.foo.bar:929|ms|@1")
     }
+
+    func testGauge() {
+        XCTAssertEqual(Gauge(name: "gaugor", value: 10).metricData, "gaugor:10|g")
+        XCTAssertEqual(Gauge(name: "gaugor", value: 1).metricData, "gaugor:1|g")
+        XCTAssertEqual(Gauge(name: "gaugor", value: 0).metricData, "gaugor:0|g")
+
+        XCTAssertEqual(Gauge(name: "gaugor", delta: 0).metricData, "gaugor:+0|g")
+        XCTAssertEqual(Gauge(name: "gaugor", delta: 123).metricData, "gaugor:+123|g")
+        XCTAssertEqual(Gauge(name: "gaugor", delta: -234).metricData, "gaugor:-234|g")
+    }
     
     static var allTests = [
         ("testCounting", testCounting),
         ("testSet", testSet),
         ("testTiming", testTiming),
+        ("testGauge", testGauge),
     ]
     
 }

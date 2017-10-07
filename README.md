@@ -43,9 +43,12 @@ let statsD: StatsD = {
 ### Sending Data
 
 ```swift
-statsD.increment(bucket: "foo") # Increment 'foo' by 1
-statsD.increment(bucket: "foo", value: 10) # Increment 'foo' by 10
-statsD.set(bucket: "uniques", value: "someUniqueValue") # Add 'someUniqueValue' to the set
+statsD.increment("foo") # Increment 'foo' by 1
+statsD.increment("foo", by: 10) # Increment 'foo' by 10
+statsD.set("uniques", value: "someUniqueValue") # Add 'someUniqueValue' to the set
+statsD.timing("api.foo.bar", value: 320) # Set time for api.foo.bar
+statsD.gauge("gaugor", value: 10) # Set gauge to 10
+statsD.gauge("gaugor", delta: -10) # Decrement gauge by 10
 ```
 
 ## Installation
