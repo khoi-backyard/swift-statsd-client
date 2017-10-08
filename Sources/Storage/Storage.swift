@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Storage {
-    associatedtype Key
+    associatedtype Key: Hashable
     associatedtype Item
 
     var count: Int { get }
