@@ -15,28 +15,25 @@ final class DiskStorage<Element: Serializable>: Storage {
 
     // MARK: - Variable
     private let config: DiskConfigurable
-    private let handler: PersistenceHandler
+    private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
     var count: Int
 
     // MARK: - Init
-    init(config: DiskConfigurable, handler: PersistenceHandler) {
+    init(config: DiskConfigurable, handler: PersistentHandler) {
         self.config = config
         self.handler = handler
         count = 0
     }
-
+    
     // MARK: - Public
     func item(forKey key: Key) -> Element? {
-        let path = handler.makeFilePath(key)
-        return handler.get(path: path)
+        return try? handler.get(key: key)
     }
 
     func set(item: Element, forKey key: Key) {
-        let path = handler.makeFilePath(key)
-        let data = item.encode()
-        handler.write(data, path: path)
+        try? handler.write(item, key: key, attribute: nil)
     }
 
     func getAllItems() -> [Element] {

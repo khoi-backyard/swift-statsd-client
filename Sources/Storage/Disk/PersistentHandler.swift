@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol PersistenceHandler {
+protocol PersistentHandler {
 
     func makeFilePath(_ key: String) -> String
-    func write(_ data: Data, path: String)
-    func get<T: Serializable>(path: String) -> T
+    func write<T: Serializable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws
+    func get<T: Serializable>(key: String) throws -> T
 }
