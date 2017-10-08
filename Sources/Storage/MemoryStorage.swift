@@ -9,8 +9,12 @@
 import Foundation
 
 class MemoryStorage<ItemType>: Storage {
-    private let queue = DispatchQueue(label: "StatsD_MemoryStorage", qos: .default, attributes: .concurrent)
-    private var internalStorage = [String: ItemType]()
+    private let queue: DispatchQueue
+    internal var internalStorage = [String: ItemType]()
+
+    init(dispatchQueueLabel: String = "StatsD_MemoryStorage") {
+        queue = DispatchQueue(label: dispatchQueueLabel, qos: .default, attributes: .concurrent)
+    }
 
     var count: Int {
         return queue.syncWithReturnedValue {
