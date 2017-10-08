@@ -52,4 +52,20 @@ class MemoryStorageTests: XCTestCase {
         XCTAssertNil(memoryStorage.item(forKey: "key3"))
     }
 
+    func testStorageForMetricType() {
+        let metricStorage = MemoryStorage<Metric>()
+        let countingMetric = Counting(name: "counter", value: 1, sample: 0.3)
+        metricStorage.set(item: countingMetric, forKey: "count1")
+
+        XCTAssertEqual(metricStorage.count, 1)
+        if let storedMetric = metricStorage.item(forKey: "count1") {
+            XCTAssertEqual(storedMetric.name, countingMetric.name)
+            XCTAssertEqual(storedMetric.value, countingMetric.value)
+            XCTAssertEqual(storedMetric.sample, countingMetric.sample)
+            XCTAssertEqual(storedMetric.metricData, countingMetric.metricData)
+        } else {
+            XCTFail("Can't get the item out of the storage")
+        }
+        
+    }
 }
