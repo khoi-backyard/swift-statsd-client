@@ -36,7 +36,7 @@ class MemoryStorage<ItemType>: Storage {
         }
     }
 
-    func remove(item: ItemType, forKey key: String) {
+    func remove(key: String) {
         queue.syncWithReturnedValue {
             _ = internalStorage.removeValue(forKey: key)
         }
