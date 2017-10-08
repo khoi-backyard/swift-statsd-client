@@ -8,12 +8,16 @@
 
 import Foundation
 
-struct Timing: Metric, Sampleable {
+struct Timing: Metric, Codable {
     var name: String
-    var value: Int
+    var value: String
     var sample: Float?
 
     init(name: String, value: Int, sample: Float? = nil) {
+        self.init(name: name, value: "\(value)", sample: sample)
+    }
+
+    init(name: String, value: String, sample: Float? = nil) {
         self.name = name
         self.value = value
         self.sample = sample

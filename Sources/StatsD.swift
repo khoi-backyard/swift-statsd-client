@@ -26,7 +26,7 @@ public class StatsD: StatsdProtocol {
     }
 
     public func increment(_ bucket: String, by value: Int = 1) {
-        transport.write(data: Counting(name: bucket, value: value).metricData, completion: nil)
+        transport.write(data: Counting(name: bucket, value: "\(value)").metricData, completion: nil)
     }
 
     public func set(_ bucket: String, value: String) {
@@ -34,7 +34,7 @@ public class StatsD: StatsdProtocol {
     }
 
     public func timing(_ bucket: String, value: Int) {
-        transport.write(data: Timing(name: bucket, value: value).metricData, completion: nil)
+        transport.write(data: Timing(name: bucket, value: "\(value)").metricData, completion: nil)
     }
 
     public func gauge(_ bucket: String, value: UInt) {
