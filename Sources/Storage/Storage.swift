@@ -9,12 +9,13 @@
 import Foundation
 
 protocol Storage {
+    associatedtype Key
     associatedtype Item
 
     var count: Int { get }
 
-    func item(forKey key: String) -> Item?
-    func set(item: Item, forKey key: String)
+    func item(forKey key: Key) -> Item?
+    func set(item: Item, forKey key: Key)
     func getAllItems() -> [Item]
     func remove(key: String)
     func removeAll()
