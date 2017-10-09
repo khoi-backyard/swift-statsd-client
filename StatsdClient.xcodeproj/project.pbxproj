@@ -81,6 +81,12 @@
 		BA8B3E9E1F8A33EB0093A6E7 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */; };
 		BA8B3E9F1F8A33EB0093A6E7 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */; };
 		BA8B3EA01F8A33EB0093A6E7 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */; };
+		BA8B3EA31F8A85540093A6E7 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA21F8A85540093A6E7 /* DiskError.swift */; };
+		BA8B3EA41F8A85540093A6E7 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA21F8A85540093A6E7 /* DiskError.swift */; };
+		BA8B3EA51F8A85540093A6E7 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA21F8A85540093A6E7 /* DiskError.swift */; };
+		BA8B3EA81F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */; };
+		BA8B3EA91F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */; };
+		BA8B3EAA1F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */; };
 		DD7502881C68FEDE006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* StatsdClient.framework */; };
 		DD7502921C690C7A006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* StatsdClient.framework */; };
 /* End PBXBuildFile section */
@@ -143,6 +149,8 @@
 		BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHandler.swift; sourceTree = "<group>"; };
 		BA8B3E991F8A32E90093A6E7 /* DiskPersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandler.swift; sourceTree = "<group>"; };
 		BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		BA8B3EA21F8A85540093A6E7 /* DiskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskError.swift; sourceTree = "<group>"; };
+		BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfiguration.swift; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* StatsdClient-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* StatsdClient-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -327,14 +335,32 @@
 		BA8B3E861F8A2C840093A6E7 /* Disk */ = {
 			isa = PBXGroup;
 			children = (
+				BA8B3EA61F8B58EC0093A6E7 /* Configuration */,
+				BA8B3EA11F8A84EC0093A6E7 /* Handler */,
 				BA8B3E871F8A2C9F0093A6E7 /* DiskStorage.swift */,
-				BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */,
 				BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */,
-				BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */,
-				BA8B3E991F8A32E90093A6E7 /* DiskPersistentHandler.swift */,
 				BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */,
+				BA8B3EA21F8A85540093A6E7 /* DiskError.swift */,
 			);
 			path = Disk;
+			sourceTree = "<group>";
+		};
+		BA8B3EA11F8A84EC0093A6E7 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */,
+				BA8B3E991F8A32E90093A6E7 /* DiskPersistentHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		BA8B3EA61F8B58EC0093A6E7 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */,
+				BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
@@ -665,6 +691,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8B3EA81F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */,
 				7C105DC11F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7CC23A811F89D64F008DED42 /* Storage.swift in Sources */,
 				BA8B3E9A1F8A32E90093A6E7 /* DiskPersistentHandler.swift in Sources */,
@@ -686,6 +713,7 @@
 				7C105DA21F6302D700ED2957 /* Metric.swift in Sources */,
 				7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */,
 				BA8B3E8E1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */,
+				BA8B3EA31F8A85540093A6E7 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,8 +738,10 @@
 				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
 				7CC23A8B1F89D96E008DED42 /* MemoryStorage.swift in Sources */,
 				7C105DB71F630CFE00ED2957 /* Float+Clean.swift in Sources */,
+				BA8B3EAA1F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */,
 				BA8B3EA01F8A33EB0093A6E7 /* String+Base64.swift in Sources */,
 				7CFC13171F66C81A003BF478 /* Transport.swift in Sources */,
+				BA8B3EA51F8A85540093A6E7 /* DiskError.swift in Sources */,
 				7CCE6ACD1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DAA1F6304D700ED2957 /* Counting.swift in Sources */,
 				BA8B3E8C1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */,
@@ -737,8 +767,10 @@
 				7CC756291F88891A00112173 /* Timing.swift in Sources */,
 				7CC23A8A1F89D96E008DED42 /* MemoryStorage.swift in Sources */,
 				7C105DB51F630CFE00ED2957 /* Float+Clean.swift in Sources */,
+				BA8B3EA91F8B590C0093A6E7 /* DiskConfiguration.swift in Sources */,
 				BA8B3E9F1F8A33EB0093A6E7 /* String+Base64.swift in Sources */,
 				7CFC13151F66C81A003BF478 /* Transport.swift in Sources */,
+				BA8B3EA41F8A85540093A6E7 /* DiskError.swift in Sources */,
 				7CCE6ACB1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DA81F6304D700ED2957 /* Counting.swift in Sources */,
 				BA8B3E8B1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */,

@@ -18,33 +18,44 @@ final class DiskStorage<Element: Serializable>: Storage {
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
-    var count: Int
+    // Count
+    fileprivate var _count = 0
+    var count: Int { return _count }
 
     // MARK: - Init
     init(config: DiskConfigurable, handler: PersistentHandler) {
         self.config = config
         self.handler = handler
-        count = 0
     }
     
     // MARK: - Public
-    func item(forKey key: Key) -> Element? {
-        return try? handler.get(key: key)
+    func item(forKey key: Key) throws -> Element?  {
+        return try queue.syncWithReturnedValue {
+            try handler.get(key: key)
+        }
     }
 
     func set(item: Element, forKey key: Key) {
-        try? handler.write(item, key: key, attribute: nil)
+      queue.async(flags: .barrier) { [unowned self] in
+
+            // Don't handle Throws error here
+            try? self.handler.write(item, key: key, attribute: nil)
+            self._count += 1
+        }
     }
 
-    func getAllItems() -> [Element] {
-        return []
+    func getAllItems() throws -> [Element]  {
+        return queue.syncWithReturnedValue {
+            let items: [Element]? = try? handler.getAll()
+            return items ?? []
+        }
     }
 
-    func remove(key: String) {
+    func remove(key: String) throws {
 
     }
 
-    func removeAll() {
+    func removeAll() throws {
 
     }
 

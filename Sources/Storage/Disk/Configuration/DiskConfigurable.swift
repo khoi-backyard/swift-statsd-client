@@ -20,7 +20,21 @@ protocol DiskConfigurable {
     // Max size on bytes
     var maxSize: UInt { get }
 
-    var directory: URL? { get }
+    // Default directly
+    var directory: URL { get }
 
+    // Protection mode in iOS/tvOS
     var protectionType: FileProtectionType? { get }
+}
+
+extension DiskConfigurable {
+
+    // Default cache folder
+    var directory: URL {
+        return try! FileManager.default.url(for: .cachesDirectory,
+                                            in: .userDomainMask,
+                                            appropriateFor: nil,
+                                            create: true
+        )
+    }
 }
