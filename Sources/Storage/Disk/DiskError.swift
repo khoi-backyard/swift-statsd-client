@@ -13,4 +13,5 @@ enum DiskError: Error {
     case fileNotFound
     case invalidFile
     case invalidEnumerator
+    case invalidCacheFolder
 }

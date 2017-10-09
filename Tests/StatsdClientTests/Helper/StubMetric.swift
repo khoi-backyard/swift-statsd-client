@@ -27,22 +27,33 @@ struct StubMetric: Metric, Codable {
 
 extension StubMetric: EncodeSerializable {
     func encode() -> Data {
-        return try! JSONEncoder().encode(self)
+        guard let data = try? JSONEncoder().encode(self) else {
+            // Workaround this annoying
+            return Data()
+        }
+        return data
     }
 }
 
 extension StubMetric: DecodeSerialable {
     init(data: Data) {
-        self = try! JSONDecoder().decode(StubMetric.self, from: data)
+        guard let obj = try? JSONDecoder().decode(StubMetric.self, from: data) else {
+            // Workaround this annoying
+            self = StubMetric()
+            return
+        }
+        self = obj
     }
 }
 
 extension StubMetric: Equatable {
-    public static func ==(lhs: StubMetric, rhs: StubMetric) -> Bool {
-        guard lhs.name == rhs.name else { return false }
-        guard lhs.value == rhs.value else { return false }
-        guard lhs.metricData == rhs.metricData else { return false }
-        guard lhs.sample == rhs.sample else { return false }
+    public static func == (lhs: StubMetric, rhs: StubMetric) -> Bool {
+        guard lhs.name == rhs.name &&
+        lhs.value == rhs.value &&
+        lhs.metricData == rhs.metricData &&
+        lhs.sample == rhs.sample else {
+            return false
+        }
         return true
     }
 }

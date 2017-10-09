@@ -10,7 +10,7 @@ import Foundation
 
 struct DiskConfiguration: DiskConfigurable {
 
-    var name: String { return "StatsD_DiskStorage"}
+    var name: String { return "StatsD_DiskStorage" }
 
     var expiry: Expiry { return .never }
 
@@ -18,4 +18,3 @@ struct DiskConfiguration: DiskConfigurable {
 
     var protectionType: FileProtectionType? { return nil }
 }
-

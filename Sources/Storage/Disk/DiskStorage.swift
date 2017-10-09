@@ -34,28 +34,30 @@ final class DiskStorage<Element: Serializable>: Storage {
         let handler = try? DiskPersistentHandler(config: config)
 
         // Make sure we could create proper DiskHandler with config
-        guard let disk = handler else {return nil }
+        guard let disk = handler else {
+            return nil
+        }
 
         // Save
         self.handler = disk
     }
 
     // MARK: - Public
-    func item(forKey key: Key) -> Element?  {
+    func item(forKey key: Key) -> Element? {
         return queue.syncWithReturnedValue {
             try? handler.get(key: key, type: Element.self)
         }
     }
 
     func set(item: Element, forKey key: Key) {
-      queue.async(flags: .barrier) { [unowned self] in
+        queue.async(flags: .barrier) { [unowned self] in
 
             // Don't handle Throws error here
             try? self.handler.write(item, key: key, attribute: nil)
         }
     }
 
-    func getAllItems() -> [Element]  {
+    func getAllItems() -> [Element] {
         return queue.syncWithReturnedValue {
             let items = try? handler.getAll(type: Element.self)
             return items ?? []

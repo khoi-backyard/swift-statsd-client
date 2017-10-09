@@ -9,7 +9,6 @@
 import XCTest
 @testable import StatsdClient
 
-
 class DiskStorageTests: XCTestCase {
 
     var disk: DiskStorage<StubMetric>!
@@ -29,7 +28,11 @@ class DiskStorageTests: XCTestCase {
         let disk = DiskStorage<StubMetric>(config: DiskConfiguration())
 
         XCTAssertNotNil(disk, "Can't create DiskStorage with default configuration")
-        XCTAssertEqual(disk!.count, 0, "Disk count should be 0")
+        guard let _disk = disk else {
+            XCTFail("Disk is nill")
+            return
+        }
+        XCTAssertEqual(_disk.count, 0, "Disk count should be 0")
     }
 
     func testSaveIndividualItem() {
@@ -43,7 +46,11 @@ class DiskStorageTests: XCTestCase {
         XCTAssertEqual(disk.count, 1, "Disk Count should be 1")
         XCTAssertNil(wrongItem, "Item with wrong key should be nil when received from Disk")
         XCTAssertNotNil(rightItem, "Item with proper key should be received successfully")
-        XCTAssertEqual(rightItem!, metric, "Item before and after is same data")
+        guard let _rightItem = rightItem else {
+            XCTFail("rightItem is nill")
+            return
+        }
+        XCTAssertEqual(_rightItem, metric, "Item before and after is same data")
     }
 
     func testRemoveIndividualItem() {

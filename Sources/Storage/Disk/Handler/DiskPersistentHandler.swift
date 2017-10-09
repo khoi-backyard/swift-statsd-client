@@ -15,25 +15,27 @@ class DiskPersistentHandler: PersistentHandler {
     fileprivate let path: String
     public let config: DiskConfigurable
 
-    fileprivate lazy var defaultEnumerator: [URLResourceKey] = {
-        return [
-            .isDirectoryKey,
-            .contentModificationDateKey,
-            .totalFileAllocatedSizeKey
-        ]
-    }()
+    fileprivate let defaultEnumerator: [URLResourceKey] = [
+        .isDirectoryKey,
+        .contentModificationDateKey,
+        .totalFileAllocatedSizeKey,
+    ]
 
     init(config: DiskConfigurable, hanlder: FileManager = FileManager.default) throws {
         self.config = config
         self.handler = hanlder
 
         // Create path
-        path = config.pathFolder
+        guard let pathFolder = config.pathFolder else {
+            throw DiskError.invalidCacheFolder
+        }
+
+        path = pathFolder
 
         // Try to create folder
         try createCacheFolder()
     }
-    
+
     // MARK: - Public
     func makeFilePath(_ key: String) -> String {
         return "\(path)/\(key.toBase64())"
@@ -87,7 +89,9 @@ extension DiskPersistentHandler {
     fileprivate func createCacheFolder() throws {
 
         // Make sure it isn't existed
-        guard handler.fileExists(atPath: path) == false else { return }
+        guard handler.fileExists(atPath: path) == false else {
+            return
+        }
 
         // Create
         try handler.createDirectory(atPath: path,
