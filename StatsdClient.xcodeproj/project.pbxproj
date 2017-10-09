@@ -348,6 +348,7 @@
 				52D6D9791BEFF229002C0205 /* Headers */,
 				52D6D97A1BEFF229002C0205 /* Resources */,
 				7CE317021F865A2100EB637A /* Carthage */,
+				7C7666781F8B90840043BDB8 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -385,6 +386,7 @@
 				52D6D9ED1BEFFFBE002C0205 /* Headers */,
 				52D6D9EE1BEFFFBE002C0205 /* Resources */,
 				7CE317041F865BB200EB637A /* Carthage */,
+				7C7666791F8B908B0043BDB8 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -555,6 +557,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7C7666781F8B90840043BDB8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
+		};
+		7C7666791F8B908B0043BDB8 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
+		};
 		7CC7562F1F88953600112173 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
 		};
 		7CE317021F865A2100EB637A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
