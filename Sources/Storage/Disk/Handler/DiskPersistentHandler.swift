@@ -53,19 +53,7 @@ class DiskPersistentHandler: PersistentHandler {
 
     func getAll<T: Serializable>() throws -> [T] {
 
-        // Get Directory
-        let parentURL = path.fileURL()
-
-        // Enumator
-        let enumerator = handler.enumerator(at: parentURL,
-                                            includingPropertiesForKeys: defaultEnumerator,
-                                            options: .skipsHiddenFiles,
-                                            errorHandler: nil)
-
-        // Check if someone is not a URL
-        guard let fileURLs = enumerator?.allObjects as? [URL] else {
-            throw DiskError.invalidEnumerator
-        }
+        let fileURLs = allFileURLs()
 
         //TODO: LazyMapCollection
         // It's super expensive operation
@@ -82,7 +70,12 @@ class DiskPersistentHandler: PersistentHandler {
     }
 
     func deleteAllFile() throws {
+        try handler.removeItem(atPath: path)
+        try createCacheFolder()
+    }
 
+    func getTotal() -> Int {
+        return allFileURLs().count
     }
 }
 
@@ -98,5 +91,24 @@ extension DiskPersistentHandler {
                                 withIntermediateDirectories: true,
                                 attributes: nil)
 
+    }
+
+    fileprivate func allFileURLs() -> [URL] {
+
+        // Get Directory
+        let parentURL = path.fileURL()
+
+        // Enumator
+        let enumerator = handler.enumerator(at: parentURL,
+                                            includingPropertiesForKeys: defaultEnumerator,
+                                            options: .skipsHiddenFiles,
+                                            errorHandler: nil)
+
+        // Check if someone is not a URL
+        guard let fileURLs = enumerator?.allObjects as? [URL] else {
+            return []
+        }
+
+        return fileURLs
     }
 }
