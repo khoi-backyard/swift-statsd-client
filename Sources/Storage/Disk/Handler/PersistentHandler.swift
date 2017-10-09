@@ -12,6 +12,7 @@ protocol PersistentHandler {
 
     var config: DiskConfigurable { get }
 
+    func getTotal() -> Int
     func makeFilePath(_ key: String) -> String
     func write<T: Serializable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws
     func get<T: Serializable>(key: String) throws -> T

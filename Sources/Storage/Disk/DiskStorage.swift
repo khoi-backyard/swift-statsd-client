@@ -18,7 +18,7 @@ final class DiskStorage<Element: Serializable>: Storage {
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
     // Count
-    fileprivate var _count = 0
+    fileprivate lazy var _count: Int = { return self.handler.getTotal() }()
     var count: Int { return _count }
 
     // MARK: - Init
