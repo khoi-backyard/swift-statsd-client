@@ -43,7 +43,7 @@ final class DiskStorage<Element: Serializable>: Storage {
     // MARK: - Public
     func item(forKey key: Key) -> Element?  {
         return queue.syncWithReturnedValue {
-            try? handler.get(key: key)
+            try? handler.get(key: key, type: Element.self)
         }
     }
 

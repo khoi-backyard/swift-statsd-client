@@ -18,3 +18,4 @@ struct DiskConfiguration: DiskConfigurable {
 
     var protectionType: FileProtectionType? { return nil }
 }
+
