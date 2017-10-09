@@ -121,7 +121,7 @@ class DiskPersistentHandlerTests: XCTestCase {
 
         XCTAssertNoThrow({[unowned self] in
 
-            let items: [StubMetric] = try! self.handler.getAll()
+            let items: [StubMetric] = try! self.handler.getAll(type: StubMetric.self)
             XCTAssertEqual(items[0], metric_2)
             XCTAssertEqual(items[1], metric_1)
 
