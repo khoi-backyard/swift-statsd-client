@@ -14,7 +14,6 @@ final class DiskStorage<Element: Serializable>: Storage {
     typealias Item = Element
 
     // MARK: - Variable
-    private let config: DiskConfigurable
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
@@ -23,11 +22,15 @@ final class DiskStorage<Element: Serializable>: Storage {
     var count: Int { return _count }
 
     // MARK: - Init
-    init(config: DiskConfigurable, handler: PersistentHandler) {
-        self.config = config
+    init(handler: PersistentHandler) {
         self.handler = handler
     }
-    
+
+    // Default
+    init(config: DiskConfigurable) throws {
+        self.handler = try DiskPersistentHandler(config: config)
+    }
+
     // MARK: - Public
     func item(forKey key: Key) throws -> Element?  {
         return try queue.syncWithReturnedValue {
@@ -52,11 +55,16 @@ final class DiskStorage<Element: Serializable>: Storage {
     }
 
     func remove(key: String) throws {
-
+        try queue.sync { [unowned self] in
+            try self.handler.deleteFile(key)
+            self._count -= 1
+        }
     }
 
     func removeAll() throws {
-
+        try queue.sync { [unowned self] in
+            try self.handler.deleteAllFile()
+            self._count = 0
+        }
     }
-
 }

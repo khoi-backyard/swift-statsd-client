@@ -47,14 +47,14 @@ class DiskPersistentHandler: PersistentHandler {
 
     func get<T: Serializable>(key: String) throws -> T {
         let pathFile = makeFilePath(key)
-        let data = try Data(contentsOf: URL(fileURLWithPath: pathFile), options: .alwaysMapped)
+        let data = try Data(contentsOf: pathFile.fileURL(), options: .alwaysMapped)
         return T(data: data)
     }
 
     func getAll<T: Serializable>() throws -> [T] {
 
         // Get Directory
-        let parentURL = URL(fileURLWithPath: path)
+        let parentURL = path.fileURL()
 
         // Enumator
         let enumerator = handler.enumerator(at: parentURL,
