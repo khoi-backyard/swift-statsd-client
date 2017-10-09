@@ -98,6 +98,9 @@
 		BA8B3EB81F8B73E40093A6E7 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EB71F8B73E40093A6E7 /* StubMetric.swift */; };
 		BA8B3EB91F8B73E40093A6E7 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EB71F8B73E40093A6E7 /* StubMetric.swift */; };
 		BA8B3EBA1F8B73E40093A6E7 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EB71F8B73E40093A6E7 /* StubMetric.swift */; };
+		BA8B3EBC1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
+		BA8B3EBD1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
+		BA8B3EBE1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
 		DD7502881C68FEDE006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* StatsdClient.framework */; };
 		DD7502921C690C7A006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* StatsdClient.framework */; };
 /* End PBXBuildFile section */
@@ -165,6 +168,7 @@
 		BA8B3EAC1F8B5CB80093A6E7 /* String+FileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileURL.swift"; sourceTree = "<group>"; };
 		BA8B3EB01F8B62C60093A6E7 /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
 		BA8B3EB71F8B73E40093A6E7 /* StubMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubMetric.swift; sourceTree = "<group>"; };
+		BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandlerTests.swift; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* StatsdClient-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* StatsdClient-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -343,6 +347,7 @@
 				7C105DAC1F6306F000ED2957 /* MetricTests.swift */,
 				7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */,
 				BA8B3EB01F8B62C60093A6E7 /* DiskStorageTests.swift */,
+				BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */,
 			);
 			name = Tests;
 			path = Tests/StatsdClientTests;
@@ -789,6 +794,7 @@
 				8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA8B3EB81F8B73E40093A6E7 /* StubMetric.swift in Sources */,
 				7CC23A921F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
+				BA8B3EBC1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */,
 				7C105DAD1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,6 +869,7 @@
 				8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA8B3EB91F8B73E40093A6E7 /* StubMetric.swift in Sources */,
 				7CC23A931F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
+				BA8B3EBD1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */,
 				7C105DAE1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,6 +882,7 @@
 				8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA8B3EBA1F8B73E40093A6E7 /* StubMetric.swift in Sources */,
 				7CC23A941F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
+				BA8B3EBE1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */,
 				7C105DAF1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

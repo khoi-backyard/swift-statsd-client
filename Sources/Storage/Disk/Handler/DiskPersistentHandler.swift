@@ -28,7 +28,7 @@ class DiskPersistentHandler: PersistentHandler {
         self.handler = hanlder
 
         // Create path
-        path = config.directory.appendingPathComponent(config.name, isDirectory: true).path
+        path = config.pathFolder
 
         // Try to create folder
         try createCacheFolder()
@@ -45,7 +45,7 @@ class DiskPersistentHandler: PersistentHandler {
         handler.createFile(atPath: pathFile, contents: data, attributes: attribute)
     }
 
-    func get<T: Serializable>(key: String) throws -> T {
+    func get<T: Serializable>(key: String, type: T.Type) throws -> T {
         let pathFile = makeFilePath(key)
         let data = try Data(contentsOf: pathFile.fileURL(), options: .alwaysMapped)
         return T(data: data)
