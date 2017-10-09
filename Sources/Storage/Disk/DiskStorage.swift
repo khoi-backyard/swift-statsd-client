@@ -57,7 +57,7 @@ final class DiskStorage<Element: Serializable>: Storage {
 
     func getAllItems() -> [Element]  {
         return queue.syncWithReturnedValue {
-            let items: [Element]? = try? handler.getAll()
+            let items = try? handler.getAll(type: Element.self)
             return items ?? []
         }
     }

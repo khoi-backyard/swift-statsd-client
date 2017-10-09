@@ -51,7 +51,7 @@ class DiskPersistentHandler: PersistentHandler {
         return T(data: data)
     }
 
-    func getAll<T: Serializable>() throws -> [T] {
+    func getAll<T: Serializable>(type: T.Type) throws -> [T] {
 
         let fileURLs = allFileURLs()
 
