@@ -75,7 +75,10 @@ class DiskPersistentHandler: PersistentHandler {
     }
 
     func getTotal() -> Int {
-        return allFileURLs().count
+        let files = allFileURLs()
+        let count = files.count
+        print("Count = \(count), file = \(files)")
+        return count
     }
 }
 
