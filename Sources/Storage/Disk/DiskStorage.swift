@@ -18,8 +18,9 @@ final class DiskStorage<Element: Serializable>: Storage {
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
     // Count
-    fileprivate lazy var _count: Int = { return self.handler.getTotal() }()
-    var count: Int { return _count }
+    var count: Int {
+        return queue.syncWithReturnedValue { self.handler.getTotal() }
+    }
 
     // MARK: - Init
     init(handler: PersistentHandler) {
@@ -27,14 +28,22 @@ final class DiskStorage<Element: Serializable>: Storage {
     }
 
     // Default
-    init(config: DiskConfigurable) throws {
-        self.handler = try DiskPersistentHandler(config: config)
+    init?(config: DiskConfigurable) {
+
+        // Try to create default DiskPersistentHandler
+        let handler = try? DiskPersistentHandler(config: config)
+
+        // Make sure we could create proper DiskHandler with config
+        guard let disk = handler else {return nil }
+
+        // Save
+        self.handler = disk
     }
 
     // MARK: - Public
-    func item(forKey key: Key) throws -> Element?  {
-        return try queue.syncWithReturnedValue {
-            try handler.get(key: key)
+    func item(forKey key: Key) -> Element?  {
+        return queue.syncWithReturnedValue {
+            try? handler.get(key: key)
         }
     }
 
@@ -43,11 +52,10 @@ final class DiskStorage<Element: Serializable>: Storage {
 
             // Don't handle Throws error here
             try? self.handler.write(item, key: key, attribute: nil)
-            self._count += 1
         }
     }
 
-    func getAllItems() throws -> [Element]  {
+    func getAllItems() -> [Element]  {
         return queue.syncWithReturnedValue {
             let items: [Element]? = try? handler.getAll()
             return items ?? []
@@ -57,14 +65,12 @@ final class DiskStorage<Element: Serializable>: Storage {
     func remove(key: String) throws {
         try queue.sync { [unowned self] in
             try self.handler.deleteFile(key)
-            self._count -= 1
         }
     }
 
     func removeAll() throws {
         try queue.sync { [unowned self] in
             try self.handler.deleteAllFile()
-            self._count = 0
         }
     }
 }
