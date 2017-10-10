@@ -17,4 +17,6 @@ struct DiskConfiguration: DiskConfigurable {
     var maxSize: UInt { return 0 }
 
     var protectionType: FileProtectionType? { return nil }
+
+    var directoryType: DirectoryType { return .cache }
 }

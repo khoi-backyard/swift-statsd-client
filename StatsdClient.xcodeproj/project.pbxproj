@@ -101,6 +101,7 @@
 		BA8B3EBC1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
 		BA8B3EBD1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
 		BA8B3EBE1F8B7C0D0093A6E7 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */; };
+		BAC4200F1F8CB5BA00AFF75B /* DirectoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4200E1F8CB5BA00AFF75B /* DirectoryType.swift */; };
 		DD7502881C68FEDE006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* StatsdClient.framework */; };
 		DD7502921C690C7A006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* StatsdClient.framework */; };
 /* End PBXBuildFile section */
@@ -169,6 +170,7 @@
 		BA8B3EB01F8B62C60093A6E7 /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
 		BA8B3EB71F8B73E40093A6E7 /* StubMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubMetric.swift; sourceTree = "<group>"; };
 		BA8B3EBB1F8B7C0A0093A6E7 /* DiskPersistentHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandlerTests.swift; sourceTree = "<group>"; };
+		BAC4200E1F8CB5BA00AFF75B /* DirectoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryType.swift; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* StatsdClient-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* StatsdClient-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -378,6 +380,7 @@
 		BA8B3EA61F8B58EC0093A6E7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				BAC4200E1F8CB5BA00AFF75B /* DirectoryType.swift */,
 				BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */,
 				BA8B3EA71F8B590C0093A6E7 /* DiskConfiguration.swift */,
 			);
@@ -771,6 +774,7 @@
 				7C105DB41F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13141F66C81A003BF478 /* Transport.swift in Sources */,
 				BA8B3E9E1F8A33EB0093A6E7 /* String+Base64.swift in Sources */,
+				BAC4200F1F8CB5BA00AFF75B /* DirectoryType.swift in Sources */,
 				BA8B3E961F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */,
 				7CCE6ACA1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				BA8B3E881F8A2C9F0093A6E7 /* DiskStorage.swift in Sources */,
