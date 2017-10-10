@@ -55,11 +55,10 @@ class DiskPersistentHandler: PersistentHandler {
 
     func getAll<T: Serializable>(type: T.Type) throws -> [T] {
 
+        // Get all URLs in directory folder
         let fileURLs = allFileURLs()
 
-        //TODO: LazyMapCollection
-        // It's super expensive operation
-        // BottleNeck could occur here
+        // Map to T
         return try fileURLs.map { (url) -> T in
             let data = try Data(contentsOf: url, options: .alwaysMapped)
             return T(data: data)
