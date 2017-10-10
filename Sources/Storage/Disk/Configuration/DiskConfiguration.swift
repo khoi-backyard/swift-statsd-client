@@ -12,8 +12,6 @@ struct DiskConfiguration: DiskConfigurable {
 
     var name: String { return "StatsD_DiskStorage" }
 
-    var expiry: Expiry { return .never }
-
     var maxSize: UInt { return 0 }
 
     var protectionType: FileProtectionType? { return nil }

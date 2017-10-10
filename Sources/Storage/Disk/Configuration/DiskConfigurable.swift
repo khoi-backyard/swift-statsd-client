@@ -14,9 +14,6 @@ protocol DiskConfigurable {
     // It's also name of folder cache
     var name: String { get }
 
-    // Expiry - apply to all entry
-    var expiry: Expiry { get }
-
     // Max size on bytes
     var maxSize: UInt { get }
 
