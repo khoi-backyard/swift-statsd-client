@@ -32,9 +32,9 @@ extension DiskConfigurable {
     // Default cache folder
     var directory: URL? {
         return try? FileManager.default.url(for: .cachesDirectory,
-                                                  in: .userDomainMask,
-                                                  appropriateFor: nil,
-                                                  create: true)
+                                            in: .userDomainMask,
+                                            appropriateFor: nil,
+                                            create: true)
     }
 
     var pathFolder: String? {

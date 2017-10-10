@@ -95,8 +95,8 @@ extension DiskPersistentHandler {
 
         // Create
         try handler.createDirectory(atPath: path,
-                                withIntermediateDirectories: true,
-                                attributes: nil)
+                                    withIntermediateDirectories: true,
+                                    attributes: nil)
 
     }
 
