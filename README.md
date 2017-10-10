@@ -8,6 +8,7 @@ A Statsd Client written in Swift that is transport protocol agnostic. UDP and HT
 - [Usage](#usage)
 - [Installation](#installation)
 - [FAQ](#faq)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Requirements
@@ -72,6 +73,10 @@ The project is currently configured to build for iOS, tvOS and Mac. After buildi
 Select the correct framework(s) and drag it into your project.
 
 ## FAQ
+
+## Contributing
+
+See [Contributing](https://github.com/khoiln/swift-statsd-client/blob/master/CONTRIBUTING.md).
 
 ## License
 
