@@ -63,9 +63,6 @@
 		8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
 		BA8B3E881F8A2C9F0093A6E7 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E871F8A2C9F0093A6E7 /* DiskStorage.swift */; };
-		BA8B3E8A1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */; };
-		BA8B3E8B1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */; };
-		BA8B3E8C1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */; };
 		BA8B3E8E1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
 		BA8B3E8F1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
 		BA8B3E901F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
@@ -157,7 +154,6 @@
 		AD2FAA261CD0B6D800659CF4 /* StatsdClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClient.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* StatsdClientTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClientTests.plist; sourceTree = "<group>"; };
 		BA8B3E871F8A2C9F0093A6E7 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
-		BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSerializable.swift; sourceTree = "<group>"; };
 		BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfigurable.swift; sourceTree = "<group>"; };
 		BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHandler.swift; sourceTree = "<group>"; };
 		BA8B3E991F8A32E90093A6E7 /* DiskPersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandler.swift; sourceTree = "<group>"; };
@@ -295,7 +291,6 @@
 				BA8B3E861F8A2C840093A6E7 /* Disk */,
 				7CC23A801F89D64F008DED42 /* Storage.swift */,
 				7CC23A881F89D96E008DED42 /* MemoryStorage.swift */,
-				BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -764,7 +759,6 @@
 				7CC23A811F89D64F008DED42 /* Storage.swift in Sources */,
 				BA8B3E9A1F8A32E90093A6E7 /* DiskPersistentHandler.swift in Sources */,
 				BA8B3EAD1F8B5CB80093A6E7 /* String+FileURL.swift in Sources */,
-				BA8B3E8A1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */,
 				7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				7CC756281F88891A00112173 /* Timing.swift in Sources */,
 				7CC23A891F89D96E008DED42 /* MemoryStorage.swift in Sources */,
@@ -818,7 +812,6 @@
 				7CCE6ACD1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DAA1F6304D700ED2957 /* Counting.swift in Sources */,
 				BA8B3EAF1F8B5CB80093A6E7 /* String+FileURL.swift in Sources */,
-				BA8B3E8C1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */,
 				7CC7562E1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC71F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				BA8B3E981F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */,
@@ -849,7 +842,6 @@
 				7CCE6ACB1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
 				7C105DA81F6304D700ED2957 /* Counting.swift in Sources */,
 				BA8B3EAE1F8B5CB80093A6E7 /* String+FileURL.swift in Sources */,
-				BA8B3E8B1F8A2D5D0093A6E7 /* DataSerializable.swift in Sources */,
 				7CC7562D1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC51F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				BA8B3E971F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */,

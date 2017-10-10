@@ -13,14 +13,16 @@ class DiskPersistentHandler: PersistentHandler {
     // MARK: - Variable
     fileprivate let handler: FileManager
     fileprivate let path: String
-    public let config: DiskConfigurable
-
     fileprivate let defaultEnumerator: [URLResourceKey] = [
         .isDirectoryKey,
         .contentModificationDateKey,
         .totalFileAllocatedSizeKey,
     ]
 
+    // Config
+    public let config: DiskConfigurable
+
+    // MARK: - Init
     init(config: DiskConfigurable, hanlder: FileManager = FileManager.default) throws {
         self.config = config
         self.handler = hanlder
@@ -41,27 +43,28 @@ class DiskPersistentHandler: PersistentHandler {
         return "\(path)/\(key.toBase64())"
     }
 
-    func write<T: Serializable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws {
+    func write<T: Codable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws {
         let pathFile = makeFilePath(key)
-        let data = item.encode()
+        let data = try JSONEncoder().encode(item)
         handler.createFile(atPath: pathFile, contents: data, attributes: attribute)
     }
 
-    func get<T: Serializable>(key: String, type: T.Type) throws -> T {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         let pathFile = makeFilePath(key)
         let data = try Data(contentsOf: pathFile.fileURL(), options: .alwaysMapped)
-        return T(data: data)
+        return try JSONDecoder().decode(T.self, from: data)
     }
 
-    func getAll<T: Serializable>(type: T.Type) throws -> [T] {
+    func getAll<T: Codable>(type: T.Type) throws -> [T] {
 
         // Get all URLs in directory folder
         let fileURLs = allFileURLs()
 
         // Map to T
+        let decoder = JSONDecoder()
         return try fileURLs.map { (url) -> T in
             let data = try Data(contentsOf: url, options: .alwaysMapped)
-            return T(data: data)
+            return try decoder.decode(T.self, from: data)
         }
     }
 
@@ -76,10 +79,7 @@ class DiskPersistentHandler: PersistentHandler {
     }
 
     func getTotal() -> Int {
-        let files = allFileURLs()
-        let count = files.count
-        print("Count = \(count), file = \(files)")
-        return count
+        return allFileURLs().count
     }
 }
 

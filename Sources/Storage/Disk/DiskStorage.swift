@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DiskStorage<Element: Serializable>: Storage {
+final class DiskStorage<Element: Codable>: Storage {
 
     typealias Key = String
     typealias Item = Element

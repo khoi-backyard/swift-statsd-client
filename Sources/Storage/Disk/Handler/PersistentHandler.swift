@@ -16,11 +16,11 @@ protocol PersistentHandler {
 
     func makeFilePath(_ key: String) -> String
 
-    func write<T: Serializable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws
+    func write<T: Codable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws
 
-    func get<T: Serializable>(key: String, type: T.Type) throws -> T
+    func get<T: Codable>(key: String, type: T.Type) throws -> T
 
-    func getAll<T: Serializable>(type: T.Type) throws -> [T]
+    func getAll<T: Codable>(type: T.Type) throws -> [T]
 
     func deleteFile(_ key: String) throws
 
