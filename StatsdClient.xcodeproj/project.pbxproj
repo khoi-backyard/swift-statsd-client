@@ -69,9 +69,6 @@
 		BA8B3E8E1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
 		BA8B3E8F1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
 		BA8B3E901F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */; };
-		BA8B3E921F8A2EB00093A6E7 /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */; };
-		BA8B3E931F8A2EB00093A6E7 /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */; };
-		BA8B3E941F8A2EB00093A6E7 /* Expiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */; };
 		BA8B3E961F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */; };
 		BA8B3E971F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */; };
 		BA8B3E981F8A2FEF0093A6E7 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */; };
@@ -162,7 +159,6 @@
 		BA8B3E871F8A2C9F0093A6E7 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		BA8B3E891F8A2D5D0093A6E7 /* DataSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSerializable.swift; sourceTree = "<group>"; };
 		BA8B3E8D1F8A2E480093A6E7 /* DiskConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfigurable.swift; sourceTree = "<group>"; };
-		BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expiry.swift; sourceTree = "<group>"; };
 		BA8B3E951F8A2FEF0093A6E7 /* PersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHandler.swift; sourceTree = "<group>"; };
 		BA8B3E991F8A32E90093A6E7 /* DiskPersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandler.swift; sourceTree = "<group>"; };
 		BA8B3E9D1F8A33EB0093A6E7 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
@@ -364,7 +360,6 @@
 				BA8B3EA61F8B58EC0093A6E7 /* Configuration */,
 				BA8B3EA11F8A84EC0093A6E7 /* Handler */,
 				BA8B3E871F8A2C9F0093A6E7 /* DiskStorage.swift */,
-				BA8B3E911F8A2EB00093A6E7 /* Expiry.swift */,
 				BA8B3EA21F8A85540093A6E7 /* DiskError.swift */,
 			);
 			path = Disk;
@@ -784,7 +779,6 @@
 				7CC7562C1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CCE6AC41F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* StatsD.swift in Sources */,
-				BA8B3E921F8A2EB00093A6E7 /* Expiry.swift in Sources */,
 				7C105DA21F6302D700ED2957 /* Metric.swift in Sources */,
 				7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */,
 				BA8B3E8E1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */,
@@ -832,7 +826,6 @@
 				BA8B3E901F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */,
 				BA8B3EB41F8B62CB0093A6E7 /* DiskStorage.swift in Sources */,
 				7C105DA51F6302D700ED2957 /* Metric.swift in Sources */,
-				BA8B3E941F8A2EB00093A6E7 /* Expiry.swift in Sources */,
 				7C4CA4F71F72CCC400AF5A69 /* Sets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,7 +857,6 @@
 				BA8B3E8F1F8A2E480093A6E7 /* DiskConfigurable.swift in Sources */,
 				BA8B3EB51F8B62CB0093A6E7 /* DiskStorage.swift in Sources */,
 				7C105DA31F6302D700ED2957 /* Metric.swift in Sources */,
-				BA8B3E931F8A2EB00093A6E7 /* Expiry.swift in Sources */,
 				7C4CA4F51F72CCC400AF5A69 /* Sets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
