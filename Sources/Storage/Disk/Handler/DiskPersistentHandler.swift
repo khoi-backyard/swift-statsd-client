@@ -90,7 +90,9 @@ extension DiskPersistentHandler {
     fileprivate func createCacheFolder() throws {
 
         // Make sure it isn't existed
-        guard fileManager.fileExists(atPath: pathFolder) == false else {
+        var isDirectory: ObjCBool = false
+        fileManager.fileExists(atPath: pathFolder, isDirectory: &isDirectory)
+        guard isDirectory.boolValue == false else {
             return
         }
 
