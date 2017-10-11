@@ -14,11 +14,6 @@ class DiskPersistentHandler: PersistentHandler {
     fileprivate let folderPath: String
     fileprivate let encoder = JSONEncoder()
     fileprivate let decoder = JSONDecoder()
-    fileprivate let defaultEnumerator: [URLResourceKey] = [
-        .isDirectoryKey,
-        .contentModificationDateKey,
-        .totalFileAllocatedSizeKey,
-    ]
 
     public let config: DiskConfigurable
     public var fileCount: Int { return allFileURLs().count }
