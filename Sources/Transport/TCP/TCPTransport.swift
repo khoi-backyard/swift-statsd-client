@@ -15,6 +15,7 @@ public class TCPTransport: NSObject, Transport {
 
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private var tag: Int = 0
+    private var timeOut: TimeInterval
 
     private lazy var socket: GCDAsyncSocket = {
         let socket = GCDAsyncSocket(delegate: self,
@@ -22,9 +23,10 @@ public class TCPTransport: NSObject, Transport {
         return socket
     }()
 
-    public init(host: String, port: UInt16) {
+    public init(host: String, port: UInt16, timeOut: TimeInterval = 15) {
         self.host = host
         self.port = port
+        self.timeOut = timeOut
         super.init()
     }
 
@@ -39,7 +41,7 @@ public class TCPTransport: NSObject, Transport {
         }
         tag += 1
 
-        socket.write(data, withTimeout: -1, tag: tag)
+        socket.write(data, withTimeout: timeOut, tag: tag)
     }
 }
 
