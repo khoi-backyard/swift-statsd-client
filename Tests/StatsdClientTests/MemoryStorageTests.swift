@@ -66,6 +66,5 @@ class MemoryStorageTests: XCTestCase {
         } else {
             XCTFail("Can't get the item out of the storage")
         }
-        
     }
 }

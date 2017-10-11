@@ -15,8 +15,8 @@ protocol Storage {
     var count: Int { get }
 
     func item(forKey key: Key) -> Item?
-    func set(item: Item, forKey key: Key)
+    func set(item: Item, forKey key: Key) throws
     func getAllItems() -> [Item]
-    func remove(key: String)
-    func removeAll()
+    func remove(key: String) throws
+    func removeAll() throws
 }
