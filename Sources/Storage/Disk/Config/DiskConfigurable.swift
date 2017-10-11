@@ -30,7 +30,7 @@ extension DiskConfigurable {
                                             create: true)
     }
 
-    var pathFolder: String? {
+    var folderPath: String? {
         return directory?.appendingPathComponent(name, isDirectory: true).path
     }
 }

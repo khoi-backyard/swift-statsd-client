@@ -51,7 +51,7 @@ class DiskPersistentHandlerTests: XCTestCase {
     }
 
     func testCreateCacheFolderAfterInitalization() {
-        guard let pathFolder = config.pathFolder else {
+        guard let pathFolder = config.folderPath else {
             XCTFail("Invalid Path Folder")
             return
         }
@@ -64,12 +64,12 @@ class DiskPersistentHandlerTests: XCTestCase {
 
         let fileName = "Login_Stats"
         let filePath = handler.makeFilePath(fileName)
-        guard let pathFolder = config.pathFolder else {
+        guard let pathFolder = config.folderPath else {
             XCTFail("Invalid Path Folder")
             return
         }
 
-        let expected = "\(pathFolder)/\(fileName.encoded())"
+        let expected = "\(pathFolder)/\(fileName)"
         XCTAssertEqual(filePath, expected, "File path should match format")
     }
 

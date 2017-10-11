@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
+final class DiskStorage<Item: Codable, Key: CustomStringConvertible>: Storage {
 
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)

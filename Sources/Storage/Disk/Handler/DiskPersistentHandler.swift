@@ -11,7 +11,7 @@ import Foundation
 class DiskPersistentHandler: PersistentHandler {
 
     fileprivate let fileManager: FileManager
-    fileprivate let pathFolder: String
+    fileprivate let folderPath: String
     fileprivate let encoder = JSONEncoder()
     fileprivate let decoder = JSONDecoder()
     fileprivate let defaultEnumerator: [URLResourceKey] = [
@@ -25,22 +25,22 @@ class DiskPersistentHandler: PersistentHandler {
 
     init(config: DiskConfigurable, fileManager: FileManager = .default) throws {
 
-        guard let pathFolder = config.pathFolder else {
+        guard let folderPath = config.folderPath else {
             throw DiskError.invalidCacheFolder
         }
 
         self.config = config
         self.fileManager = fileManager
-        self.pathFolder = pathFolder
+        self.folderPath = folderPath
 
         try createCacheFolder()
     }
 
-    func makeFilePath(_ key: Base64Transformable) -> String {
-        return "\(pathFolder)/\(key.encoded())"
+    func makeFilePath(_ key: CustomStringConvertible) -> String {
+        return "\(folderPath)/\(key)"
     }
 
-    func write<T: Codable>(_ item: T, key: Base64Transformable, attribute: [FileAttributeKey: Any]?) throws {
+    func write<T: Codable>(_ item: T, key: CustomStringConvertible, attribute: [FileAttributeKey: Any]?) throws {
         let pathFile = makeFilePath(key)
         let data = try encoder.encode(item)
 
@@ -50,7 +50,7 @@ class DiskPersistentHandler: PersistentHandler {
         }
     }
 
-    func get<T: Codable>(key: Base64Transformable, type: T.Type) throws -> T {
+    func get<T: Codable>(key: CustomStringConvertible, type: T.Type) throws -> T {
         let pathFile = makeFilePath(key)
         let urlFile = URL(fileURLWithPath: pathFile)
         let data = try Data(contentsOf: urlFile, options: .alwaysMapped)
@@ -69,13 +69,13 @@ class DiskPersistentHandler: PersistentHandler {
         }
     }
 
-    func deleteFile(_ key: Base64Transformable) throws {
+    func deleteFile(_ key: CustomStringConvertible) throws {
         let pathFile = makeFilePath(key)
         try fileManager.removeItem(atPath: pathFile)
     }
 
     func deleteAllFile() throws {
-        try fileManager.removeItem(atPath: pathFolder)
+        try fileManager.removeItem(atPath: folderPath)
     }
 }
 
@@ -84,19 +84,19 @@ extension DiskPersistentHandler {
     fileprivate func createCacheFolder() throws {
 
         var isDirectory: ObjCBool = false
-        fileManager.fileExists(atPath: pathFolder, isDirectory: &isDirectory)
-        guard isDirectory.boolValue == false else {
+        fileManager.fileExists(atPath: folderPath, isDirectory: &isDirectory)
+        guard !isDirectory.boolValue else {
             return
         }
 
-        try fileManager.createDirectory(atPath: pathFolder,
+        try fileManager.createDirectory(atPath: folderPath,
                                         withIntermediateDirectories: true,
                                         attributes: nil)
     }
 
     fileprivate func allFileURLs() -> [URL] {
 
-        let url = URL(fileURLWithPath: self.pathFolder)
+        let url = URL(fileURLWithPath: folderPath)
         let fileURLs = try? fileManager.contentsOfDirectory(at: url,
                                                             includingPropertiesForKeys: nil,
                                                             options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants])
