@@ -1,6 +1,5 @@
 # Sometimes it's a README fix, or something like that - which isn't relevant for
 # including in a project's CHANGELOG for example
-not_declared_trivial = !(github.pr_title.include? "#trivial")
 has_app_changes = !git.modified_files.grep(/Sources/).empty?
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
@@ -12,12 +11,6 @@ warn("Big PR, try to keep changes smaller if you can") if git.lines_of_code > 50
 # Don't let testing shortcuts get into master by accident
 fail("fit left in tests") if `grep -r "fit Demo/Tests/ `.length > 1
 
-# Changelog entries are required for changes to library files.
-no_changelog_entry = !git.modified_files.include?("Changelog.md")
-if has_app_changes && no_changelog_entry && not_declared_trivial
-  warn("Any changes to library code should be reflected in the Changelog. Please consider adding a note there and adhere to the [Changelog Guidelines](https://github.com/Moya/contributors/blob/master/Changelog%20Guidelines.md).")
-end
-
 # Added (or removed) library files need to be added (or removed) from the
 # Carthage Xcode project to avoid breaking things for our Carthage users.
 added_swift_library_files = !(git.added_files.grep(/Sources.*\.swift/).empty?)
@@ -26,12 +19,6 @@ modified_carthage_xcode_project = !(git.modified_files.grep(/StatsdClient\.xcode
 if (added_swift_library_files || deleted_swift_library_files) && !modified_carthage_xcode_project
   fail("Added or removed library files require the Carthage Xcode project to be updated. See the Readme")
 end
-
-# missing_doc_changes = git.modified_files.grep(/docs/).empty?
-# doc_changes_recommended = git.insertions > 15
-# if has_app_changes && missing_doc_changes && doc_changes_recommended && not_declared_trivial
-#   warn("Consider adding supporting documentation to this change. Documentation can be found in the `docs` directory.")
-# end
 
 # Warn when either the podspec or Cartfile + Cartfile.resolved has been updated,
 # but not both.
@@ -54,4 +41,4 @@ if has_app_changes && !tests_updated
 end
 
 # Run SwiftLint
-swiftlint.lint_files
+swiftlint.lint_files inline_mode: true
