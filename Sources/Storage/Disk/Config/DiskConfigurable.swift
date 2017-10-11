@@ -10,24 +10,17 @@ import Foundation
 
 protocol DiskConfigurable {
 
-    // Name
-    // It's also name of folder cache
     var name: String { get }
 
-    // Max size on bytes
     var maxSize: UInt { get }
 
-    // Cache folder type
-    var directoryType: DirectoryType { get }
-
-    // Protection mode in iOS/tvOS
-    var protectionType: FileProtectionType? { get }
+    var directoryType: Directory { get }
 }
 
 extension DiskConfigurable {
 
     // Default folder Type
-    var directoryType: DirectoryType {
+    var directoryType: Directory {
         return .cache
     }
 

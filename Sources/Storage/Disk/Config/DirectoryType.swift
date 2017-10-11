@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum DirectoryType {
+enum Directory {
 
     case cache
     case document
+}
 
-    /// Convert DirectoryType to FileManager.SearchPathDirectory
-    /// Because we would like hide unneccessary SearchPathDirectory
-    /// - Returns: FileManager.SearchPathDirectory
+extension Directory {
+
     var toSearchPath: FileManager.SearchPathDirectory {
         switch self {
         case .cache:

@@ -11,14 +11,14 @@ import XCTest
 
 class DiskPersistentHandlerTests: XCTestCase {
 
-    let config = DiskConfiguration()
+    let config = DiskConfiguration.default
     let fileManager = FileManager.default
     var handler: DiskPersistentHandler!
 
     override func setUp() {
         super.setUp()
 
-        handler = try? DiskPersistentHandler(config: config, hanlder: fileManager)
+        handler = try? DiskPersistentHandler(config: config, fileManager: fileManager)
     }
 
     override func tearDown() {
@@ -28,12 +28,12 @@ class DiskPersistentHandlerTests: XCTestCase {
     }
 
     func testInitialization() {
-        XCTAssertNoThrow(try DiskPersistentHandler(config: DiskConfiguration()),
+        XCTAssertNoThrow(try DiskPersistentHandler(config: DiskConfiguration.default),
                          "Able to initialize DiskPersistentHandler with default configuration")
     }
 
     func testTotalCountAtFreshInitialization() {
-        XCTAssertEqual(handler.getTotal(), 0, "File count should be 0")
+        XCTAssertEqual(handler.fileCount, 0, "File count should be 0")
     }
 
     func testTotalCountAfterInitializationBefore() {
@@ -44,8 +44,8 @@ class DiskPersistentHandlerTests: XCTestCase {
                          "Write fill successfully without any execptions")
         XCTAssertNoThrow({[unowned self] in
             let anotherHandler = try DiskPersistentHandler(config: self.config,
-                                                           hanlder: self.fileManager)
-            XCTAssertEqual(anotherHandler.getTotal(), 1,
+                                                           fileManager: self.fileManager)
+            XCTAssertEqual(anotherHandler.fileCount, 1,
                            "Another Hanlder should fetch same data if same configuration")
         }, "Initialized without exception")
     }
@@ -80,10 +80,10 @@ class DiskPersistentHandlerTests: XCTestCase {
 
         XCTAssertNoThrow(try handler.write(metric_1, key: metric_1.name, attribute: nil),
                          "Write fill successfully without any execptions")
-        XCTAssertEqual(handler.getTotal(), 1, "File count should be 1")
+        XCTAssertEqual(handler.fileCount, 1, "File count should be 1")
         XCTAssertNoThrow(try handler.write(metric_2, key: metric_2.name, attribute: nil),
                          "Write fill successfully without any execptions")
-        XCTAssertEqual(handler.getTotal(), 2, "File count should be 2")
+        XCTAssertEqual(handler.fileCount, 2, "File count should be 2")
 
         XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(metric_1.name)), "File exists")
         XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(metric_2.name)), "File exists")
@@ -126,7 +126,7 @@ class DiskPersistentHandlerTests: XCTestCase {
                          "Write fill successfully without any execptions")
 
         XCTAssertNoThrow(try handler.deleteAllFile(), "Delete all without any execeptions")
-        XCTAssertEqual(handler.getTotal(), 0, "Should be 0")
+        XCTAssertEqual(handler.fileCount, 0, "Should be 0")
     }
 
     func testGetAll() {
@@ -136,14 +136,14 @@ class DiskPersistentHandlerTests: XCTestCase {
 
         XCTAssertNoThrow(try handler.write(metric_1, key: metric_1.name, attribute: nil),
                          "Write fill successfully without any execptions")
-        XCTAssertEqual(handler.getTotal(), 1, "File count should be 1")
+        XCTAssertEqual(handler.fileCount, 1, "File count should be 1")
         XCTAssertNoThrow(try handler.write(metric_2, key: metric_2.name, attribute: nil),
                          "Write fill successfully without any execptions")
-        XCTAssertEqual(handler.getTotal(), 2, "File count should be 2")
+        XCTAssertEqual(handler.fileCount, 2, "File count should be 2")
 
         XCTAssertNoThrow({[unowned self] in
 
-        let items: [StubMetric] = try self.handler.getAll(type: StubMetric.self)
+        let items: [StubMetric] = self.handler.getAll(type: StubMetric.self)
         XCTAssertEqual(items[0], metric_2)
         XCTAssertEqual(items[1], metric_1)
 

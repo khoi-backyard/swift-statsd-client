@@ -8,18 +8,16 @@
 
 import Foundation
 
-final class DiskStorage<Element: Codable>: Storage {
+final class DiskStorage<ItemType: Codable>: Storage {
 
     typealias Key = String
-    typealias Item = Element
 
     // MARK: - Variable
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
-    // Count
     var count: Int {
-        return queue.syncWithReturnedValue { self.handler.getTotal() }
+        return queue.syncWithReturnedValue { self.handler.fileCount }
     }
 
     // MARK: - Init
@@ -31,25 +29,21 @@ final class DiskStorage<Element: Codable>: Storage {
     init?(config: DiskConfigurable) {
 
         // Try to create default DiskPersistentHandler
-        let handler = try? DiskPersistentHandler(config: config)
-
-        // Make sure we could create proper DiskHandler with config
-        guard let disk = handler else {
+        guard let handler = try? DiskPersistentHandler(config: config) else {
             return nil
         }
 
-        // Save
-        self.handler = disk
+        self.handler = handler
     }
 
     // MARK: - Public
-    func item(forKey key: Key) -> Element? {
+    func item(forKey key: Key) -> ItemType? {
         return queue.syncWithReturnedValue {
-            try? handler.get(key: key, type: Element.self)
+            try? handler.get(key: key, type: ItemType.self)
         }
     }
 
-    func set(item: Element, forKey key: Key) {
+    func set(item: ItemType, forKey key: Key) {
         queue.async(flags: .barrier) { [unowned self] in
 
             // Don't handle Throws error here
@@ -57,22 +51,24 @@ final class DiskStorage<Element: Codable>: Storage {
         }
     }
 
-    func getAllItems() -> [Element] {
+    func getAllItems() -> [ItemType] {
         return queue.syncWithReturnedValue {
-            let items = try? handler.getAll(type: Element.self)
-            return items ?? []
+            guard let items = try? handler.getAll(type: ItemType.self) else {
+                return []
+            }
+            return items
         }
     }
 
     func remove(key: String) throws {
-        try queue.sync { [unowned self] in
-            try self.handler.deleteFile(key)
+        try queue.sync {
+            try handler.deleteFile(key)
         }
     }
 
     func removeAll() throws {
-        try queue.sync { [unowned self] in
-            try self.handler.deleteAllFile()
+        try queue.sync {
+            try handler.deleteAllFile()
         }
     }
 }

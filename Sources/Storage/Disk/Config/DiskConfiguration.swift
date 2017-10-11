@@ -10,11 +10,9 @@ import Foundation
 
 struct DiskConfiguration: DiskConfigurable {
 
-    var name: String { return "StatsD_DiskStorage" }
+    static let `default` = DiskConfiguration(name: "StatsD_DiskStorage", maxSize: 0)
 
-    var maxSize: UInt { return 0 }
+    var name: String
 
-    var protectionType: FileProtectionType? { return nil }
-
-    var directoryType: DirectoryType { return .cache }
+    var maxSize: UInt
 }

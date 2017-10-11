@@ -81,11 +81,8 @@
 		BAA3CA491F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */; };
 		BAA3CA4A1F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */; };
 		BAA3CA4B1F8DC8C9004C35F6 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */; };
-		BAA3CA4C1F8DC8C9004C35F6 /* String+FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2E1F8DC850004C35F6 /* String+FileURL.swift */; };
 		BAA3CA4D1F8DC8C9004C35F6 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */; };
-		BAA3CA4E1F8DC8C9004C35F6 /* String+FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2E1F8DC850004C35F6 /* String+FileURL.swift */; };
 		BAA3CA4F1F8DC8C9004C35F6 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */; };
-		BAA3CA501F8DC8C9004C35F6 /* String+FileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2E1F8DC850004C35F6 /* String+FileURL.swift */; };
 		BAA3CA511F8DC8CC004C35F6 /* DirectoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */; };
 		BAA3CA521F8DC8CC004C35F6 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */; };
 		BAA3CA531F8DC8CC004C35F6 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */; };
@@ -156,7 +153,6 @@
 		BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskError.swift; sourceTree = "<group>"; };
 		BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
-		BAA3CA2E1F8DC850004C35F6 /* String+FileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileURL.swift"; sourceTree = "<group>"; };
 		BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryType.swift; sourceTree = "<group>"; };
 		BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfigurable.swift; sourceTree = "<group>"; };
 		BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfiguration.swift; sourceTree = "<group>"; };
@@ -269,6 +265,7 @@
 		7C105DB81F630D3700ED2957 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */,
 				7C105DB31F630CFE00ED2957 /* Float+Clean.swift */,
 				7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */,
 			);
@@ -352,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				BAA3CA2F1F8DC858004C35F6 /* Config */,
-				BAA3CA2C1F8DC843004C35F6 /* Extension */,
 				BAA3CA2B1F8DC83F004C35F6 /* Handler */,
 				BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */,
 				BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */,
@@ -367,15 +363,6 @@
 				BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */,
 			);
 			path = Handler;
-			sourceTree = "<group>";
-		};
-		BAA3CA2C1F8DC843004C35F6 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA2D1F8DC850004C35F6 /* String+Base64.swift */,
-				BAA3CA2E1F8DC850004C35F6 /* String+FileURL.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		BAA3CA2F1F8DC858004C35F6 /* Config */ = {
@@ -759,7 +746,6 @@
 				7CC23A811F89D64F008DED42 /* Storage.swift in Sources */,
 				7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				7CC756281F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA501F8DC8C9004C35F6 /* String+FileURL.swift in Sources */,
 				BAA3CA571F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA491F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BAA3CA4A1F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */,
@@ -802,7 +788,6 @@
 				7CC23A831F89D64F008DED42 /* Storage.swift in Sources */,
 				7C1942501F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA4C1F8DC8C9004C35F6 /* String+FileURL.swift in Sources */,
 				BAA3CA511F8DC8CC004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA451F8DC8C4004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BAA3CA461F8DC8C4004C35F6 /* PersistentHandler.swift in Sources */,
@@ -832,7 +817,6 @@
 				7CC23A821F89D64F008DED42 /* Storage.swift in Sources */,
 				7C19424F1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				7CC756291F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA4E1F8DC8C9004C35F6 /* String+FileURL.swift in Sources */,
 				BAA3CA541F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA471F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BAA3CA481F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */,

@@ -12,7 +12,7 @@ protocol PersistentHandler {
 
     var config: DiskConfigurable { get }
 
-    func getTotal() -> Int
+    var fileCount: Int { get }
 
     func makeFilePath(_ key: String) -> String
 
