@@ -13,9 +13,8 @@ public class UDPTransport: NSObject, Transport {
     let port: UInt16
 
     private lazy var socket: GCDAsyncUdpSocket = {
-        let socket = GCDAsyncUdpSocket(delegate: self, delegateQueue:
-            DispatchQueue(label: "UDPClient_Delegate_Queue"))
-        return socket
+        GCDAsyncUdpSocket(delegate: self,
+                          delegateQueue: DispatchQueue(label: "UDPClient_Delegate_Queue"))
     }()
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private var tag: Int = 0

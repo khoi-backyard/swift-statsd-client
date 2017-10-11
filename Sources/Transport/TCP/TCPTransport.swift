@@ -18,9 +18,8 @@ public class TCPTransport: NSObject, Transport {
     private var timeOut: TimeInterval
 
     private lazy var socket: GCDAsyncSocket = {
-        let socket = GCDAsyncSocket(delegate: self,
-                                    delegateQueue: DispatchQueue(label: "TCPClient_Delegate_Queue"))
-        return socket
+        GCDAsyncSocket(delegate: self,
+                       delegateQueue: DispatchQueue(label: "TCPClient_Delegate_Queue"))
     }()
 
     public init(host: String, port: UInt16, timeOut: TimeInterval = 15) {
