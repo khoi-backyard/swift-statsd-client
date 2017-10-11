@@ -31,11 +31,11 @@ class DiskPersistentHandler: PersistentHandler {
         try createCacheFolder()
     }
 
-    func makeFilePath(_ key: CustomStringConvertible) -> String {
+    func makeFilePath(_ key: String) -> String {
         return "\(folderPath)/\(key)"
     }
 
-    func write<T: Codable>(_ item: T, key: CustomStringConvertible, attribute: [FileAttributeKey: Any]?) throws {
+    func write<T: Codable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws {
         let pathFile = makeFilePath(key)
         let data = try encoder.encode(item)
 
@@ -45,7 +45,7 @@ class DiskPersistentHandler: PersistentHandler {
         }
     }
 
-    func get<T: Codable>(key: CustomStringConvertible, type: T.Type) throws -> T {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         let pathFile = makeFilePath(key)
         let urlFile = URL(fileURLWithPath: pathFile)
         let data = try Data(contentsOf: urlFile, options: .alwaysMapped)
@@ -64,7 +64,7 @@ class DiskPersistentHandler: PersistentHandler {
         }
     }
 
-    func deleteFile(_ key: CustomStringConvertible) throws {
+    func deleteFile(_ key: String) throws {
         let pathFile = makeFilePath(key)
         try fileManager.removeItem(atPath: pathFile)
     }

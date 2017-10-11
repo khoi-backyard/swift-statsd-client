@@ -14,15 +14,15 @@ protocol PersistentHandler {
 
     var fileCount: Int { get }
 
-    func makeFilePath(_ key: CustomStringConvertible) -> String
+    func makeFilePath(_ key: String) -> String
 
-    func write<T: Codable>(_ item: T, key: CustomStringConvertible, attribute: [FileAttributeKey: Any]?) throws
+    func write<T: Codable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws
 
-    func get<T: Codable>(key: CustomStringConvertible, type: T.Type) throws -> T
+    func get<T: Codable>(key: String, type: T.Type) throws -> T
 
     func getAll<T: Codable>(type: T.Type) throws -> [T]
 
-    func deleteFile(_ key: CustomStringConvertible) throws
+    func deleteFile(_ key: String) throws
 
     func deleteAllFile() throws
 }

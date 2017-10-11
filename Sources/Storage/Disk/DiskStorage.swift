@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DiskStorage<Item: Codable, Key: CustomStringConvertible>: Storage {
+final class DiskStorage<Item: Codable>: Storage {
 
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
@@ -30,13 +30,13 @@ final class DiskStorage<Item: Codable, Key: CustomStringConvertible>: Storage {
         self.handler = handler
     }
 
-    func item(forKey key: Key) -> Item? {
+    func item(forKey key: String) -> Item? {
         return queue.syncWithReturnedValue {
             try? handler.get(key: key, type: Item.self)
         }
     }
 
-    func set(item: Item, forKey key: Key) {
+    func set(item: Item, forKey key: String) {
         queue.async(flags: .barrier) { [unowned self] in
             try? self.handler.write(item, key: key, attribute: nil)
         }
