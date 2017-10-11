@@ -69,7 +69,7 @@ class DiskPersistentHandlerTests: XCTestCase {
             return
         }
 
-        let expected = "\(pathFolder)/\(fileName.toBase64())"
+        let expected = "\(pathFolder)/\(fileName.encoded())"
         XCTAssertEqual(filePath, expected, "File path should match format")
     }
 

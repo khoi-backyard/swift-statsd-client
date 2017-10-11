@@ -8,9 +8,7 @@
 
 import Foundation
 
-final class DiskStorage<Item: Codable>: Storage {
-
-    typealias Key = String
+final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
 
     // MARK: - Variable
     private let handler: PersistentHandler

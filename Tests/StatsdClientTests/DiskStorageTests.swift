@@ -11,11 +11,11 @@ import XCTest
 
 class DiskStorageTests: XCTestCase {
 
-    var disk: DiskStorage<StubMetric>!
+    var disk: DiskStorage<StubMetric, String>!
 
     override func setUp() {
         super.setUp()
-        disk = DiskStorage<StubMetric>(config: DiskConfiguration.default)
+        disk = DiskStorage<StubMetric, String>(config: DiskConfiguration.default)
     }
 
     override func tearDown() {
@@ -25,7 +25,7 @@ class DiskStorageTests: XCTestCase {
     }
 
     func testCreateDiskStorageWithDefaultConfiguration() {
-        let disk = DiskStorage<StubMetric>(config: DiskConfiguration.default)
+        let disk = DiskStorage<StubMetric, String>(config: DiskConfiguration.default)
 
         XCTAssertNotNil(disk, "Can't create DiskStorage with default configuration")
         guard let _disk = disk else {

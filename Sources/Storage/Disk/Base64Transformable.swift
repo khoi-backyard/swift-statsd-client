@@ -1,16 +1,22 @@
 //
-//  String+MD5.swift
-//  StatsdClient
+//  Base64Transformable.swift
+//  StatsdClient-iOS
 //
-//  Created by Nghia Tran on 10/8/17.
+//  Created by Nghia Tran on 10/11/17.
 //  Copyright © 2017 StatsdClient. All rights reserved.
 //
 
 import Foundation
 
-extension String {
+protocol Base64Transformable {
 
-    func fromBase64() -> String? {
+    func decoded() -> String?
+    func encoded() -> String
+}
+
+extension String: Base64Transformable {
+
+    func decoded() -> String? {
         guard let data = Data(base64Encoded: self) else {
             return nil
         }
@@ -18,7 +24,7 @@ extension String {
         return String(data: data, encoding: .utf8)
     }
 
-    func toBase64() -> String {
+    func encoded() -> String {
         return Data(self.utf8).base64EncodedString()
     }
 }

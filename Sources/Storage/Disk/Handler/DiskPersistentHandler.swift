@@ -41,17 +41,17 @@ class DiskPersistentHandler: PersistentHandler {
     }
 
     // MARK: - Public
-    func makeFilePath(_ key: String) -> String {
-        return "\(pathFolder)/\(key.toBase64())"
+    func makeFilePath(_ key: Base64Transformable) -> String {
+        return "\(pathFolder)/\(key.encoded())"
     }
 
-    func write<T: Codable>(_ item: T, key: String, attribute: [FileAttributeKey: Any]?) throws {
+    func write<T: Codable>(_ item: T, key: Base64Transformable, attribute: [FileAttributeKey: Any]?) throws {
         let pathFile = makeFilePath(key)
         let data = try encoder.encode(item)
         fileManager.createFile(atPath: pathFile, contents: data, attributes: attribute)
     }
 
-    func get<T: Codable>(key: String, type: T.Type) throws -> T {
+    func get<T: Codable>(key: Base64Transformable, type: T.Type) throws -> T {
         let pathFile = makeFilePath(key)
         let urlFile = URL(fileURLWithPath: pathFile)
         let data = try Data(contentsOf: urlFile, options: .alwaysMapped)
@@ -72,7 +72,7 @@ class DiskPersistentHandler: PersistentHandler {
         }
     }
 
-    func deleteFile(_ key: String) throws {
+    func deleteFile(_ key: Base64Transformable) throws {
         let pathFile = makeFilePath(key)
         try fileManager.removeItem(atPath: pathFile)
     }
