@@ -75,18 +75,18 @@ class DiskPersistentHandlerTests: XCTestCase {
 
     func testWriteIndividualFile() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric(name: "Aloha")
 
-        XCTAssertNoThrow(try handler.write(metric_1, key: metric_1.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(firstMetric, key: firstMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
         XCTAssertEqual(handler.fileCount, 1, "File count should be 1")
-        XCTAssertNoThrow(try handler.write(metric_2, key: metric_2.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(secondMetric, key: secondMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
         XCTAssertEqual(handler.fileCount, 2, "File count should be 2")
 
-        XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(metric_1.name)), "File exists")
-        XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(metric_2.name)), "File exists")
+        XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(firstMetric.name)), "File exists")
+        XCTAssertTrue(fileManager.fileExists(atPath: handler.makeFilePath(secondMetric.name)), "File exists")
     }
 
     func testWriteManyFiles() {
@@ -117,12 +117,12 @@ class DiskPersistentHandlerTests: XCTestCase {
 
     func testDeleteAll() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric(name: "Aloha")
 
-        XCTAssertNoThrow(try handler.write(metric_1, key: metric_1.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(firstMetric, key: firstMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
-        XCTAssertNoThrow(try handler.write(metric_2, key: metric_2.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(secondMetric, key: secondMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
 
         XCTAssertNoThrow(try handler.deleteAllFile(), "Delete all without any execeptions")
@@ -131,21 +131,21 @@ class DiskPersistentHandlerTests: XCTestCase {
 
     func testGetAll() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric(name: "Aloha")
 
-        XCTAssertNoThrow(try handler.write(metric_1, key: metric_1.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(firstMetric, key: firstMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
         XCTAssertEqual(handler.fileCount, 1, "File count should be 1")
-        XCTAssertNoThrow(try handler.write(metric_2, key: metric_2.name, attribute: nil),
+        XCTAssertNoThrow(try handler.write(secondMetric, key: secondMetric.name, attribute: nil),
                          "Write fill successfully without any execptions")
         XCTAssertEqual(handler.fileCount, 2, "File count should be 2")
 
         XCTAssertNoThrow({[unowned self] in
 
         let items: [StubMetric] = self.handler.getAll(type: StubMetric.self)
-        XCTAssertEqual(items[0], metric_2)
-        XCTAssertEqual(items[1], metric_1)
+        XCTAssertEqual(items[0], secondMetric)
+        XCTAssertEqual(items[1], firstMetric)
 
         }, "Get all files success")
     }

@@ -83,40 +83,40 @@ class DiskStorageTests: XCTestCase {
 
     func testAddTwoItemWithSameKey() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric()
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric()
 
-        disk.set(item: metric_1, forKey: metric_1.name)
-        disk.set(item: metric_2, forKey: metric_2.name)
+        disk.set(item: firstMetric, forKey: firstMetric.name)
+        disk.set(item: secondMetric, forKey: secondMetric.name)
 
         XCTAssertEqual(disk.count, 1, "Disk Count should be 1 because two items have same key")
     }
 
     func testAddTwoItemWithSameKeyAndDifferentItem() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric()
-        let metric_3 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric()
+        let thirdMetric = StubMetric(name: "Aloha")
 
-        disk.set(item: metric_1, forKey: metric_1.name)
-        disk.set(item: metric_2, forKey: metric_2.name)
-        disk.set(item: metric_3, forKey: metric_3.name)
+        disk.set(item: firstMetric, forKey: firstMetric.name)
+        disk.set(item: secondMetric, forKey: secondMetric.name)
+        disk.set(item: thirdMetric, forKey: thirdMetric.name)
 
         XCTAssertEqual(disk.count, 2, "Disk Count should be 2")
     }
 
     func testRemoveAll() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric(name: "Aloha")
 
-        disk.set(item: metric_1, forKey: metric_1.name)
-        disk.set(item: metric_2, forKey: metric_2.name)
+        disk.set(item: firstMetric, forKey: firstMetric.name)
+        disk.set(item: secondMetric, forKey: secondMetric.name)
 
         try? disk.removeAll()
 
-        let item_1 = disk.item(forKey: metric_1.name)
-        let item_2 = disk.item(forKey: metric_2.name)
+        let item_1 = disk.item(forKey: firstMetric.name)
+        let item_2 = disk.item(forKey: secondMetric.name)
 
         XCTAssertEqual(disk.count, 0, "Disk Count should be 2")
         XCTAssertNil(item_1, "Shouldn't received because Disk was removed all")
@@ -125,19 +125,19 @@ class DiskStorageTests: XCTestCase {
 
     func testGetAllItems() {
 
-        let metric_1 = StubMetric()
-        let metric_2 = StubMetric()
-        let metric_3 = StubMetric(name: "Aloha")
+        let firstMetric = StubMetric()
+        let secondMetric = StubMetric()
+        let thirdMetric = StubMetric(name: "Aloha")
 
-        disk.set(item: metric_1, forKey: metric_1.name)
-        disk.set(item: metric_2, forKey: metric_2.name)
-        disk.set(item: metric_3, forKey: metric_3.name)
+        disk.set(item: firstMetric, forKey: firstMetric.name)
+        disk.set(item: secondMetric, forKey: secondMetric.name)
+        disk.set(item: thirdMetric, forKey: thirdMetric.name)
 
         let items = disk.getAllItems()
 
         XCTAssertEqual(disk.count, 2, "Disk Count should be 2")
         XCTAssertEqual(items.count, 2)
-        XCTAssertEqual(items[0], metric_3, "Should same data with metric 3")
-        XCTAssertEqual(items[1], metric_1, "Should same data with metric 2")
+        XCTAssertEqual(items[0], thirdMetric, "Should same data with metric 3")
+        XCTAssertEqual(items[1], firstMetric, "Should same data with metric 2")
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class DiskStorage<ItemType: Codable>: Storage {
+final class DiskStorage<Item: Codable>: Storage {
 
     typealias Key = String
 
@@ -37,13 +37,13 @@ final class DiskStorage<ItemType: Codable>: Storage {
     }
 
     // MARK: - Public
-    func item(forKey key: Key) -> ItemType? {
+    func item(forKey key: Key) -> Item? {
         return queue.syncWithReturnedValue {
-            try? handler.get(key: key, type: ItemType.self)
+            try? handler.get(key: key, type: Item.self)
         }
     }
 
-    func set(item: ItemType, forKey key: Key) {
+    func set(item: Item, forKey key: Key) {
         queue.async(flags: .barrier) { [unowned self] in
 
             // Don't handle Throws error here
@@ -51,9 +51,9 @@ final class DiskStorage<ItemType: Codable>: Storage {
         }
     }
 
-    func getAllItems() -> [ItemType] {
+    func getAllItems() -> [Item] {
         return queue.syncWithReturnedValue {
-            guard let items = try? handler.getAll(type: ItemType.self) else {
+            guard let items = try? handler.getAll(type: Item.self) else {
                 return []
             }
             return items
