@@ -23,7 +23,6 @@ final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
 
     init?(config: DiskConfigurable) {
 
-        // Try to create default DiskPersistentHandler
         guard let handler = try? DiskPersistentHandler(config: config) else {
             return nil
         }
@@ -39,8 +38,6 @@ final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
 
     func set(item: Item, forKey key: Key) {
         queue.async(flags: .barrier) { [unowned self] in
-
-            // Don't handle Throws error here
             try? self.handler.write(item, key: key, attribute: nil)
         }
     }

@@ -19,12 +19,10 @@ protocol DiskConfigurable {
 
 extension DiskConfigurable {
 
-    // Default folder Type
     var directoryType: Directory {
         return .cache
     }
 
-    // Default cache folder
     var directory: URL? {
         return try? FileManager.default.url(for: directoryType.toSearchPath,
                                             in: .userDomainMask,
@@ -32,7 +30,6 @@ extension DiskConfigurable {
                                             create: true)
     }
 
-    // Path folder by directory + name
     var pathFolder: String? {
         return directory?.appendingPathComponent(name, isDirectory: true).path
     }

@@ -10,7 +10,6 @@ import Foundation
 
 class DiskPersistentHandler: PersistentHandler {
 
-    // MARK: - Variable
     fileprivate let fileManager: FileManager
     fileprivate let pathFolder: String
     fileprivate let encoder = JSONEncoder()
@@ -26,7 +25,6 @@ class DiskPersistentHandler: PersistentHandler {
 
     init(config: DiskConfigurable, fileManager: FileManager = .default) throws {
 
-        // Create path
         guard let pathFolder = config.pathFolder else {
             throw DiskError.invalidCacheFolder
         }
@@ -35,7 +33,6 @@ class DiskPersistentHandler: PersistentHandler {
         self.fileManager = fileManager
         self.pathFolder = pathFolder
 
-        // Try to create folder
         try createCacheFolder()
     }
 
@@ -47,7 +44,6 @@ class DiskPersistentHandler: PersistentHandler {
         let pathFile = makeFilePath(key)
         let data = try encoder.encode(item)
 
-        // Try to create folder if need
         try createCacheFolder()
         guard fileManager.createFile(atPath: pathFile, contents: data, attributes: attribute) else {
             throw DiskError.unableWriteFile
@@ -63,10 +59,8 @@ class DiskPersistentHandler: PersistentHandler {
 
     func getAll<T: Codable>(type: T.Type) -> [T] {
 
-        // Get all URLs in directory folder
         let fileURLs = allFileURLs()
 
-        // Map to T
         return fileURLs.flatMap { url in
             guard let data = try? Data(contentsOf: url, options: .alwaysMapped) else {
                 return nil
@@ -89,14 +83,12 @@ extension DiskPersistentHandler {
 
     fileprivate func createCacheFolder() throws {
 
-        // Make sure it isn't existed
         var isDirectory: ObjCBool = false
         fileManager.fileExists(atPath: pathFolder, isDirectory: &isDirectory)
         guard isDirectory.boolValue == false else {
             return
         }
 
-        // Create
         try fileManager.createDirectory(atPath: pathFolder,
                                         withIntermediateDirectories: true,
                                         attributes: nil)
@@ -104,7 +96,6 @@ extension DiskPersistentHandler {
 
     fileprivate func allFileURLs() -> [URL] {
 
-        // Get Directory
         let url = URL(fileURLWithPath: self.pathFolder)
         let fileURLs = try? fileManager.contentsOfDirectory(at: url,
                                                             includingPropertiesForKeys: nil,
