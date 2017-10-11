@@ -127,6 +127,11 @@ class DiskPersistentHandlerTests: XCTestCase {
 
         XCTAssertNoThrow(try handler.deleteAllFile(), "Delete all without any execeptions")
         XCTAssertEqual(handler.fileCount, 0, "Should be 0")
+
+        // After delete -> Should write success
+        XCTAssertNoThrow(try handler.write(firstMetric, key: firstMetric.name, attribute: nil),
+                         "Write fill successfully without any execptions")
+        XCTAssertEqual(handler.fileCount, 1, "Should be 1")
     }
 
     func testGetAll() {

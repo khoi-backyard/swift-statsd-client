@@ -13,18 +13,17 @@ class DiskPersistentHandler: PersistentHandler {
     // MARK: - Variable
     fileprivate let fileManager: FileManager
     fileprivate let pathFolder: String
+    fileprivate let encoder = JSONEncoder()
+    fileprivate let decoder = JSONDecoder()
     fileprivate let defaultEnumerator: [URLResourceKey] = [
         .isDirectoryKey,
         .contentModificationDateKey,
         .totalFileAllocatedSizeKey,
     ]
-    fileprivate let encoder = JSONEncoder()
-    fileprivate let decoder = JSONDecoder()
 
     public let config: DiskConfigurable
     public var fileCount: Int { return allFileURLs().count }
 
-    // MARK: - Init
     init(config: DiskConfigurable, fileManager: FileManager = .default) throws {
 
         // Create path
@@ -40,7 +39,6 @@ class DiskPersistentHandler: PersistentHandler {
         try createCacheFolder()
     }
 
-    // MARK: - Public
     func makeFilePath(_ key: Base64Transformable) -> String {
         return "\(pathFolder)/\(key.encoded())"
     }
@@ -48,7 +46,12 @@ class DiskPersistentHandler: PersistentHandler {
     func write<T: Codable>(_ item: T, key: Base64Transformable, attribute: [FileAttributeKey: Any]?) throws {
         let pathFile = makeFilePath(key)
         let data = try encoder.encode(item)
-        fileManager.createFile(atPath: pathFile, contents: data, attributes: attribute)
+
+        // Try to create folder if need
+        try createCacheFolder()
+        guard fileManager.createFile(atPath: pathFile, contents: data, attributes: attribute) else {
+            throw DiskError.unableWriteFile
+        }
     }
 
     func get<T: Codable>(key: Base64Transformable, type: T.Type) throws -> T {
@@ -79,7 +82,6 @@ class DiskPersistentHandler: PersistentHandler {
 
     func deleteAllFile() throws {
         try fileManager.removeItem(atPath: pathFolder)
-        try createCacheFolder()
     }
 }
 
@@ -96,7 +98,6 @@ extension DiskPersistentHandler {
         try fileManager.createDirectory(atPath: pathFolder,
                                         withIntermediateDirectories: true,
                                         attributes: nil)
-
     }
 
     fileprivate func allFileURLs() -> [URL] {

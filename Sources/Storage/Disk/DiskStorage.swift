@@ -10,7 +10,6 @@ import Foundation
 
 final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
 
-    // MARK: - Variable
     private let handler: PersistentHandler
     private let queue = DispatchQueue(label: "StatsD_DiskStorage", qos: .default, attributes: .concurrent)
 
@@ -18,12 +17,10 @@ final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
         return queue.syncWithReturnedValue { self.handler.fileCount }
     }
 
-    // MARK: - Init
     init(handler: PersistentHandler) {
         self.handler = handler
     }
 
-    // Default
     init?(config: DiskConfigurable) {
 
         // Try to create default DiskPersistentHandler
@@ -34,7 +31,6 @@ final class DiskStorage<Item: Codable, Key: Base64Transformable>: Storage {
         self.handler = handler
     }
 
-    // MARK: - Public
     func item(forKey key: Key) -> Item? {
         return queue.syncWithReturnedValue {
             try? handler.get(key: key, type: Item.self)

@@ -11,4 +11,5 @@ import Foundation
 enum DiskError: Error {
 
     case invalidCacheFolder
+    case unableWriteFile
 }
