@@ -26,6 +26,11 @@ UDP Client
 let statsD = StatsD(transport: UDPTransport(host: "localhost", port: 2003))
 ```
 
+TCPClient
+```swift
+let statsD = StatsD(transport: TCPTransport(host: "localhost", port: 2003))
+```
+
 HTTP CLient
 ```swift
 let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!)

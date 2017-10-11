@@ -12,6 +12,7 @@ public typealias TransportCompletionCallback = (Error?) -> Void
 
 enum TransportError: Error {
     case invalidData
+    case timeout
 }
 
 public protocol Transport {

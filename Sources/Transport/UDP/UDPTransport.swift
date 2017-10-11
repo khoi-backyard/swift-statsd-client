@@ -12,8 +12,10 @@ public class UDPTransport: NSObject, Transport {
     let host: String
     let port: UInt16
 
-    private var socket: GCDAsyncUdpSocket?
-    private let socketDelegateQueue = DispatchQueue(label: "UDPClient_Delegate_Queue")
+    private lazy var socket: GCDAsyncUdpSocket = {
+        GCDAsyncUdpSocket(delegate: self,
+                          delegateQueue: DispatchQueue(label: "UDPClient_Delegate_Queue"))
+    }()
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private var tag: Int = 0
 
@@ -21,7 +23,6 @@ public class UDPTransport: NSObject, Transport {
         self.host = host
         self.port = port
         super.init()
-        self.socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: socketDelegateQueue)
     }
 
     public func write(data: String, completion: TransportCompletionCallback?) {
@@ -37,11 +38,11 @@ public class UDPTransport: NSObject, Transport {
 
         completionBlocks[tag] = completion
 
-        socket?.send(data,
-                     toHost: host,
-                     port: port,
-                     withTimeout: -1,
-                     tag: tag)
+        socket.send(data,
+                    toHost: host,
+                    port: port,
+                    withTimeout: -1,
+                    tag: tag)
     }
 }
 
