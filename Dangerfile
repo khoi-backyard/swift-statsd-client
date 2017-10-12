@@ -8,9 +8,6 @@ warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 # Warn when there is a big PR
 warn("Big PR, try to keep changes smaller if you can") if git.lines_of_code > 500
 
-# Don't let testing shortcuts get into master by accident
-fail("fit left in tests") if `grep -r "fit Demo/Tests/ `.length > 1
-
 # Added (or removed) library files need to be added (or removed) from the
 # Carthage Xcode project to avoid breaking things for our Carthage users.
 added_swift_library_files = !(git.added_files.grep(/Sources.*\.swift/).empty?)
@@ -41,5 +38,4 @@ if has_app_changes && !tests_updated
 end
 
 # Run SwiftLint
-swiftlint.verbose = true
 swiftlint.lint_files inline_mode: true
