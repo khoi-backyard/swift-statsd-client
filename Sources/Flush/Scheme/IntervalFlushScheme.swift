@@ -21,7 +21,7 @@ final class IntervalFlushScheme: FlushScheme {
     deinit {
         stop()
     }
-    
+
     func start(delegate: FlushSchemeDelegate) {
         self.delegate = delegate
         scheduleTimer()

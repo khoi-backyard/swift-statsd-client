@@ -24,19 +24,25 @@ public class StatsD: NSObject, StatsdProtocol {
     let transport: Transport
     private let storage: MemoryStorage<Metric>
     private let schemes: [FlushScheme]
-    private lazy var flush: Flushable = {
-        Flush(schemes: self.schemes)
-    }()
+    private var flush: Flushable
 
-    public init(transport: Transport) {
+    public convenience init(transport: Transport) {
+        let storage = MemoryStorage<Metric>()
+        let schemes: [FlushScheme] = [AppCycleFlushScheme(),
+                                      IntervalFlushScheme(),
+                                      ]
+        let flush = Flush(schemes: schemes)
+        self.init(transport: transport, storage: storage, schemes: schemes, flush: flush)
+    }
+
+    init(transport: Transport, storage: MemoryStorage<Metric>, schemes: [FlushScheme], flush: Flushable) {
         self.transport = transport
-        storage = MemoryStorage<Metric>()
-        schemes = [AppCycleFlushScheme(),
-                   IntervalFlushScheme(),
-                  ]
+        self.flush = flush
+        self.storage = storage
+        self.schemes = schemes
         super.init()
 
-        flush.delegate = self
+        self.flush.delegate = self
         flush.start()
     }
 
