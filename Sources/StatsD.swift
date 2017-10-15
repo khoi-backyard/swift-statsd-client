@@ -23,7 +23,6 @@ public class StatsD: NSObject, StatsdProtocol {
 
     let transport: Transport
     private let storage: MemoryStorage<Metric>
-    private let schemes: [FlushScheme]
     private var flush: Flushable
 
     public convenience init(transport: Transport) {
@@ -32,14 +31,13 @@ public class StatsD: NSObject, StatsdProtocol {
                                       IntervalFlushScheme(),
                                       ]
         let flush = Flush(schemes: schemes)
-        self.init(transport: transport, storage: storage, schemes: schemes, flush: flush)
+        self.init(transport: transport, storage: storage, flush: flush)
     }
 
-    init(transport: Transport, storage: MemoryStorage<Metric>, schemes: [FlushScheme], flush: Flushable) {
+    init(transport: Transport, storage: MemoryStorage<Metric>, flush: Flushable) {
         self.transport = transport
         self.flush = flush
         self.storage = storage
-        self.schemes = schemes
         super.init()
 
         self.flush.delegate = self
@@ -70,8 +68,11 @@ public class StatsD: NSObject, StatsdProtocol {
 extension StatsD: FlushDelegate {
 
     func flush(_ sender: Flushable) {
+        guard !storage.isEmpty else {
+            return
+        }
+
         let batch = mapToBatch()
-        transport.write(data: batch, completion: nil)
         transport.write(data: batch) {[unowned self] (error) in
             guard error == nil else {
                 return
@@ -81,6 +82,6 @@ extension StatsD: FlushDelegate {
     }
 
     private func mapToBatch() -> String {
-        return storage.getAllItems().reduce("") { $0 + "\n" + $1.metricData }
+        return storage.getAllItems().map { $0.metricData }.joined(separator: "\n")
     }
 }
