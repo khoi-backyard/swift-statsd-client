@@ -12,6 +12,18 @@ final class AppCycleFlushScheme: FlushScheme {
 
     private weak var delegate: FlushSchemeDelegate?
 
+    func start(delegate: FlushSchemeDelegate) {
+        self.delegate = delegate
+        register()
+    }
+
+    func stop() {
+
+    }
+}
+
+extension AppCycleFlushScheme {
+
     private func register() {
 
     }
@@ -22,10 +34,5 @@ final class AppCycleFlushScheme: FlushScheme {
 
     private func didEnterBackground() {
         delegate?.flush(scheme: self)
-    }
-
-    func start(delegate: FlushSchemeDelegate) {
-        self.delegate = delegate
-        register()
     }
 }

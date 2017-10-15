@@ -11,4 +11,5 @@ import Foundation
 protocol FlushScheme {
 
     func start(delegate: FlushSchemeDelegate)
+    func stop()
 }

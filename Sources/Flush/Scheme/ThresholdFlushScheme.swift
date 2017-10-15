@@ -19,4 +19,8 @@ struct ThresholdFlushScheme: FlushScheme {
     func start(delegate: FlushSchemeDelegate) {
 
     }
+
+    func stop() {
+
+    }
 }

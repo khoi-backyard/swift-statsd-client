@@ -18,7 +18,19 @@ final class IntervalFlushScheme: FlushScheme {
         self.interval = interval
     }
 
-    private func invalidTimer() {
+    func start(delegate: FlushSchemeDelegate) {
+        self.delegate = delegate
+        scheduleTimer()
+    }
+
+    func stop() {
+        invalidTimer()
+    }
+}
+
+extension IntervalFlushScheme {
+
+    fileprivate func invalidTimer() {
         guard let timer = timer else {
             return
         }
@@ -27,24 +39,19 @@ final class IntervalFlushScheme: FlushScheme {
         self.timer = nil
     }
 
-    private func createTimer() {
+    fileprivate func scheduleTimer() {
         guard timer == nil else {
             return
         }
 
-        timer = Timer(timeInterval: interval,
-                      target: self,
-                      selector: #selector(self.timerFired),
-                      userInfo: nil,
-                      repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: interval,
+                                     target: self,
+                                     selector: #selector(self.timerFired),
+                                     userInfo: nil,
+                                     repeats: true)
     }
 
     @objc func timerFired() {
         delegate?.flush(scheme: self)
-    }
-
-    func start(delegate: FlushSchemeDelegate) {
-        self.delegate = delegate
-        createTimer()
     }
 }
