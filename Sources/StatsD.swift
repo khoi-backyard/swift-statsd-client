@@ -31,8 +31,7 @@ public class StatsD: NSObject, StatsdProtocol {
     public init(transport: Transport) {
         self.transport = transport
         storage = MemoryStorage<Metric>()
-        schemes = [ThresholdFlushScheme(),
-                   AppCycleFlushScheme(),
+        schemes = [AppCycleFlushScheme(),
                    IntervalFlushScheme(),
                   ]
         super.init()

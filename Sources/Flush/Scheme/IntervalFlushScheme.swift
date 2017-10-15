@@ -18,6 +18,10 @@ final class IntervalFlushScheme: FlushScheme {
         self.interval = interval
     }
 
+    deinit {
+        stop()
+    }
+    
     func start(delegate: FlushSchemeDelegate) {
         self.delegate = delegate
         scheduleTimer()

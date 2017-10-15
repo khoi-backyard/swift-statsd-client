@@ -71,9 +71,6 @@
 		BA335AE31F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
 		BA335AE41F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
 		BA335AE51F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
-		BA335AE71F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE61F93087B007F8622 /* ThresholdFlushScheme.swift */; };
-		BA335AE81F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE61F93087B007F8622 /* ThresholdFlushScheme.swift */; };
-		BA335AE91F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE61F93087B007F8622 /* ThresholdFlushScheme.swift */; };
 		BA335AEC1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
 		BA335AED1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
 		BA335AEE1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
@@ -177,7 +174,6 @@
 		AD2FAA281CD0B6E100659CF4 /* StatsdClientTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClientTests.plist; sourceTree = "<group>"; };
 		BA335ADE1F930810007F8622 /* FlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushScheme.swift; sourceTree = "<group>"; };
 		BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushSchemeDelegate.swift; sourceTree = "<group>"; };
-		BA335AE61F93087B007F8622 /* ThresholdFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdFlushScheme.swift; sourceTree = "<group>"; };
 		BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalFlushScheme.swift; sourceTree = "<group>"; };
 		BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushScheme.swift; sourceTree = "<group>"; };
 		BA335AF31F930922007F8622 /* Flushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flushable.swift; sourceTree = "<group>"; };
@@ -399,7 +395,6 @@
 		BA335ADD1F9307F0007F8622 /* Scheme */ = {
 			isa = PBXGroup;
 			children = (
-				BA335AE61F93087B007F8622 /* ThresholdFlushScheme.swift */,
 				BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */,
 				BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */,
 			);
@@ -820,7 +815,6 @@
 				7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				BA335AEC1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC756281F88891A00112173 /* Timing.swift in Sources */,
-				BA335AE71F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */,
 				BAA3CA571F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA491F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BA335ADF1F930810007F8622 /* FlushScheme.swift in Sources */,
@@ -870,7 +864,6 @@
 				7C1942501F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				BA335AEE1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
-				BA335AE91F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */,
 				BAA3CA511F8DC8CC004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA451F8DC8C4004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BA335AE11F930810007F8622 /* FlushScheme.swift in Sources */,
@@ -907,7 +900,6 @@
 				7C19424F1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
 				BA335AED1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC756291F88891A00112173 /* Timing.swift in Sources */,
-				BA335AE81F93087B007F8622 /* ThresholdFlushScheme.swift in Sources */,
 				BAA3CA541F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
 				BAA3CA471F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
 				BA335AE01F930810007F8622 /* FlushScheme.swift in Sources */,

@@ -19,7 +19,7 @@ final class AppCycleFlushScheme: FlushScheme {
     private weak var delegate: FlushSchemeDelegate?
 
     deinit {
-        unObserveAppCycle()
+        stop()
     }
 
     func start(delegate: FlushSchemeDelegate) {
