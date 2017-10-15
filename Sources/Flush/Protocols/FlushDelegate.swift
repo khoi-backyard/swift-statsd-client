@@ -10,5 +10,5 @@ import Foundation
 
 protocol FlushDelegate: class {
 
-    func flush()
+    func flush(_ sender: Flushable)
 }

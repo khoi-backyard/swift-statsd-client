@@ -12,7 +12,7 @@ struct ThresholdFlushScheme: FlushScheme {
 
     private let threshold: Int
 
-    init(threshold: Int) {
+    init(threshold: Int = 100) {
         self.threshold = threshold
     }
 

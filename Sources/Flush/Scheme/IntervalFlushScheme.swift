@@ -14,7 +14,7 @@ final class IntervalFlushScheme: FlushScheme {
     private var timer: Timer?
     private weak var delegate: FlushSchemeDelegate?
 
-    init(interval: TimeInterval) {
+    init(interval: TimeInterval = 100) {
         self.interval = interval
     }
 

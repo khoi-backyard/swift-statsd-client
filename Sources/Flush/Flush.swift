@@ -27,6 +27,6 @@ final class Flush: Flushable {
 extension Flush: FlushSchemeDelegate {
 
     func flush(scheme: FlushScheme) {
-        delegate?.flush()
+        delegate?.flush(self)
     }
 }

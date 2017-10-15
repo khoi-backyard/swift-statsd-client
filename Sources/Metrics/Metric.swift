@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Metric {
+public protocol Metric {
     var name: String { get }
     var value: String { get }
     var metricData: String { get }
