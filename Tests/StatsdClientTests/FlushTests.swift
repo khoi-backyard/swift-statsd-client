@@ -35,7 +35,7 @@ class FlushTests: XCTestCase {
 
     func testFlushCallDelegateWhenSchemeNeedFlush() {
         let scheme = SpyScheme()
-        let statsD = SpyStatsD()
+        let statsD = SpyFlushDelegate()
         let flush = Flush(schemes: [scheme])
         flush.delegate = statsD
 

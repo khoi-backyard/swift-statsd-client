@@ -10,7 +10,6 @@ import XCTest
 @testable import StatsdClient
 
 
-
 class StatsDTests: XCTestCase {
 
     override func setUp() {

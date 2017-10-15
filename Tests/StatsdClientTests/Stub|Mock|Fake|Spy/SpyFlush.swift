@@ -1,5 +1,5 @@
 //
-//  SpyStatsD.swift
+//  SpyFlush.swift
 //  StatsdClient
 //
 //  Created by Nghia Tran on 10/15/17.
@@ -9,11 +9,11 @@
 import Foundation
 @testable import StatsdClient
 
-class SpyStatsD: FlushDelegate {
+class SpyFlushSchemeDelegate: FlushSchemeDelegate {
 
     var isCallFlush = false
 
-    func flush(_ sender: Flushable) {
+    func flush(scheme: FlushScheme) {
         isCallFlush = true
     }
 }

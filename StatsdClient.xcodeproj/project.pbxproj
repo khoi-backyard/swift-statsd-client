@@ -95,9 +95,21 @@
 		BA49B3251F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
 		BA49B3261F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
 		BA49B3271F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
-		BA49B3291F93483400C92BED /* SpyStatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyStatsD.swift */; };
-		BA49B32A1F93483400C92BED /* SpyStatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyStatsD.swift */; };
-		BA49B32B1F93483400C92BED /* SpyStatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyStatsD.swift */; };
+		BA49B3291F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
+		BA49B32A1F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
+		BA49B32B1F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
+		BA49B3311F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
+		BA49B3321F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
+		BA49B3331F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
+		BA49B3351F9348EB00C92BED /* SpyFlush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlush.swift */; };
+		BA49B3361F9348EB00C92BED /* SpyFlush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlush.swift */; };
+		BA49B3371F9348EB00C92BED /* SpyFlush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlush.swift */; };
+		BA49B3391F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
+		BA49B33A1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
+		BA49B33B1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
+		BA49B33D1F934B2800C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
+		BA49B33E1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
+		BA49B33F1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
 		BAA3CA371F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
 		BAA3CA381F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
 		BAA3CA391F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
@@ -194,7 +206,11 @@
 		BA49B31B1F933EC000C92BED /* StatsDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDTests.swift; sourceTree = "<group>"; };
 		BA49B31F1F93452500C92BED /* FlushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushTests.swift; sourceTree = "<group>"; };
 		BA49B3241F93481800C92BED /* SpyScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyScheme.swift; sourceTree = "<group>"; };
-		BA49B3281F93483400C92BED /* SpyStatsD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyStatsD.swift; sourceTree = "<group>"; };
+		BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyFlushDelegate.swift; sourceTree = "<group>"; };
+		BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalFlushSchemeTests.swift; sourceTree = "<group>"; };
+		BA49B3341F9348EB00C92BED /* SpyFlush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyFlush.swift; sourceTree = "<group>"; };
+		BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
+		BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushSchemeTests.swift; sourceTree = "<group>"; };
 		BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskError.swift; sourceTree = "<group>"; };
 		BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryType.swift; sourceTree = "<group>"; };
@@ -396,6 +412,8 @@
 				7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */,
 				BA49B31B1F933EC000C92BED /* StatsDTests.swift */,
 				BA49B31F1F93452500C92BED /* FlushTests.swift */,
+				BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */,
+				BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */,
 			);
 			name = Tests;
 			path = Tests/StatsdClientTests;
@@ -435,7 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				BA49B3241F93481800C92BED /* SpyScheme.swift */,
-				BA49B3281F93483400C92BED /* SpyStatsD.swift */,
+				BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */,
+				BA49B3341F9348EB00C92BED /* SpyFlush.swift */,
 			);
 			path = "Stub|Mock|Fake|Spy";
 			sourceTree = "<group>";
@@ -474,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */,
+				BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -873,15 +893,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA49B3201F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B3291F93483400C92BED /* SpyStatsD.swift in Sources */,
+				BA49B3291F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA391F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
 				BAA3CA5A1F8DC922004C35F6 /* StubMetric.swift in Sources */,
 				BAA3CA3C1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
+				BA49B3311F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
+				BA49B33D1F934B2800C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
+				BA49B3391F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA49B31C1F933EC000C92BED /* StatsDTests.swift in Sources */,
 				7CC23A921F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAD1F6306F000ED2957 /* MetricTests.swift in Sources */,
 				BA49B3251F93481800C92BED /* SpyScheme.swift in Sources */,
+				BA49B3351F9348EB00C92BED /* SpyFlush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,15 +986,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA49B3211F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B32A1F93483400C92BED /* SpyStatsD.swift in Sources */,
+				BA49B32A1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA371F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
 				BAA3CA5B1F8DC922004C35F6 /* StubMetric.swift in Sources */,
 				BAA3CA3A1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
+				BA49B3321F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
+				BA49B33F1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
+				BA49B33A1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA49B31D1F933EC300C92BED /* StatsDTests.swift in Sources */,
 				7CC23A931F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAE1F6306F000ED2957 /* MetricTests.swift in Sources */,
 				BA49B3261F93481800C92BED /* SpyScheme.swift in Sources */,
+				BA49B3361F9348EB00C92BED /* SpyFlush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,15 +1007,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA49B3221F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B32B1F93483400C92BED /* SpyStatsD.swift in Sources */,
+				BA49B32B1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA381F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
 				BAA3CA5C1F8DC923004C35F6 /* StubMetric.swift in Sources */,
 				BAA3CA3B1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
+				BA49B3331F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
+				BA49B33E1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
+				BA49B33B1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				BA49B31E1F933EC300C92BED /* StatsDTests.swift in Sources */,
 				7CC23A941F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAF1F6306F000ED2957 /* MetricTests.swift in Sources */,
 				BA49B3271F93481800C92BED /* SpyScheme.swift in Sources */,
+				BA49B3371F9348EB00C92BED /* SpyFlush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
