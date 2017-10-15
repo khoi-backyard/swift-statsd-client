@@ -8,31 +8,54 @@
 
 import Foundation
 
+#if os(macOS)
+    import AppKit
+#else
+    import UIKit
+#endif
+
 final class AppCycleFlushScheme: FlushScheme {
 
     private weak var delegate: FlushSchemeDelegate?
 
+    deinit {
+        unObserveAppCycle()
+    }
+
     func start(delegate: FlushSchemeDelegate) {
         self.delegate = delegate
-        register()
+        observeAppCycle()
     }
 
     func stop() {
-
+        unObserveAppCycle()
     }
 }
 
 extension AppCycleFlushScheme {
 
-    private func register() {
-
+    #if os(macOS)
+    private func observeAppCycle() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.flush),
+                                               name: NSApplication.willResignActiveNotification,
+                                               object: nil)
     }
 
-    private func unRegister() {
+    #else
+    private func observeAppCycle() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.flush),
+                                               name: .UIApplicationDidEnterBackground,
+                                               object: nil)
+    }
+    #endif
 
+    private func unObserveAppCycle() {
+        NotificationCenter.default.removeObserver(self)
     }
 
-    private func didEnterBackground() {
+    @objc private func flush() {
         delegate?.flush(scheme: self)
     }
 }
