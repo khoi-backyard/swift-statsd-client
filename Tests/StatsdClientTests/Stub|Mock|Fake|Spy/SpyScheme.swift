@@ -11,12 +11,12 @@ import Foundation
 
 class SpyScheme: FlushScheme {
 
-    var isStartCall = false
+    var isCallStrated = false
     weak var delegate: FlushSchemeDelegate?
 
     func start(delegate: FlushSchemeDelegate) {
         self.delegate = delegate
-        isStartCall = true
+        isCallStrated = true
     }
 
     func stop() {

@@ -1,5 +1,5 @@
 //
-//  FlushDelegateScheme.swift
+//  FlushScheme.swift
 //  StatsdClient
 //
 //  Created by Nghia Tran on 10/15/17.
@@ -11,4 +11,10 @@ import Foundation
 protocol FlushSchemeDelegate: class {
 
     func flush(scheme: FlushScheme)
+}
+
+protocol FlushScheme {
+
+    func start(delegate: FlushSchemeDelegate)
+    func stop()
 }

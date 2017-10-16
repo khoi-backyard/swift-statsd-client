@@ -103,7 +103,7 @@ class StatsDTests: XCTestCase {
     func testClientWithEmptyStorage() {
 
         spyScheme.excess()
-        XCTAssertFalse(transport.isCallWrite, "Shouldn't call transport if Storage is Empty")
+        XCTAssertFalse(transport.isCallWritten, "Shouldn't call transport if Storage is Empty")
     }
 
     func testClientShouldTransportBatchWhenSchemeExcess() {
@@ -115,7 +115,7 @@ class StatsDTests: XCTestCase {
         client.increment(keySignUp)
         spyScheme.excess()
 
-        XCTAssertTrue(transport.isCallWrite, "Should call transport")
+        XCTAssertTrue(transport.isCallWritten, "Should call transport")
         XCTAssertEqual(transport.writeData, expect, "Correct Batch format")
     }
 
@@ -126,7 +126,7 @@ class StatsDTests: XCTestCase {
         XCTAssertEqual(storage.count, 1, "Storage count should equal 1")
         spyScheme.excess()
 
-        XCTAssertTrue(transport.isCallWrite, "Should call transport")
+        XCTAssertTrue(transport.isCallWritten, "Should call transport")
         XCTAssertEqual(storage.count, 0, "After flushing, Storage should be flushed too")
     }
 
@@ -138,7 +138,7 @@ class StatsDTests: XCTestCase {
         transport.fakeError = NSError(domain: "Internet broken", code: 1, userInfo: nil)
         spyScheme.excess()
 
-        XCTAssertTrue(transport.isCallWrite, "Should call transport")
+        XCTAssertTrue(transport.isCallWritten, "Should call transport")
         XCTAssertEqual(storage.count, 1, "If transport gets error, Client should not clean Storage")
     }
 }

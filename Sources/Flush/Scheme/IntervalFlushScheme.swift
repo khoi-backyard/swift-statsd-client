@@ -13,6 +13,9 @@ final class IntervalFlushScheme: FlushScheme {
     private let interval: TimeInterval
     private var timer: Timer?
     private weak var delegate: FlushSchemeDelegate?
+    fileprivate let queue = DispatchQueue(label: "StatsD_IntervalFlushScheme",
+                                          qos: .background,
+                                          attributes: .concurrent)
 
     init(interval: TimeInterval = 100) {
         self.interval = interval
@@ -35,12 +38,10 @@ final class IntervalFlushScheme: FlushScheme {
 extension IntervalFlushScheme {
 
     fileprivate func invalidTimer() {
-        guard let timer = timer else {
-            return
+        queue.sync { [unowned self] in
+            self.timer?.invalidate()
+            self.timer = nil
         }
-
-        timer.invalidate()
-        self.timer = nil
     }
 
     fileprivate func scheduleTimer() {
@@ -48,11 +49,18 @@ extension IntervalFlushScheme {
             return
         }
 
-        timer = Timer.scheduledTimer(timeInterval: interval,
-                                     target: self,
-                                     selector: #selector(self.timerFired),
-                                     userInfo: nil,
-                                     repeats: true)
+        queue.async { [unowned self] in
+            let timer = Timer(timeInterval: self.interval,
+                              target: self,
+                              selector: #selector(self.timerFired),
+                              userInfo: nil,
+                              repeats: true)
+            self.timer = timer
+            let loop = RunLoop.current
+            loop.add(timer, forMode: .commonModes)
+            loop.run()
+        }
+
     }
 
     @objc func timerFired() {

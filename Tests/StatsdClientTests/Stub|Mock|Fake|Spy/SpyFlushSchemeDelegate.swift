@@ -11,9 +11,9 @@ import Foundation
 
 class SpyFlushSchemeDelegate: FlushSchemeDelegate {
 
-    var isCallFlush = false
+    var isCallFlushed = false
 
     func flush(scheme: FlushScheme) {
-        isCallFlush = true
+        isCallFlushed = true
     }
 }

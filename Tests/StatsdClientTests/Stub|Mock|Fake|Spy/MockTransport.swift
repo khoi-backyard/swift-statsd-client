@@ -11,13 +11,13 @@ import Foundation
 
 class MockTransport: Transport {
 
-    var isCallWrite = false
+    var isCallWritten = false
     var writeData = ""
     var fakeError: Error?
 
     func write(data: String, completion: TransportCompletionCallback?) {
         writeData = data
-        isCallWrite = true
+        isCallWritten = true
         completion?(fakeError)
     }
 }

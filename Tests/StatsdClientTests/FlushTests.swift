@@ -29,7 +29,7 @@ class FlushTests: XCTestCase {
         flush.start()
 
         schemes.forEach { (scheme) in
-            XCTAssertTrue(scheme.isStartCall, "Flush should call start() in each Schemes")
+            XCTAssertTrue(scheme.isCallStrated, "Flush should call start() in each Schemes")
         }
     }
 
@@ -42,6 +42,6 @@ class FlushTests: XCTestCase {
         flush.start()
         scheme.excess()
 
-        XCTAssertTrue(statsD.isCallFlush, "When scheme excesses threshold, it should call flush() on StatsD")
+        XCTAssertTrue(statsD.isCallFlushed, "When scheme excesses threshold, it should call flush() on StatsD")
     }
 }

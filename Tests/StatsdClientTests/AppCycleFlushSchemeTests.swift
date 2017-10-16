@@ -40,6 +40,6 @@ class AppCycleFlushSchemeTests: XCTestCase {
                                             userInfo: nil)
         #endif
 
-        XCTAssertTrue(delegate.isCallFlush, "AppCycle should call delegate's flush when it's excessed")
+        XCTAssertTrue(delegate.isCallFlushed, "AppCycle should call delegate's flush when it's excessed")
     }
 }

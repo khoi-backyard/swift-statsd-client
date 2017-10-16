@@ -11,9 +11,9 @@ import Foundation
 
 class SpyFlushDelegate: FlushDelegate {
 
-    var isCallFlush = false
+    var isCallFlushed = false
 
     func flush(_ sender: Flushable) {
-        isCallFlush = true
+        isCallFlushed = true
     }
 }

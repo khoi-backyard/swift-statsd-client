@@ -8,9 +8,14 @@
 
 import Foundation
 
+protocol FlushDelegate: class {
+
+    func flush(_ sender: Flushable)
+}
+
 final class Flush: Flushable {
 
-    var schemes: [FlushScheme]
+    let schemes: [FlushScheme]
     weak var delegate: FlushDelegate?
 
     init(schemes: [FlushScheme]) {
@@ -18,7 +23,7 @@ final class Flush: Flushable {
     }
 
     func start() {
-        self.schemes.forEach { (scheme) in
+        schemes.forEach { (scheme) in
             scheme.start(delegate: self)
         }
     }

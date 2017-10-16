@@ -68,9 +68,6 @@
 		BA335ADF1F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
 		BA335AE01F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
 		BA335AE11F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
-		BA335AE31F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
-		BA335AE41F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
-		BA335AE51F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */; };
 		BA335AEC1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
 		BA335AED1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
 		BA335AEE1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
@@ -80,9 +77,6 @@
 		BA335AF41F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
 		BA335AF51F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
 		BA335AF61F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
-		BA335AF81F93094D007F8622 /* FlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF71F93094D007F8622 /* FlushDelegate.swift */; };
-		BA335AF91F93094D007F8622 /* FlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF71F93094D007F8622 /* FlushDelegate.swift */; };
-		BA335AFA1F93094D007F8622 /* FlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF71F93094D007F8622 /* FlushDelegate.swift */; };
 		BA335AFC1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
 		BA335AFD1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
 		BA335AFE1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
@@ -203,11 +197,9 @@
 		AD2FAA261CD0B6D800659CF4 /* StatsdClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClient.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* StatsdClientTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClientTests.plist; sourceTree = "<group>"; };
 		BA335ADE1F930810007F8622 /* FlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushScheme.swift; sourceTree = "<group>"; };
-		BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushSchemeDelegate.swift; sourceTree = "<group>"; };
 		BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalFlushScheme.swift; sourceTree = "<group>"; };
 		BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushScheme.swift; sourceTree = "<group>"; };
 		BA335AF31F930922007F8622 /* Flushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flushable.swift; sourceTree = "<group>"; };
-		BA335AF71F93094D007F8622 /* FlushDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushDelegate.swift; sourceTree = "<group>"; };
 		BA335AFB1F930A33007F8622 /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		BA49B31B1F933EC000C92BED /* StatsDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDTests.swift; sourceTree = "<group>"; };
 		BA49B31F1F93452500C92BED /* FlushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushTests.swift; sourceTree = "<group>"; };
@@ -440,6 +432,7 @@
 		BA335ADD1F9307F0007F8622 /* Scheme */ = {
 			isa = PBXGroup;
 			children = (
+				BA335ADE1F930810007F8622 /* FlushScheme.swift */,
 				BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */,
 				BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */,
 			);
@@ -449,10 +442,7 @@
 		BA335AEA1F93087F007F8622 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				BA335ADE1F930810007F8622 /* FlushScheme.swift */,
-				BA335AE21F93082C007F8622 /* FlushSchemeDelegate.swift */,
 				BA335AF31F930922007F8622 /* Flushable.swift */,
-				BA335AF71F93094D007F8622 /* FlushDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -866,7 +856,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA335AF81F93094D007F8622 /* FlushDelegate.swift in Sources */,
 				BAA3CA591F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC11F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7CC23A811F89D64F008DED42 /* Storage.swift in Sources */,
@@ -893,7 +882,6 @@
 				BAA3CA581F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */,
 				BA335AFC1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BA335AE31F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */,
 				BAA3CA441F8DC8C1004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -925,7 +913,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA335AFA1F93094D007F8622 /* FlushDelegate.swift in Sources */,
 				BAA3CA531F8DC8CC004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC41F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7CC23A831F89D64F008DED42 /* Storage.swift in Sources */,
@@ -952,7 +939,6 @@
 				BAA3CA521F8DC8CC004C35F6 /* DiskConfigurable.swift in Sources */,
 				BA335AFE1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F71F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BA335AE51F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */,
 				BAA3CA421F8DC8C0004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -961,7 +947,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA335AF91F93094D007F8622 /* FlushDelegate.swift in Sources */,
 				BAA3CA561F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC21F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7CC23A821F89D64F008DED42 /* Storage.swift in Sources */,
@@ -988,7 +973,6 @@
 				BAA3CA551F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */,
 				BA335AFD1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F51F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BA335AE41F93082C007F8622 /* FlushSchemeDelegate.swift in Sources */,
 				BAA3CA431F8DC8C0004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

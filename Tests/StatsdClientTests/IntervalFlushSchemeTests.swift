@@ -26,6 +26,6 @@ class IntervalFlushSchemeTests: XCTestCase {
         intervalScheme.start(delegate: delegate)
         wait(for: 1.5)
 
-        XCTAssertTrue(delegate.isCallFlush, "IntervalScheme should call delegate's flush when it's excessed")
+        XCTAssertTrue(delegate.isCallFlushed, "IntervalScheme should call delegate's flush when it's excessed")
     }
 }
