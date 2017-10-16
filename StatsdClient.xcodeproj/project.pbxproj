@@ -422,9 +422,9 @@
 		BA335ADC1F9307E7007F8622 /* Flush */ = {
 			isa = PBXGroup;
 			children = (
-				BA335AEA1F93087F007F8622 /* Protocols */,
 				BA335ADD1F9307F0007F8622 /* Scheme */,
 				BA335AFB1F930A33007F8622 /* Flush.swift */,
+				BA335AF31F930922007F8622 /* Flushable.swift */,
 			);
 			path = Flush;
 			sourceTree = "<group>";
@@ -437,14 +437,6 @@
 				BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */,
 			);
 			path = Scheme;
-			sourceTree = "<group>";
-		};
-		BA335AEA1F93087F007F8622 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				BA335AF31F930922007F8622 /* Flushable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BA49B3231F93452D00C92BED /* Stub|Mock|Fake|Spy */ = {

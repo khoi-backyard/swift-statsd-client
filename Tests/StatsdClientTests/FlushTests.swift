@@ -29,7 +29,7 @@ class FlushTests: XCTestCase {
         flush.start()
 
         schemes.forEach { (scheme) in
-            XCTAssertTrue(scheme.isCallStrated, "Flush should call start() in each Schemes")
+            XCTAssertTrue(scheme.isCallStarted, "Flush should call start() in each Schemes")
         }
     }
 

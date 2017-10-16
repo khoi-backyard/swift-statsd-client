@@ -72,7 +72,7 @@ extension StatsD: FlushDelegate {
             return
         }
 
-        let batch = mapToBatch()
+        let batch = StatsD.accumulate(metrics: storage.getAllItems())
         transport.write(data: batch) {[unowned self] (error) in
             guard error == nil else {
                 return
@@ -81,7 +81,8 @@ extension StatsD: FlushDelegate {
         }
     }
 
-    private func mapToBatch() -> String {
-        return storage.getAllItems().map { $0.metricData }.joined(separator: "\n")
+    private static func accumulate(metrics: [Metric]) -> String {
+        return metrics.map { $0.metricData }
+            .joined(separator: "\n")
     }
 }
