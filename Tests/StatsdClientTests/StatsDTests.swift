@@ -12,7 +12,7 @@ import XCTest
 class StatsDTests: XCTestCase {
 
     var spyScheme: SpyScheme!
-    var storage: MockStorage<Metric>!
+    var storage: MemoryStorage<Metric>!
     var client: StatsD!
     var transport: MockTransport!
 
@@ -22,7 +22,7 @@ class StatsDTests: XCTestCase {
         spyScheme = SpyScheme()
         let flush = Flush(schemes: [spyScheme])
         transport = MockTransport()
-        storage = MockStorage<Metric>()
+        storage = MemoryStorage<Metric>()
         client = StatsD(transport: transport, storage: storage, flush: flush)
     }
 

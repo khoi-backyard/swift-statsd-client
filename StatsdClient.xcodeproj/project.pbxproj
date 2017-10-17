@@ -104,9 +104,6 @@
 		BA49B33D1F934B2800C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
 		BA49B33E1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
 		BA49B33F1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
-		BA49B3411F935D2C00C92BED /* MockStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3401F935D2C00C92BED /* MockStorage.swift */; };
-		BA49B3421F935D2C00C92BED /* MockStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3401F935D2C00C92BED /* MockStorage.swift */; };
-		BA49B3431F935D2C00C92BED /* MockStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3401F935D2C00C92BED /* MockStorage.swift */; };
 		BA49B3451F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
 		BA49B3461F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
 		BA49B3471F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
@@ -209,7 +206,6 @@
 		BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyFlushSchemeDelegate.swift; sourceTree = "<group>"; };
 		BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushSchemeTests.swift; sourceTree = "<group>"; };
-		BA49B3401F935D2C00C92BED /* MockStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorage.swift; sourceTree = "<group>"; };
 		BA49B3441F935D5700C92BED /* MockTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransport.swift; sourceTree = "<group>"; };
 		BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskError.swift; sourceTree = "<group>"; };
@@ -445,7 +441,6 @@
 				BA49B3241F93481800C92BED /* SpyScheme.swift */,
 				BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */,
 				BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */,
-				BA49B3401F935D2C00C92BED /* MockStorage.swift */,
 				BA49B3441F935D5700C92BED /* MockTransport.swift */,
 			);
 			path = "Stub|Mock|Fake|Spy";
@@ -882,7 +877,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3411F935D2C00C92BED /* MockStorage.swift in Sources */,
 				BA49B3201F93452500C92BED /* FlushTests.swift in Sources */,
 				BA49B3291F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA391F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
@@ -973,7 +967,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3421F935D2C00C92BED /* MockStorage.swift in Sources */,
 				BA49B3211F93452500C92BED /* FlushTests.swift in Sources */,
 				BA49B32A1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA371F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
@@ -996,7 +989,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3431F935D2C00C92BED /* MockStorage.swift in Sources */,
 				BA49B3221F93452500C92BED /* FlushTests.swift in Sources */,
 				BA49B32B1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
 				BAA3CA381F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
