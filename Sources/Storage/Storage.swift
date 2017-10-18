@@ -20,3 +20,11 @@ protocol Storage {
     func remove(key: String) throws
     func removeAll() throws
 }
+
+extension Storage {
+
+    var isEmpty: Bool {
+        // swiftlint:disable:next empty_count
+        return count == 0
+    }
+}
