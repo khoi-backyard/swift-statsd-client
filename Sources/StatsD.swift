@@ -45,23 +45,28 @@ public class StatsD: NSObject, StatsdProtocol {
     }
 
     public func increment(_ bucket: String, by value: Int = 1) {
-        storage.set(item: Counting(name: bucket, value: "\(value)"), forKey: bucket)
+        let metric = Counting(name: bucket, value: "\(value)")
+        storage.set(item: metric, forKey: metric.id)
     }
 
     public func set(_ bucket: String, value: String) {
-        storage.set(item: Sets(name: bucket, value: value), forKey: bucket)
+        let metric = Sets(name: bucket, value: value)
+        storage.set(item: metric, forKey: metric.id)
     }
 
     public func timing(_ bucket: String, value: Int) {
-        storage.set(item: Timing(name: bucket, value: value), forKey: bucket)
+        let metric = Timing(name: bucket, value: value)
+        storage.set(item: metric, forKey: metric.id)
     }
 
     public func gauge(_ bucket: String, value: UInt) {
-        storage.set(item: Gauge(name: bucket, value: value), forKey: bucket)
+        let metric = Gauge(name: bucket, value: value)
+        storage.set(item: metric, forKey: metric.id)
     }
 
     public func gauge(_ bucket: String, delta: Int) {
-        storage.set(item: Gauge(name: bucket, delta: delta), forKey: bucket)
+        let metric = Gauge(name: bucket, delta: delta)
+        storage.set(item: metric, forKey: metric.id)
     }
 }
 
@@ -73,7 +78,8 @@ extension StatsD: FlushDelegate {
         }
 
         let batch = StatsD.accumulate(metrics: storage.getAllItems())
-        transport.write(data: batch) {[unowned self] (error) in
+
+        transport.write(data: batch) { [unowned self] (error) in
             guard error == nil else {
                 return
             }
