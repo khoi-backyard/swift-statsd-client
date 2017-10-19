@@ -758,7 +758,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		7C7666791F8B908B0043BDB8 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -772,7 +772,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		7CC7562F1F88953600112173 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -786,7 +786,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" && exit 1\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"ERR: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		7CE317021F865A2100EB637A /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
