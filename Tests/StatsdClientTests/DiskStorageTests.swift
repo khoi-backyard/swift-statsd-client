@@ -123,7 +123,7 @@ class DiskStorageTests: XCTestCase {
         XCTAssertNil(item_2, "Shouldn't received because Disk was removed all")
     }
 
-    func testGetAllItems() {
+    func testGetAll() {
 
         let firstMetric = StubMetric()
         let secondMetric = StubMetric()
@@ -133,7 +133,7 @@ class DiskStorageTests: XCTestCase {
         disk.set(item: secondMetric, forKey: secondMetric.name)
         disk.set(item: thirdMetric, forKey: thirdMetric.name)
 
-        let items = disk.getAllItems()
+        let items = disk.getAll()
 
         XCTAssertEqual(disk.count, 2, "Disk Count should be 2")
         XCTAssertEqual(items.count, 2)

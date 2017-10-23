@@ -77,7 +77,7 @@ extension StatsD: FlushDelegate {
             return
         }
 
-        let batch = StatsD.accumulate(metrics: storage.getAllItems())
+        let batch = StatsD.accumulate(metrics: storage.getAll())
 
         transport.write(data: batch) { [unowned self] (error) in
             guard error == nil else {

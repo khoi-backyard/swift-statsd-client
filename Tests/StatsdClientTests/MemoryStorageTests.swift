@@ -31,7 +31,7 @@ class MemoryStorageTests: XCTestCase {
         XCTAssertEqual(memoryStorage.count, 2, "Storage count should equal to number of items")
         XCTAssertEqual(memoryStorage.item(forKey: "key1"), "item1")
         XCTAssertEqual(memoryStorage.item(forKey: "key2"), "item2")
-        XCTAssertEqual(Set(memoryStorage.getAllItems()), Set(["item1", "item2"]))
+        XCTAssertEqual(Set(memoryStorage.getAll()), Set(["item1", "item2"]))
     }
 
     func testRemoveItem() {
