@@ -16,7 +16,7 @@ protocol Storage {
 
     func item(forKey key: Key) -> Item?
     func set(item: Item, forKey key: Key) throws
-    func getAllItems() -> [Item]
+    func getAll() -> [Item]
     func remove(key: String) throws
     func removeAll() throws
 }

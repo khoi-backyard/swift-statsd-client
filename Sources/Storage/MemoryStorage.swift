@@ -8,9 +8,9 @@
 
 import Foundation
 
-class MemoryStorage<ItemType>: Storage {
+class MemoryStorage<Item>: Storage {
     private let queue = DispatchQueue(label: "StatsD_MemoryStorage", qos: .default, attributes: .concurrent)
-    private var internalStorage = [String: ItemType]()
+    private var internalStorage = [String: Item]()
 
     var count: Int {
         return queue.syncWithReturnedValue {
@@ -18,19 +18,19 @@ class MemoryStorage<ItemType>: Storage {
         }
     }
 
-    func item(forKey key: String) -> ItemType? {
+    func item(forKey key: String) -> Item? {
         return queue.syncWithReturnedValue {
             internalStorage[key]
         }
     }
 
-    func set(item: ItemType, forKey: String) {
+    func set(item: Item, forKey: String) {
         queue.async(flags: .barrier) { [unowned self] in
             self.internalStorage[forKey] = item
         }
     }
 
-    func getAllItems() -> [ItemType] {
+    func getAll() -> [Item] {
         return queue.syncWithReturnedValue {
             Array(internalStorage.values)
         }

@@ -37,7 +37,7 @@ class StatsDTests: XCTestCase {
         let key = "increment"
         client.increment(key)
 
-        guard let metric = storage.item(forKey: key) else {
+        guard let metric = storage.getAll().first else {
             XCTFail("Metric is nil")
             return
         }
@@ -50,7 +50,7 @@ class StatsDTests: XCTestCase {
         let value = "1"
         client.set(key, value: value)
 
-        guard let metric = storage.item(forKey: key) else {
+        guard let metric = storage.getAll().first else {
             XCTFail("Metric is nil")
             return
         }
@@ -64,7 +64,7 @@ class StatsDTests: XCTestCase {
         let value = 100
         client.timing(key, value: value)
 
-        guard let metric = storage.item(forKey: key) else {
+        guard let metric = storage.getAll().first else {
             XCTFail("Metric is nil")
             return
         }
@@ -78,7 +78,7 @@ class StatsDTests: XCTestCase {
         let value = 100
         client.gauge(key, delta: value)
 
-        guard let metric = storage.item(forKey: key) else {
+        guard let metric = storage.getAll().first else {
             XCTFail("Metric is nil")
             return
         }
@@ -92,7 +92,7 @@ class StatsDTests: XCTestCase {
         let value: UInt = 100
         client.gauge(key, value: value)
 
-        guard let metric = storage.item(forKey: key) else {
+        guard let metric = storage.getAll().first else {
             XCTFail("Metric is nil")
             return
         }

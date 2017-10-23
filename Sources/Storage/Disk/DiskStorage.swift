@@ -42,7 +42,7 @@ final class DiskStorage<Item: Codable>: Storage {
         }
     }
 
-    func getAllItems() -> [Item] {
+    func getAll() -> [Item] {
         return queue.syncWithReturnedValue {
             guard let items = try? handler.getAll(type: Item.self) else {
                 return []
