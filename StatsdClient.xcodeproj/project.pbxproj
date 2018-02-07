@@ -32,15 +32,6 @@
 		7CB539581F8DF87300B493E5 /* TCPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB539571F8DF87300B493E5 /* TCPTransport.swift */; };
 		7CB539591F8DF87300B493E5 /* TCPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB539571F8DF87300B493E5 /* TCPTransport.swift */; };
 		7CB5395A1F8DF87300B493E5 /* TCPTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB539571F8DF87300B493E5 /* TCPTransport.swift */; };
-		7CC23A811F89D64F008DED42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A801F89D64F008DED42 /* Storage.swift */; };
-		7CC23A821F89D64F008DED42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A801F89D64F008DED42 /* Storage.swift */; };
-		7CC23A831F89D64F008DED42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A801F89D64F008DED42 /* Storage.swift */; };
-		7CC23A891F89D96E008DED42 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A881F89D96E008DED42 /* MemoryStorage.swift */; };
-		7CC23A8A1F89D96E008DED42 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A881F89D96E008DED42 /* MemoryStorage.swift */; };
-		7CC23A8B1F89D96E008DED42 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A881F89D96E008DED42 /* MemoryStorage.swift */; };
-		7CC23A921F89E739008DED42 /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */; };
-		7CC23A931F89E739008DED42 /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */; };
-		7CC23A941F89E739008DED42 /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */; };
 		7CC756281F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
 		7CC756291F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
 		7CC7562A1F88891A00112173 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC756271F88891A00112173 /* Timing.swift */; };
@@ -65,78 +56,6 @@
 		8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
 		8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
-		BA335ADF1F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
-		BA335AE01F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
-		BA335AE11F930810007F8622 /* FlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335ADE1F930810007F8622 /* FlushScheme.swift */; };
-		BA335AEC1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
-		BA335AED1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
-		BA335AEE1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */; };
-		BA335AF01F930905007F8622 /* AppCycleFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */; };
-		BA335AF11F930905007F8622 /* AppCycleFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */; };
-		BA335AF21F930905007F8622 /* AppCycleFlushScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */; };
-		BA335AF41F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
-		BA335AF51F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
-		BA335AF61F930922007F8622 /* Flushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AF31F930922007F8622 /* Flushable.swift */; };
-		BA335AFC1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
-		BA335AFD1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
-		BA335AFE1F930A33007F8622 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA335AFB1F930A33007F8622 /* Flush.swift */; };
-		BA49B31C1F933EC000C92BED /* StatsDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31B1F933EC000C92BED /* StatsDTests.swift */; };
-		BA49B31D1F933EC300C92BED /* StatsDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31B1F933EC000C92BED /* StatsDTests.swift */; };
-		BA49B31E1F933EC300C92BED /* StatsDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31B1F933EC000C92BED /* StatsDTests.swift */; };
-		BA49B3201F93452500C92BED /* FlushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31F1F93452500C92BED /* FlushTests.swift */; };
-		BA49B3211F93452500C92BED /* FlushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31F1F93452500C92BED /* FlushTests.swift */; };
-		BA49B3221F93452500C92BED /* FlushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B31F1F93452500C92BED /* FlushTests.swift */; };
-		BA49B3251F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
-		BA49B3261F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
-		BA49B3271F93481800C92BED /* SpyScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3241F93481800C92BED /* SpyScheme.swift */; };
-		BA49B3291F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
-		BA49B32A1F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
-		BA49B32B1F93483400C92BED /* SpyFlushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */; };
-		BA49B3311F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
-		BA49B3321F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
-		BA49B3331F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */; };
-		BA49B3351F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */; };
-		BA49B3361F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */; };
-		BA49B3371F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */; };
-		BA49B3391F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
-		BA49B33A1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
-		BA49B33B1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */; };
-		BA49B33D1F934B2800C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
-		BA49B33E1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
-		BA49B33F1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */; };
-		BA49B3451F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
-		BA49B3461F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
-		BA49B3471F935D5700C92BED /* MockTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49B3441F935D5700C92BED /* MockTransport.swift */; };
-		BAA3CA371F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
-		BAA3CA381F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
-		BAA3CA391F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */; };
-		BAA3CA3A1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA361F8DC89B004C35F6 /* DiskStorageTests.swift */; };
-		BAA3CA3B1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA361F8DC89B004C35F6 /* DiskStorageTests.swift */; };
-		BAA3CA3C1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA361F8DC89B004C35F6 /* DiskStorageTests.swift */; };
-		BAA3CA3F1F8DC8BD004C35F6 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */; };
-		BAA3CA401F8DC8BD004C35F6 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */; };
-		BAA3CA411F8DC8BE004C35F6 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */; };
-		BAA3CA421F8DC8C0004C35F6 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */; };
-		BAA3CA431F8DC8C0004C35F6 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */; };
-		BAA3CA441F8DC8C1004C35F6 /* DiskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */; };
-		BAA3CA451F8DC8C4004C35F6 /* DiskPersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */; };
-		BAA3CA461F8DC8C4004C35F6 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */; };
-		BAA3CA471F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */; };
-		BAA3CA481F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */; };
-		BAA3CA491F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */; };
-		BAA3CA4A1F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */; };
-		BAA3CA511F8DC8CC004C35F6 /* DirectoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */; };
-		BAA3CA521F8DC8CC004C35F6 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */; };
-		BAA3CA531F8DC8CC004C35F6 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */; };
-		BAA3CA541F8DC8CD004C35F6 /* DirectoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */; };
-		BAA3CA551F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */; };
-		BAA3CA561F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */; };
-		BAA3CA571F8DC8CD004C35F6 /* DirectoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */; };
-		BAA3CA581F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */; };
-		BAA3CA591F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */; };
-		BAA3CA5A1F8DC922004C35F6 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */; };
-		BAA3CA5B1F8DC922004C35F6 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */; };
-		BAA3CA5C1F8DC923004C35F6 /* StubMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */; };
 		DD7502881C68FEDE006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* StatsdClient.framework */; };
 		DD7502921C690C7A006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* StatsdClient.framework */; };
 /* End PBXBuildFile section */
@@ -178,9 +97,6 @@
 		7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Polyfills.swift"; sourceTree = "<group>"; };
 		7C4CA4F31F72CCC400AF5A69 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
 		7CB539571F8DF87300B493E5 /* TCPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPTransport.swift; sourceTree = "<group>"; };
-		7CC23A801F89D64F008DED42 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		7CC23A881F89D96E008DED42 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
-		7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageTests.swift; sourceTree = "<group>"; };
 		7CC756271F88891A00112173 /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 		7CC7562B1F888C6E00112173 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
 		7CCE6AC31F77A3BF00716C0F /* HTTPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTransport.swift; sourceTree = "<group>"; };
@@ -193,30 +109,6 @@
 		8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsdClientTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* StatsdClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClient.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* StatsdClientTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClientTests.plist; sourceTree = "<group>"; };
-		BA335ADE1F930810007F8622 /* FlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushScheme.swift; sourceTree = "<group>"; };
-		BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalFlushScheme.swift; sourceTree = "<group>"; };
-		BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushScheme.swift; sourceTree = "<group>"; };
-		BA335AF31F930922007F8622 /* Flushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flushable.swift; sourceTree = "<group>"; };
-		BA335AFB1F930A33007F8622 /* Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
-		BA49B31B1F933EC000C92BED /* StatsDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsDTests.swift; sourceTree = "<group>"; };
-		BA49B31F1F93452500C92BED /* FlushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlushTests.swift; sourceTree = "<group>"; };
-		BA49B3241F93481800C92BED /* SpyScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyScheme.swift; sourceTree = "<group>"; };
-		BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyFlushDelegate.swift; sourceTree = "<group>"; };
-		BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalFlushSchemeTests.swift; sourceTree = "<group>"; };
-		BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyFlushSchemeDelegate.swift; sourceTree = "<group>"; };
-		BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
-		BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCycleFlushSchemeTests.swift; sourceTree = "<group>"; };
-		BA49B3441F935D5700C92BED /* MockTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransport.swift; sourceTree = "<group>"; };
-		BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
-		BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskError.swift; sourceTree = "<group>"; };
-		BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryType.swift; sourceTree = "<group>"; };
-		BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfigurable.swift; sourceTree = "<group>"; };
-		BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskConfiguration.swift; sourceTree = "<group>"; };
-		BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandler.swift; sourceTree = "<group>"; };
-		BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentHandler.swift; sourceTree = "<group>"; };
-		BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistentHandlerTests.swift; sourceTree = "<group>"; };
-		BAA3CA361F8DC89B004C35F6 /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
-		BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubMetric.swift; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* StatsdClient-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD75028D1C690C7A006590AF /* StatsdClient-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -346,16 +238,6 @@
 			path = TCP;
 			sourceTree = "<group>";
 		};
-		7CC23A7F1F89D641008DED42 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA231F8DC7EE004C35F6 /* Disk */,
-				7CC23A801F89D64F008DED42 /* Storage.swift */,
-				7CC23A881F89D96E008DED42 /* MemoryStorage.swift */,
-			);
-			path = Storage;
-			sourceTree = "<group>";
-		};
 		7CCE6AC81F77A56A00716C0F /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,8 +268,6 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BA335ADC1F9307E7007F8622 /* Flush */,
-				7CC23A7F1F89D641008DED42 /* Storage */,
 				7C105DBE1F655E9500ED2957 /* Transport */,
 				7C105DAB1F6306C600ED2957 /* Metrics */,
 				7C105DB81F630D3700ED2957 /* Extensions */,
@@ -399,90 +279,11 @@
 		8933C7831EB5B7EB000D00A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BA49B3231F93452D00C92BED /* Stub|Mock|Fake|Spy */,
-				BAA3CA3D1F8DC8A2004C35F6 /* Helper */,
-				BAA3CA351F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift */,
-				BAA3CA361F8DC89B004C35F6 /* DiskStorageTests.swift */,
 				8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */,
 				7C105DAC1F6306F000ED2957 /* MetricTests.swift */,
-				7CC23A911F89E739008DED42 /* MemoryStorageTests.swift */,
-				BA49B31B1F933EC000C92BED /* StatsDTests.swift */,
-				BA49B31F1F93452500C92BED /* FlushTests.swift */,
-				BA49B3301F9348A300C92BED /* IntervalFlushSchemeTests.swift */,
-				BA49B33C1F934B2800C92BED /* AppCycleFlushSchemeTests.swift */,
 			);
 			name = Tests;
 			path = Tests/StatsdClientTests;
-			sourceTree = "<group>";
-		};
-		BA335ADC1F9307E7007F8622 /* Flush */ = {
-			isa = PBXGroup;
-			children = (
-				BA335ADD1F9307F0007F8622 /* Scheme */,
-				BA335AFB1F930A33007F8622 /* Flush.swift */,
-				BA335AF31F930922007F8622 /* Flushable.swift */,
-			);
-			path = Flush;
-			sourceTree = "<group>";
-		};
-		BA335ADD1F9307F0007F8622 /* Scheme */ = {
-			isa = PBXGroup;
-			children = (
-				BA335ADE1F930810007F8622 /* FlushScheme.swift */,
-				BA335AEB1F9308BC007F8622 /* IntervalFlushScheme.swift */,
-				BA335AEF1F930905007F8622 /* AppCycleFlushScheme.swift */,
-			);
-			path = Scheme;
-			sourceTree = "<group>";
-		};
-		BA49B3231F93452D00C92BED /* Stub|Mock|Fake|Spy */ = {
-			isa = PBXGroup;
-			children = (
-				BA49B3241F93481800C92BED /* SpyScheme.swift */,
-				BA49B3281F93483400C92BED /* SpyFlushDelegate.swift */,
-				BA49B3341F9348EB00C92BED /* SpyFlushSchemeDelegate.swift */,
-				BA49B3441F935D5700C92BED /* MockTransport.swift */,
-			);
-			path = "Stub|Mock|Fake|Spy";
-			sourceTree = "<group>";
-		};
-		BAA3CA231F8DC7EE004C35F6 /* Disk */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA2F1F8DC858004C35F6 /* Config */,
-				BAA3CA2B1F8DC83F004C35F6 /* Handler */,
-				BAA3CA2A1F8DC834004C35F6 /* DiskError.swift */,
-				BAA3CA291F8DC834004C35F6 /* DiskStorage.swift */,
-			);
-			path = Disk;
-			sourceTree = "<group>";
-		};
-		BAA3CA2B1F8DC83F004C35F6 /* Handler */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA331F8DC87A004C35F6 /* DiskPersistentHandler.swift */,
-				BAA3CA341F8DC87A004C35F6 /* PersistentHandler.swift */,
-			);
-			path = Handler;
-			sourceTree = "<group>";
-		};
-		BAA3CA2F1F8DC858004C35F6 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA301F8DC865004C35F6 /* DirectoryType.swift */,
-				BAA3CA311F8DC865004C35F6 /* DiskConfigurable.swift */,
-				BAA3CA321F8DC865004C35F6 /* DiskConfiguration.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		BAA3CA3D1F8DC8A2004C35F6 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				BAA3CA3E1F8DC8AB004C35F6 /* StubMetric.swift */,
-				BA49B3381F934A9C00C92BED /* XCTestCase+Wait.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
@@ -843,33 +644,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA3CA591F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC11F655F7000ED2957 /* UDPTransport.swift in Sources */,
-				7CC23A811F89D64F008DED42 /* Storage.swift in Sources */,
 				7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
-				BA335AEC1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC756281F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA571F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
-				BAA3CA491F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
-				BA335ADF1F930810007F8622 /* FlushScheme.swift in Sources */,
-				BAA3CA4A1F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */,
-				7CC23A891F89D96E008DED42 /* MemoryStorage.swift in Sources */,
-				BA335AF41F930922007F8622 /* Flushable.swift in Sources */,
 				7C105DB41F630CFE00ED2957 /* Float+Clean.swift in Sources */,
-				BA335AF01F930905007F8622 /* AppCycleFlushScheme.swift in Sources */,
 				7CFC13141F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACA1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
-				BAA3CA411F8DC8BE004C35F6 /* DiskStorage.swift in Sources */,
 				7C105DA71F6304D700ED2957 /* Counting.swift in Sources */,
 				7CC7562C1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CB539581F8DF87300B493E5 /* TCPTransport.swift in Sources */,
 				7CCE6AC41F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA21F6302D700ED2957 /* Metric.swift in Sources */,
-				BAA3CA581F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */,
-				BA335AFC1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BAA3CA441F8DC8C1004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,21 +664,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3201F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B3291F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
-				BAA3CA391F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
-				BAA3CA5A1F8DC922004C35F6 /* StubMetric.swift in Sources */,
-				BA49B3451F935D5700C92BED /* MockTransport.swift in Sources */,
-				BAA3CA3C1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
-				BA49B3311F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
-				BA49B33D1F934B2800C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
-				BA49B3391F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */,
-				BA49B31C1F933EC000C92BED /* StatsDTests.swift in Sources */,
-				7CC23A921F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAD1F6306F000ED2957 /* MetricTests.swift in Sources */,
-				BA49B3251F93481800C92BED /* SpyScheme.swift in Sources */,
-				BA49B3351F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,33 +673,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA3CA531F8DC8CC004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC41F655F7000ED2957 /* UDPTransport.swift in Sources */,
-				7CC23A831F89D64F008DED42 /* Storage.swift in Sources */,
 				7C1942501F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
-				BA335AEE1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA511F8DC8CC004C35F6 /* DirectoryType.swift in Sources */,
-				BAA3CA451F8DC8C4004C35F6 /* DiskPersistentHandler.swift in Sources */,
-				BA335AE11F930810007F8622 /* FlushScheme.swift in Sources */,
-				BAA3CA461F8DC8C4004C35F6 /* PersistentHandler.swift in Sources */,
-				7CC23A8B1F89D96E008DED42 /* MemoryStorage.swift in Sources */,
-				BA335AF61F930922007F8622 /* Flushable.swift in Sources */,
 				7C105DB71F630CFE00ED2957 /* Float+Clean.swift in Sources */,
-				BA335AF21F930905007F8622 /* AppCycleFlushScheme.swift in Sources */,
 				7CFC13171F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACD1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
-				BAA3CA3F1F8DC8BD004C35F6 /* DiskStorage.swift in Sources */,
 				7C105DAA1F6304D700ED2957 /* Counting.swift in Sources */,
 				7CC7562E1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CB5395A1F8DF87300B493E5 /* TCPTransport.swift in Sources */,
 				7CCE6AC71F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA51F6302D700ED2957 /* Metric.swift in Sources */,
-				BAA3CA521F8DC8CC004C35F6 /* DiskConfigurable.swift in Sources */,
-				BA335AFE1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F71F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BAA3CA421F8DC8C0004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,33 +693,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA3CA561F8DC8CD004C35F6 /* DiskConfiguration.swift in Sources */,
 				7C105DC21F655F7000ED2957 /* UDPTransport.swift in Sources */,
-				7CC23A821F89D64F008DED42 /* Storage.swift in Sources */,
 				7C19424F1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
-				BA335AED1F9308BC007F8622 /* IntervalFlushScheme.swift in Sources */,
 				7CC756291F88891A00112173 /* Timing.swift in Sources */,
-				BAA3CA541F8DC8CD004C35F6 /* DirectoryType.swift in Sources */,
-				BAA3CA471F8DC8C5004C35F6 /* DiskPersistentHandler.swift in Sources */,
-				BA335AE01F930810007F8622 /* FlushScheme.swift in Sources */,
-				BAA3CA481F8DC8C5004C35F6 /* PersistentHandler.swift in Sources */,
-				7CC23A8A1F89D96E008DED42 /* MemoryStorage.swift in Sources */,
-				BA335AF51F930922007F8622 /* Flushable.swift in Sources */,
 				7C105DB51F630CFE00ED2957 /* Float+Clean.swift in Sources */,
-				BA335AF11F930905007F8622 /* AppCycleFlushScheme.swift in Sources */,
 				7CFC13151F66C81A003BF478 /* Transport.swift in Sources */,
 				7CCE6ACB1F77A57D00716C0F /* URLSessionDataProtocol.swift in Sources */,
-				BAA3CA401F8DC8BD004C35F6 /* DiskStorage.swift in Sources */,
 				7C105DA81F6304D700ED2957 /* Counting.swift in Sources */,
 				7CC7562D1F888C6E00112173 /* Gauge.swift in Sources */,
 				7CB539591F8DF87300B493E5 /* TCPTransport.swift in Sources */,
 				7CCE6AC51F77A3BF00716C0F /* HTTPTransport.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* StatsD.swift in Sources */,
 				7C105DA31F6302D700ED2957 /* Metric.swift in Sources */,
-				BAA3CA551F8DC8CD004C35F6 /* DiskConfigurable.swift in Sources */,
-				BA335AFD1F930A33007F8622 /* Flush.swift in Sources */,
 				7C4CA4F51F72CCC400AF5A69 /* Sets.swift in Sources */,
-				BAA3CA431F8DC8C0004C35F6 /* DiskError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,21 +713,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3211F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B32A1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
-				BAA3CA371F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
-				BAA3CA5B1F8DC922004C35F6 /* StubMetric.swift in Sources */,
-				BA49B3461F935D5700C92BED /* MockTransport.swift in Sources */,
-				BAA3CA3A1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
-				BA49B3321F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
-				BA49B33F1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
-				BA49B33A1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
-				BA49B31D1F933EC300C92BED /* StatsDTests.swift in Sources */,
-				7CC23A931F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAE1F6306F000ED2957 /* MetricTests.swift in Sources */,
-				BA49B3261F93481800C92BED /* SpyScheme.swift in Sources */,
-				BA49B3361F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,21 +722,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA49B3221F93452500C92BED /* FlushTests.swift in Sources */,
-				BA49B32B1F93483400C92BED /* SpyFlushDelegate.swift in Sources */,
-				BAA3CA381F8DC89B004C35F6 /* DiskPersistentHandlerTests.swift in Sources */,
-				BAA3CA5C1F8DC923004C35F6 /* StubMetric.swift in Sources */,
-				BA49B3471F935D5700C92BED /* MockTransport.swift in Sources */,
-				BAA3CA3B1F8DC89B004C35F6 /* DiskStorageTests.swift in Sources */,
-				BA49B3331F9348A300C92BED /* IntervalFlushSchemeTests.swift in Sources */,
-				BA49B33E1F934B2D00C92BED /* AppCycleFlushSchemeTests.swift in Sources */,
-				BA49B33B1F934A9C00C92BED /* XCTestCase+Wait.swift in Sources */,
 				8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
-				BA49B31E1F933EC300C92BED /* StatsDTests.swift in Sources */,
-				7CC23A941F89E739008DED42 /* MemoryStorageTests.swift in Sources */,
 				7C105DAF1F6306F000ED2957 /* MetricTests.swift in Sources */,
-				BA49B3271F93481800C92BED /* SpyScheme.swift in Sources */,
-				BA49B3371F9348EB00C92BED /* SpyFlushSchemeDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,67 +22,32 @@ protocol StatsdProtocol {
 public class StatsD: NSObject, StatsdProtocol {
 
     let transport: Transport
-    private let storage: MemoryStorage<Metric>
-    private var flush: Flushable
 
-    public convenience init(transport: Transport) {
-        let storage = MemoryStorage<Metric>()
-        let schemes: [FlushScheme] = [AppCycleFlushScheme(),
-                                      IntervalFlushScheme(),
-                                      ]
-        let flush = Flush(schemes: schemes)
-        self.init(transport: transport, storage: storage, flush: flush)
-    }
-
-    init(transport: Transport, storage: MemoryStorage<Metric>, flush: Flushable) {
+    init(transport: Transport) {
         self.transport = transport
-        self.flush = flush
-        self.storage = storage
-        super.init()
-
-        self.flush.delegate = self
-        flush.start()
     }
 
     public func increment(_ bucket: String, by value: Int = 1) {
-        storage.set(item: Counting(name: bucket, value: "\(value)"), forKey: bucket)
+        transport.write(data: Counting(name: bucket, value: "\(value)").metricData, completion: nil)
     }
 
     public func set(_ bucket: String, value: String) {
-        storage.set(item: Sets(name: bucket, value: value), forKey: bucket)
+        transport.write(data: Sets(name: bucket, value: value).metricData, completion: nil)
     }
 
     public func timing(_ bucket: String, value: Int) {
-        storage.set(item: Timing(name: bucket, value: value), forKey: bucket)
+        transport.write(data: Timing(name: bucket, value: value).metricData, completion: nil)
     }
 
     public func gauge(_ bucket: String, value: UInt) {
-        storage.set(item: Gauge(name: bucket, value: value), forKey: bucket)
+        transport.write(data: Gauge(name: bucket, value: value).metricData, completion: nil)
     }
 
     public func gauge(_ bucket: String, delta: Int) {
-        storage.set(item: Gauge(name: bucket, delta: delta), forKey: bucket)
+        transport.write(data: Gauge(name: bucket, delta: delta).metricData, completion: nil)
     }
-}
-
-extension StatsD: FlushDelegate {
-
-    func flush(_ sender: Flushable) {
-        guard !storage.isEmpty else {
-            return
-        }
-
-        let batch = StatsD.accumulate(metrics: storage.getAllItems())
-        transport.write(data: batch) {[unowned self] (error) in
-            guard error == nil else {
-                return
-            }
-            self.storage.removeAll()
-        }
-    }
-
-    private static func accumulate(metrics: [Metric]) -> String {
-        return metrics.map { $0.metricData }
-            .joined(separator: "\n")
+    
+    public func write(metricData: String) {
+        transport.write(data: metricData, completion: nil)
     }
 }

@@ -55,6 +55,7 @@ statsD.set("uniques", value: "someUniqueValue") # Add 'someUniqueValue' to the s
 statsD.timing("api.foo.bar", value: 320) # Set time for api.foo.bar
 statsD.gauge("gaugor", value: 10) # Set gauge to 10
 statsD.gauge("gaugor", delta: -10) # Decrement gauge by 10
+statsD.write(metricData: "foo:1|c") # Send raw metric data if you know what you're doing
 ```
 
 ## Installation

@@ -25,7 +25,7 @@ public class UDPTransport: NSObject, Transport {
         super.init()
     }
 
-    public func write(data: String, completion: TransportCompletionCallback?) {
+    func write(data: String, completion: TransportCompletionCallback?) {
         guard let data = data.data(using: String.Encoding.utf8) else {
             completion?(TransportError.invalidData)
             return
