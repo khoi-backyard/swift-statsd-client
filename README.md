@@ -1,6 +1,6 @@
 # swift-statsd-client
 
-[![CircleCI](https://circleci.com/gh/khoiracle/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiracle/swift-statsd-client)
+[![CircleCI](https://circleci.com/gh/zalora/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/zalora/swift-statsd-client)
 
 A Statsd Client written in Swift that is transport protocol agnostic. UDP and HTTP are supported out of the box.
 
@@ -84,7 +84,7 @@ statsD.write(payload: "foo:1|c")
 To integrate StatsD into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "khoiracle/swift-statsd-client"
+github "zalora/swift-statsd-client"
 ```
 
 The project is currently configured to build for iOS, tvOS and Mac. After building with carthage the resultant frameworks will be stored in:
@@ -99,8 +99,8 @@ Select the correct framework(s) and drag it into your project.
 
 ## Contributing
 
-See [Contributing](https://github.com/khoiracle/swift-statsd-client/blob/master/CONTRIBUTING.md).
+See [Contributing](https://github.com/zalora/swift-statsd-client/blob/master/CONTRIBUTING.md).
 
 ## License
 
-swift-statsd-client is released under the MIT license. See [LICENSE](https://github.com/khoiracle/swift-statsd-client/blob/master/LICENSE) for details.
+swift-statsd-client is released under the MIT license. See [LICENSE](https://github.com/zalora/swift-statsd-client/blob/master/LICENSE) for details.
