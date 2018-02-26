@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Timing: Metric, Codable {
-    public var name: String
-    public var value: String
-    public var sample: Float?
+    var name: String
+    var value: String
+    var sample: Float?
 
     init(name: String, value: Int, sample: Float? = nil) {
         self.init(name: name, value: "\(value)", sample: sample)

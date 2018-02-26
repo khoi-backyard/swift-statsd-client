@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Gauge: Metric, Codable {
-    public var name: String
-    public var value: String
-    public let sample: Float? = nil
+    var name: String
+    var value: String
+    let sample: Float? = nil
 
     private init(name: String, value: String) {
         self.name = name
