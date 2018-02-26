@@ -56,9 +56,6 @@
 		8933C7851EB5B820000D00A4 /* StatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* StatsD.swift */; };
 		8933C7861EB5B820000D00A4 /* StatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* StatsD.swift */; };
 		8933C7881EB5B820000D00A4 /* StatsD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* StatsD.swift */; };
-		8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
-		8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
-		8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */; };
 		DD7502881C68FEDE006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* StatsdClient.framework */; };
 		DD7502921C690C7A006590AF /* StatsdClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* StatsdClient.framework */; };
 /* End PBXBuildFile section */
@@ -110,7 +107,6 @@
 		7CE317001F8659EE00EB637A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		7CFC13131F66C81A003BF478 /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* StatsD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsD.swift; sourceTree = "<group>"; };
-		8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsdClientTests.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* StatsdClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClient.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* StatsdClientTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StatsdClientTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* StatsdClient-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StatsdClient-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +280,6 @@
 		8933C7831EB5B7EB000D00A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8933C7891EB5B82A000D00A4 /* StatsdClientTests.swift */,
 				7C105DAC1F6306F000ED2957 /* MetricTests.swift */,
 			);
 			name = Tests;
@@ -670,7 +665,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C7901EB5B82D000D00A4 /* StatsdClientTests.swift in Sources */,
 				7C105DAD1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -721,7 +715,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C78F1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				7C105DAE1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -730,7 +723,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8933C78E1EB5B82C000D00A4 /* StatsdClientTests.swift in Sources */,
 				7C105DAF1F6306F000ED2957 /* MetricTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
