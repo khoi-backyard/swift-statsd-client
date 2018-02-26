@@ -1,3 +1,5 @@
+# Use [zalora/swift-statsd-client](https://github.com/zalora/swift-statsd-client) for the updated version.
+
 # swift-statsd-client
 
 [![CircleCI](https://circleci.com/gh/khoiracle/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiracle/swift-statsd-client)
