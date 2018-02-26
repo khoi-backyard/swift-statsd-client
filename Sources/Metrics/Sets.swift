@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct Sets: Metric, Codable {
-    var name: String
-    var value: String
-    let sample: Float? = nil
+public struct Sets: Metric, Codable {
+    public var name: String
+    public var value: String
+    public let sample: Float? = nil
 
     init(name: String, value: String) {
         self.name = name
         self.value = value
     }
 
-    var metricData: String {
+    public var metricData: String {
         return "\(name):\(value)|s"
     }
 }

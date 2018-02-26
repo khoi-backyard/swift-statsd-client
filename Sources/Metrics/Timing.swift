@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Timing: Metric, Codable {
-    var name: String
-    var value: String
-    var sample: Float?
+public struct Timing: Metric, Codable {
+    public var name: String
+    public var value: String
+    public var sample: Float?
 
     init(name: String, value: Int, sample: Float? = nil) {
         self.init(name: name, value: "\(value)", sample: sample)
@@ -23,7 +23,7 @@ struct Timing: Metric, Codable {
         self.sample = sample
     }
 
-    var metricData: String {
+    public var metricData: String {
         if let sample = sample {
             return "\(name):\(value)|ms|@\(sample.clean)"
         }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Gauge: Metric, Codable {
-    var name: String
-    var value: String
-    let sample: Float? = nil
+public struct Gauge: Metric, Codable {
+    public var name: String
+    public var value: String
+    public let sample: Float? = nil
 
     private init(name: String, value: String) {
         self.name = name
@@ -27,7 +27,7 @@ struct Gauge: Metric, Codable {
         self.init(name: name, value: "\(prefix)\(abs(delta))")
     }
 
-    var metricData: String {
+    public var metricData: String {
         return "\(name):\(value)|g"
     }
 }
