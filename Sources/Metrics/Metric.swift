@@ -9,8 +9,5 @@
 import Foundation
 
 public protocol Metric {
-    var name: String { get }
-    var value: String { get }
     var metricData: String { get }
-    var sample: Float? { get }
 }

@@ -48,6 +48,17 @@ let statsD: StatsD = {
 
 ### Sending Data
 
+Sending metrics
+```swift
+statsD.write(metric: Counting(name: "counting", value: 1))
+statsD.write(metric: Sets(name: "uniques", value: "765"))
+statsD.write(metric: Timing(name: "glork", value: 320))
+statsD.write(metric: Gauge(name: "gaugor", value: 333))
+```
+
+Sending metrics in batch - Keep in mind of your network's MTU [Ref](https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets)
+
+There are helper functions so you don't have to create metric models.
 ```swift
 statsD.increment("foo") # Increment 'foo' by 1
 statsD.increment("foo", by: 10) # Increment 'foo' by 10
@@ -55,8 +66,14 @@ statsD.set("uniques", value: "someUniqueValue") # Add 'someUniqueValue' to the s
 statsD.timing("api.foo.bar", value: 320) # Set time for api.foo.bar
 statsD.gauge("gaugor", value: 10) # Set gauge to 10
 statsD.gauge("gaugor", delta: -10) # Decrement gauge by 10
-statsD.write(metricData: "foo:1|c") # Send raw metric data if you know what you're doing
 ```
+
+And if you want to send raw metric data
+```
+statsD.write(payload: "foo:1|c") 
+```
+
+### Accessing
 
 ## Installation
 

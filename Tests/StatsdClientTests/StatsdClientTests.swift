@@ -12,7 +12,8 @@ import XCTest
 class StatsdClientTests: XCTestCase {
 
     func testExample() {
-        
+        let statsD = StatsD(transport: TCPTransport(host: "ASD", port: 80))
+        statsD.write(metric: Counting(name: "counting", value: 1))
     }
 
     static var allTests = [

@@ -26,6 +26,9 @@
 		7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */; };
 		7C19424F1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */; };
 		7C1942501F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */; };
+		7C4098DF20440DFA0075D96E /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4098DE20440DFA0075D96E /* Batch.swift */; };
+		7C4098E020440DFA0075D96E /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4098DE20440DFA0075D96E /* Batch.swift */; };
+		7C4098E120440DFA0075D96E /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4098DE20440DFA0075D96E /* Batch.swift */; };
 		7C4CA4F41F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
 		7C4CA4F51F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
 		7C4CA4F71F72CCC400AF5A69 /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CA4F31F72CCC400AF5A69 /* Sets.swift */; };
@@ -95,6 +98,7 @@
 		7C105DB31F630CFE00ED2957 /* Float+Clean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Clean.swift"; sourceTree = "<group>"; };
 		7C105DC01F655F7000ED2957 /* UDPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPTransport.swift; sourceTree = "<group>"; };
 		7C19424D1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Polyfills.swift"; sourceTree = "<group>"; };
+		7C4098DE20440DFA0075D96E /* Batch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
 		7C4CA4F31F72CCC400AF5A69 /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
 		7CB539571F8DF87300B493E5 /* TCPTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPTransport.swift; sourceTree = "<group>"; };
 		7CC756271F88891A00112173 /* Timing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				7C4CA4F31F72CCC400AF5A69 /* Sets.swift */,
 				7CC756271F88891A00112173 /* Timing.swift */,
 				7CC7562B1F888C6E00112173 /* Gauge.swift */,
+				7C4098DE20440DFA0075D96E /* Batch.swift */,
 			);
 			path = Metrics;
 			sourceTree = "<group>";
@@ -646,6 +651,7 @@
 			files = (
 				7C105DC11F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7C19424E1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
+				7C4098DF20440DFA0075D96E /* Batch.swift in Sources */,
 				7CC756281F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB41F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13141F66C81A003BF478 /* Transport.swift in Sources */,
@@ -675,6 +681,7 @@
 			files = (
 				7C105DC41F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7C1942501F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
+				7C4098E120440DFA0075D96E /* Batch.swift in Sources */,
 				7CC7562A1F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB71F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13171F66C81A003BF478 /* Transport.swift in Sources */,
@@ -695,6 +702,7 @@
 			files = (
 				7C105DC21F655F7000ED2957 /* UDPTransport.swift in Sources */,
 				7C19424F1F89F4B700D38DCF /* DispatchQueue+Polyfills.swift in Sources */,
+				7C4098E020440DFA0075D96E /* Batch.swift in Sources */,
 				7CC756291F88891A00112173 /* Timing.swift in Sources */,
 				7C105DB51F630CFE00ED2957 /* Float+Clean.swift in Sources */,
 				7CFC13151F66C81A003BF478 /* Transport.swift in Sources */,

@@ -91,6 +91,7 @@ class MetricTests: XCTestCase {
         XCTAssertEqual(Gauge(name: "gaugor", delta: 0).metricData, "gaugor:+0|g")
         XCTAssertEqual(Gauge(name: "gaugor", delta: 123).metricData, "gaugor:+123|g")
         XCTAssertEqual(Gauge(name: "gaugor", delta: -234).metricData, "gaugor:-234|g")
+        XCTAssertEqual(Gauge(name: "gaugor", delta: 333).metricData, "gaugor:+333|g")
 
         let gaugor = Gauge(name: "gaugor", delta: -234)
         if let jsonData = try? jsonEncoder.encode(gaugor),
@@ -104,12 +105,23 @@ class MetricTests: XCTestCase {
             XCTFail("Failed to encode \(gaugor)")
         }
     }
+    
+    func testBatch() {
+        let count = Counting(name: "gorets", value: 1)
+        let timer = Timing(name: "glork", value: 320)
+        let gauge = Gauge(name: "gaugor", value: 333)
+        let unique = Sets(name: "uniques", value: "765")
+        let batch = Batch(metrics: count, timer, gauge, unique)
+        let expected = "gorets:1|c\nglork:320|ms\ngaugor:333|g\nuniques:765|s"
+        XCTAssertEqual(batch.metricData, expected)
+    }
 
     static var allTests = [
         ("testCounting", testCounting),
         ("testSet", testSet),
         ("testTiming", testTiming),
         ("testGauge", testGauge),
+        ("testBatch", testBatch),
     ]
 
 }
