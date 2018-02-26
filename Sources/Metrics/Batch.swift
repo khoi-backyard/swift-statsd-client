@@ -9,9 +9,9 @@
 import Foundation
 
 public struct Batch: Metric {
-    
+
     public var metricData: String
-    
+
     init(metrics: Metric...) {
         metricData = ""
         for (i, m) in metrics.enumerated() {

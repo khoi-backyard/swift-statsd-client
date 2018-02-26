@@ -46,11 +46,11 @@ public class StatsD: NSObject, StatsdProtocol {
     public func gauge(_ bucket: String, delta: Int) {
         transport.write(data: Gauge(name: bucket, delta: delta).metricData, completion: nil)
     }
-    
+
     public func write(metric: Metric) {
         transport.write(data: metric.metricData, completion: nil)
     }
-    
+
     public func write(payload: String) {
         transport.write(data: payload, completion: nil)
     }

@@ -23,7 +23,7 @@ class MetricTests: XCTestCase {
     }
 
     func testCounting() {
-        
+
         XCTAssertEqual(Counting(name: "gorets", value: 1).metricData, "gorets:1|c")
         XCTAssertEqual(Counting(name: "gorets", value: -5).metricData, "gorets:-5|c")
         XCTAssertEqual(Counting(name: "gorets", value: 0).metricData, "gorets:0|c")
@@ -105,7 +105,7 @@ class MetricTests: XCTestCase {
             XCTFail("Failed to encode \(gaugor)")
         }
     }
-    
+
     func testBatch() {
         let count = Counting(name: "gorets", value: 1)
         let timer = Timing(name: "glork", value: 320)
