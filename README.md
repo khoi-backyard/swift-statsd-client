@@ -77,8 +77,6 @@ And if you want to send raw metric data
 statsD.write(payload: "foo:1|c") 
 ```
 
-### Accessing
-
 ## Installation
 
 ### Carthage
