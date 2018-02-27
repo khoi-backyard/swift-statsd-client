@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-fn-6J6">
+                                <rect key="frame" x="166" y="397" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="example_count" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rwe-ds-E9d">
+                                <rect key="frame" x="208" y="88" width="139" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSR-GM-99x">
+                                <rect key="frame" x="40" y="88" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="76s-aP-ZlD"/>
+                                </constraints>
+                                <state key="normal" title="Increment Bucket"/>
+                                <connections>
+                                    <action selector="countPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGS-3R-Uh3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wMu-fn-6J6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V9w-uP-xCF"/>
+                            <constraint firstItem="wMu-fn-6J6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="377" id="WaK-eC-yfE"/>
+                            <constraint firstItem="Rwe-ds-E9d" firstAttribute="leading" secondItem="sSR-GM-99x" secondAttribute="trailing" constant="47" id="bSh-kt-yoE"/>
+                            <constraint firstItem="sSR-GM-99x" firstAttribute="top" secondItem="Rwe-ds-E9d" secondAttribute="top" id="cRD-K0-6UI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rwe-ds-E9d" secondAttribute="trailing" constant="28" id="cby-Tq-FlB"/>
+                            <constraint firstItem="sSR-GM-99x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="dGf-7m-fao"/>
+                            <constraint firstItem="sSR-GM-99x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="zgz-ik-Y1Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="countBucketLabel" destination="Rwe-ds-E9d" id="43o-ee-PTm"/>
+                        <outlet property="statusLabel" destination="wMu-fn-6J6" id="cpO-uk-Eoc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="29.23538230884558"/>
+        </scene>
+    </scenes>
+</document>
