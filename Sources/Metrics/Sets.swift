@@ -11,7 +11,6 @@ import Foundation
 public struct Sets: Metric, Codable {
     let name: String
     let value: String
-    let sample: Float? = nil
 
     init(name: String, value: String) {
         self.name = name
