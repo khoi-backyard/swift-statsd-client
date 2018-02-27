@@ -17,7 +17,22 @@ public class UDPTransport: NSObject, Transport {
                           delegateQueue: DispatchQueue(label: "UDPClient_Delegate_Queue"))
     }()
     private var completionBlocks = [Int: TransportCompletionCallback]()
+    private let completionLock = NSLock()
     private var tag: Int = 0
+
+    /// Access the completion block in a thread-safe manner.
+    subscript(tag: Int) -> TransportCompletionCallback? {
+        get {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            return completionBlocks[tag]
+        }
+        set {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            completionBlocks[tag] = newValue
+        }
+    }
 
     public init(host: String, port: UInt16) {
         self.host = host
@@ -36,7 +51,7 @@ public class UDPTransport: NSObject, Transport {
         }
         tag += 1
 
-        completionBlocks[tag] = completion
+        self[tag] = completion
 
         socket.send(data,
                     toHost: host,
@@ -48,19 +63,19 @@ public class UDPTransport: NSObject, Transport {
 
 extension UDPTransport: GCDAsyncUdpSocketDelegate {
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didSendDataWithTag tag: Int) {
-        guard let callback = completionBlocks[tag] else {
+        guard self[tag] != nil else {
             return
         }
-        callback(nil)
-        completionBlocks[tag] = nil
+        self[tag]?(nil)
+        self[tag] = nil
     }
 
     public func udpSocket(_ sock: GCDAsyncUdpSocket, didNotSendDataWithTag tag: Int, dueToError error: Error?) {
-        guard let callback = completionBlocks[tag] else {
+        guard self[tag] != nil else {
             return
         }
 
-        callback(error)
-        completionBlocks[tag] = nil
+        self[tag]?(error)
+        self[tag] = nil
     }
 }

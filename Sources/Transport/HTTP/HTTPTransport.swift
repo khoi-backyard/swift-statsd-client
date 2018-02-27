@@ -20,6 +20,22 @@ public class HTTPTransport: NSObject, Transport {
     }()
 
     private var completionBlocks = [Int: TransportCompletionCallback]()
+    private var completionLock = NSLock()
+
+    /// Access the completion block in a thread-safe manner.
+    subscript(tag: Int) -> TransportCompletionCallback? {
+        get {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            return completionBlocks[tag]
+        }
+        set {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            completionBlocks[tag] = newValue
+        }
+    }
+
     private let configuration: URLSessionConfiguration
 
     public init(endpoint: URL,
@@ -42,17 +58,17 @@ public class HTTPTransport: NSObject, Transport {
 
         let task = urlSession.dataTask(with: request)
 
-        completionBlocks[task.taskIdentifier] = completion
+        self[task.taskIdentifier] = completion
         task.resume()
     }
 }
 
 extension HTTPTransport: URLSessionDataDelegate {
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        guard let callback = completionBlocks[task.taskIdentifier] else {
+        guard self[task.taskIdentifier] != nil else {
             return
         }
-        callback(error)
-        completionBlocks[task.taskIdentifier] = nil
+        self[task.taskIdentifier]?(error)
+        self[task.taskIdentifier] = nil
     }
 }
