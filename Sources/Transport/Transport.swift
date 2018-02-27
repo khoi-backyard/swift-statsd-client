@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias TransportCompletionCallback = (Error?) -> Void
+public typealias TransportCompletionCallback = (Error?) -> Void
 
 enum TransportError: Error {
     case invalidData
     case timeout
 }
 
-protocol Transport {
+public protocol Transport {
     func write(data: String, completion: TransportCompletionCallback?)
 }

@@ -26,7 +26,7 @@ public class HTTPTransport: NSObject, Transport {
         self.configuration = configuration
     }
 
-    func write(data: String, completion: TransportCompletionCallback?) {
+    public func write(data: String, completion: TransportCompletionCallback?) {
         guard let data = data.data(using: String.Encoding.utf8) else {
             completion?(TransportError.invalidData)
             return
