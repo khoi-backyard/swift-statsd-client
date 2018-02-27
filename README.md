@@ -32,8 +32,10 @@ let statsD = StatsD(transport: TCPTransport(host: "localhost", port: 2003))
 ```
 
 HTTP CLient
+
+_Use [docker-graphite-statsd](https://github.com/khoiracle/docker-graphite-statsd) Docker's image to test the HTTP interface_
 ```swift
-let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!)
+let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8127/statsd")!)
 ```
 
 And if you want to customize your HTTP request
@@ -41,7 +43,7 @@ And if you want to customize your HTTP request
 let statsD: StatsD = {
     let configuration = URLSessionConfiguration()
     configuration.httpAdditionalHeaders = ["token": "Some Super Secret Token"]
-    return StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!,
+    return StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8127/statsd")!,
                                       configuration: configuration))
 }()
 ```
