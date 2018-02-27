@@ -12,12 +12,14 @@ import XCTest
 class FloatExtensionsTests: XCTestCase {
 
     func testClean() {
-        let a: Float = 0.30
-        let b: Float = 0.31
-        XCTAssertEqual(a.clean, "0.3")
-        XCTAssertEqual(b.clean, "0.31")
-        
-        
+        XCTAssertEqual(Float(0.30).clean, "0.3")
+        XCTAssertEqual(Float(0.300).clean, "0.3")
+        XCTAssertEqual(Float(0.3000).clean, "0.3")
+        XCTAssertEqual(Float(0.30001).clean, "0.30001")
+
+        XCTAssertEqual(Float(0.31).clean, "0.31")
+        XCTAssertEqual(Float(0.310).clean, "0.31")
+        XCTAssertEqual(Float(0.3101).clean, "0.3101")
     }
 
 }
