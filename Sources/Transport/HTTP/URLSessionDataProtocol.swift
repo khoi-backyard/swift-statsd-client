@@ -18,8 +18,8 @@ public protocol URLSessionDataProtocol {
 
 extension URLSession: URLSessionDataProtocol {
     public func getDataTasks(completion: @escaping ([URLSessionDataTask]) -> Void) {
-        getTasksWithCompletionHandler { (datas, _, _) in
-            completion(datas)
+        getTasksWithCompletionHandler { (dataTasks, _, _) in
+            completion(dataTasks)
         }
     }
 }
