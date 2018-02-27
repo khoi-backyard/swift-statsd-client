@@ -10,6 +10,7 @@ import Foundation
 
 public class HTTPTransport: NSObject, Transport {
     let endpoint: URL
+    let httpMethod: String
 
     lazy var urlSession: URLSessionDataProtocol = {
         let session = URLSession(configuration: configuration,
@@ -21,9 +22,12 @@ public class HTTPTransport: NSObject, Transport {
     private var completionBlocks = [Int: TransportCompletionCallback]()
     private let configuration: URLSessionConfiguration
 
-    public init(endpoint: URL, configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
+    public init(endpoint: URL,
+                httpMethod: String = "POST",
+                configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
         self.endpoint = endpoint
         self.configuration = configuration
+        self.httpMethod = httpMethod
     }
 
     public func write(data: String, completion: TransportCompletionCallback?) {
@@ -33,7 +37,7 @@ public class HTTPTransport: NSObject, Transport {
         }
 
         var request = URLRequest(url: endpoint)
-        request.httpMethod = "POST"
+        request.httpMethod = httpMethod
         request.httpBody = data
 
         let task = urlSession.dataTask(with: request)
