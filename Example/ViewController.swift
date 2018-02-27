@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StatsdClient
+import StatsDClient
 
 class ViewController: UIViewController {
     

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
                BuildableName = "StatsdClient.framework"
-               BlueprintName = "StatsdClient-tvOS"
-               ReferencedContainer = "container:StatsdClient.xcodeproj">
+               BlueprintName = "StatsDClient-tvOS"
+               ReferencedContainer = "container:StatsDClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD75028C1C690C7A006590AF"
-               BuildableName = "StatsdClient-tvOS Tests.xctest"
-               BlueprintName = "StatsdClient-tvOS Tests"
-               ReferencedContainer = "container:StatsdClient.xcodeproj">
+               BuildableName = "StatsDClient-tvOS Tests.xctest"
+               BlueprintName = "StatsDClient-tvOS Tests"
+               ReferencedContainer = "container:StatsDClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,8 +45,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
             BuildableName = "StatsdClient.framework"
-            BlueprintName = "StatsdClient-tvOS"
-            ReferencedContainer = "container:StatsdClient.xcodeproj">
+            BlueprintName = "StatsDClient-tvOS"
+            ReferencedContainer = "container:StatsDClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,8 +68,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
             BuildableName = "StatsdClient.framework"
-            BlueprintName = "StatsdClient-tvOS"
-            ReferencedContainer = "container:StatsdClient.xcodeproj">
+            BlueprintName = "StatsDClient-tvOS"
+            ReferencedContainer = "container:StatsDClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -86,8 +86,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
             BuildableName = "StatsdClient.framework"
-            BlueprintName = "StatsdClient-tvOS"
-            ReferencedContainer = "container:StatsdClient.xcodeproj">
+            BlueprintName = "StatsDClient-tvOS"
+            ReferencedContainer = "container:StatsDClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

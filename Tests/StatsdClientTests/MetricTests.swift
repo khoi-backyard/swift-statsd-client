@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import StatsdClient
+@testable import StatsDClient
 
 class MetricTests: XCTestCase {
 
