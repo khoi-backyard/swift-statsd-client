@@ -10,7 +10,7 @@ import Foundation
 
 public typealias StatsDCompletionCallback = (_ succes: Bool) -> Void
 
-protocol StatsdProtocol {
+protocol StatsDProtocol {
 
     var transport: Transport { get }
 
@@ -21,7 +21,7 @@ protocol StatsdProtocol {
     func gauge(_ bucket: String, delta: Int, completion: StatsDCompletionCallback?)
 }
 
-public class StatsD: NSObject, StatsdProtocol {
+public class StatsD: NSObject, StatsDProtocol {
 
     let transport: Transport
 
