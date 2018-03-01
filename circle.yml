@@ -8,15 +8,12 @@ machine:
 
 dependencies:
   override:
-    - brew install swiftlint
-    - bundle install
-    - carthage bootstrap --platform iOS
+    - ./bin/bootstrap-carthage.sh
   cache_directories:
     - "Carthage" # Cache carthage to speed up builds.
 
 test:
   override:
-    - bundle exec danger
     - set -o pipefail &&
       xcodebuild
         CODE_SIGNING_REQUIRED=NO

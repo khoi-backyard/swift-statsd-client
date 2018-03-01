@@ -2,7 +2,7 @@
 
 # swift-statsd-client
 
-[![CircleCI](https://circleci.com/gh/khoiracle/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/khoiracle/swift-statsd-client)
+[![CircleCI](https://circleci.com/gh/zalora/swift-statsd-client.svg?style=svg)](https://circleci.com/gh/zalora/swift-statsd-client)
 
 A Statsd Client written in Swift that is transport protocol agnostic. UDP and HTTP are supported out of the box.
 
@@ -34,8 +34,10 @@ let statsD = StatsD(transport: TCPTransport(host: "localhost", port: 2003))
 ```
 
 HTTP CLient
+
+_Use [docker-graphite-statsd](https://github.com/khoiracle/docker-graphite-statsd) Docker's image to test the HTTP interface_
 ```swift
-let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!)
+let statsD = StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8127/statsd")!)
 ```
 
 And if you want to customize your HTTP request
@@ -43,7 +45,7 @@ And if you want to customize your HTTP request
 let statsD: StatsD = {
     let configuration = URLSessionConfiguration()
     configuration.httpAdditionalHeaders = ["token": "Some Super Secret Token"]
-    return StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8888/statsd")!,
+    return StatsD(transport: HTTPTransport(endpoint: URL(string: "https://localhost:8127/statsd")!,
                                       configuration: configuration))
 }()
 ```
@@ -58,7 +60,11 @@ statsD.write(metric: Timing(name: "glork", value: 320))
 statsD.write(metric: Gauge(name: "gaugor", value: 333))
 ```
 
-Sending metrics in batch - Keep in mind of your network's MTU [Ref](https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets)
+Sending metrics in batch - Keep in mind of your network's MTU. [See References](https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets)
+```swift
+let batchMetric = Batch(metrics: count, timer, gauge, unique)
+statsD.write(metric: batchMetric)
+```
 
 There are helper functions so you don't have to create metric models.
 ```swift
@@ -71,11 +77,9 @@ statsD.gauge("gaugor", delta: -10) # Decrement gauge by 10
 ```
 
 And if you want to send raw metric data
-```
+```swift
 statsD.write(payload: "foo:1|c") 
 ```
-
-### Accessing
 
 ## Installation
 
@@ -86,7 +90,7 @@ statsD.write(payload: "foo:1|c")
 To integrate StatsD into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "khoiracle/swift-statsd-client"
+github "zalora/swift-statsd-client"
 ```
 
 The project is currently configured to build for iOS, tvOS and Mac. After building with carthage the resultant frameworks will be stored in:
@@ -101,8 +105,8 @@ Select the correct framework(s) and drag it into your project.
 
 ## Contributing
 
-See [Contributing](https://github.com/khoiracle/swift-statsd-client/blob/master/CONTRIBUTING.md).
+See [Contributing](https://github.com/zalora/swift-statsd-client/blob/master/CONTRIBUTING.md).
 
 ## License
 
-swift-statsd-client is released under the MIT license. See [LICENSE](https://github.com/khoiracle/swift-statsd-client/blob/master/LICENSE) for details.
+swift-statsd-client is released under the MIT license. See [LICENSE](https://github.com/zalora/swift-statsd-client/blob/master/LICENSE) for details.

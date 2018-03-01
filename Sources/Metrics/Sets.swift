@@ -9,9 +9,8 @@
 import Foundation
 
 public struct Sets: Metric, Codable {
-    var name: String
-    var value: String
-    let sample: Float? = nil
+    let name: String
+    let value: String
 
     init(name: String, value: String) {
         self.name = name

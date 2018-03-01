@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import StatsdClient
+@testable import StatsDClient
 
 class MetricTests: XCTestCase {
 
@@ -54,8 +54,6 @@ class MetricTests: XCTestCase {
             let decodedObject = try? jsonDecoder.decode(Sets.self, from: jsonData) {
             XCTAssertEqual(decodedObject.name, set.name)
             XCTAssertEqual(decodedObject.value, set.value)
-            XCTAssertNil(set.sample)
-            XCTAssertNil(decodedObject.sample)
             XCTAssertEqual(decodedObject.metricData, set.metricData)
         } else {
             XCTFail("Failed to encode \(set)")

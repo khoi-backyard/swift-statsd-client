@@ -14,8 +14,23 @@ public class TCPTransport: NSObject, Transport {
     let port: UInt16
 
     private var completionBlocks = [Int: TransportCompletionCallback]()
+    private let completionLock = NSLock()
     private var tag: Int = 0
     private var timeOut: TimeInterval
+
+    /// Access the completion block in a thread-safe manner.
+    subscript(tag: Int) -> TransportCompletionCallback? {
+        get {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            return completionBlocks[tag]
+        }
+        set {
+            completionLock.lock()
+            defer { completionLock.unlock() }
+            completionBlocks[tag] = newValue
+        }
+    }
 
     private lazy var socket: GCDAsyncSocket = {
         GCDAsyncSocket(delegate: self,
@@ -29,7 +44,7 @@ public class TCPTransport: NSObject, Transport {
         super.init()
     }
 
-    func write(data: String, completion: TransportCompletionCallback?) {
+    public func write(data: String, completion: TransportCompletionCallback?) {
         guard let data = data.data(using: String.Encoding.utf8) else {
             completion?(TransportError.invalidData)
             return
@@ -40,25 +55,27 @@ public class TCPTransport: NSObject, Transport {
         }
         tag += 1
 
+        self[tag] = completion
+
         socket.write(data, withTimeout: timeOut, tag: tag)
     }
 }
 
 extension TCPTransport: GCDAsyncSocketDelegate {
     public func socket(_ sock: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
-        guard let callback = completionBlocks[tag] else {
+        guard self[tag] != nil else {
             return
         }
-        callback(nil)
-        completionBlocks[tag] = nil
+        self[tag]?(nil)
+        self[tag] = nil
     }
 
     public func socket(_ sock: GCDAsyncSocket,
                        shouldTimeoutWriteWithTag tag: Int,
                        elapsed: TimeInterval,
                        bytesDone length: UInt) -> TimeInterval {
-        completionBlocks[tag]?(TransportError.timeout)
-        completionBlocks[tag] = nil
+        self[tag]?(TransportError.timeout)
+        self[tag] = nil
         return -1
     }
 }

@@ -13,9 +13,6 @@ public struct Batch: Metric {
     public var metricData: String
 
     init(metrics: Metric...) {
-        metricData = ""
-        for (i, m) in metrics.enumerated() {
-            metricData += i == metrics.count - 1 ? "\(m.metricData)" : "\(m.metricData)\n"
-        }
+        metricData = metrics.map { $0.metricData }.joined(separator: "\n")
     }
 }

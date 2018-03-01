@@ -8,50 +8,54 @@
 
 import Foundation
 
-protocol StatsdProtocol {
+public typealias StatsDCompletionCallback = (_ succes: Bool) -> Void
+
+protocol StatsDProtocol {
 
     var transport: Transport { get }
 
-    func increment(_ bucket: String, by value: Int)
-    func set(_ bucket: String, value: String)
-    func timing(_ bucket: String, value: Int)
-    func gauge(_ bucket: String, value: UInt)
-    func gauge(_ bucket: String, delta: Int)
+    func increment(_ bucket: String, by value: Int, completion: StatsDCompletionCallback?)
+    func set(_ bucket: String, value: String, completion: StatsDCompletionCallback?)
+    func timing(_ bucket: String, value: Int, completion: StatsDCompletionCallback?)
+    func gauge(_ bucket: String, value: UInt, completion: StatsDCompletionCallback?)
+    func gauge(_ bucket: String, delta: Int, completion: StatsDCompletionCallback?)
 }
 
-public class StatsD: NSObject, StatsdProtocol {
+public class StatsD: NSObject, StatsDProtocol {
 
     let transport: Transport
 
-    init(transport: Transport) {
+    public init(transport: Transport) {
         self.transport = transport
     }
 
-    public func increment(_ bucket: String, by value: Int = 1) {
-        transport.write(data: Counting(name: bucket, value: "\(value)").metricData, completion: nil)
+    public func increment(_ bucket: String, by value: Int = 1, completion: StatsDCompletionCallback? = nil) {
+        write(metric: Counting(name: bucket, value: "\(value)"), completion: completion)
     }
 
-    public func set(_ bucket: String, value: String) {
-        transport.write(data: Sets(name: bucket, value: value).metricData, completion: nil)
+    public func set(_ bucket: String, value: String, completion: StatsDCompletionCallback? = nil) {
+        write(metric: Sets(name: bucket, value: value), completion: completion)
     }
 
-    public func timing(_ bucket: String, value: Int) {
-        transport.write(data: Timing(name: bucket, value: value).metricData, completion: nil)
+    public func timing(_ bucket: String, value: Int, completion: StatsDCompletionCallback? = nil) {
+        write(metric: Timing(name: bucket, value: value), completion: completion)
     }
 
-    public func gauge(_ bucket: String, value: UInt) {
-        transport.write(data: Gauge(name: bucket, value: value).metricData, completion: nil)
+    public func gauge(_ bucket: String, value: UInt, completion: StatsDCompletionCallback? = nil) {
+        write(metric: Gauge(name: bucket, value: value), completion: completion)
     }
 
-    public func gauge(_ bucket: String, delta: Int) {
-        transport.write(data: Gauge(name: bucket, delta: delta).metricData, completion: nil)
+    public func gauge(_ bucket: String, delta: Int, completion: StatsDCompletionCallback? = nil) {
+        write(metric: Gauge(name: bucket, delta: delta), completion: completion)
     }
 
-    public func write(metric: Metric) {
-        transport.write(data: metric.metricData, completion: nil)
+    public func write(metric: Metric, completion: StatsDCompletionCallback? = nil) {
+        write(payload: metric.metricData, completion: completion)
     }
 
-    public func write(payload: String) {
-        transport.write(data: payload, completion: nil)
+    public func write(payload: String, completion: StatsDCompletionCallback? = nil) {
+        transport.write(data: payload) { (error) in
+            completion?(error == nil)
+        }
     }
 }
